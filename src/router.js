@@ -23,6 +23,15 @@ export default new Router({
         import("./components/Scholarships")
     },
     {
+      path: "/scholarships/:scholarshipName",
+      name: "ScholarshipChild",
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () =>
+        import("./components/ScholarshipComponents/ScholarshipChild")
+    },
+    {
       path: "/apply",
       name: "Apply",
       component: () =>

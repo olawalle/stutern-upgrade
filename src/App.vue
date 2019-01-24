@@ -1,12 +1,12 @@
 <template>
   <div id="app">
     <div id="nav">
-      <img src="./assets/logo.svg" alt="">
+      <img src="./assets/logo.png" alt="">
 
       <button class="apply-btn">
         Apply
       </button>
-      
+
       <button v-for="(link, i) in topLinks" :key="i" class="top-link" @click="makeActive(i)" :class="link.active ? 'active' : ''">{{link.name}}</button>
 
     </div>
@@ -62,25 +62,28 @@ export default {
   }
   #nav {
     width: 100%;
-    height: 80px;
+    height: 60px;
     padding: 0 108px;
-    line-height: 80px;
+    line-height: 60px;
     background: #FFFFFF;
     box-shadow: 0px 2.5px 5px rgba(0, 0, 0, 0.02);
+    position: fixed;
+    top: 0;
+    z-index: 10000000000000;
     img {
-      height: 30px;
+      height: 20px;
     }
     .apply-btn {
       float: right;
-      height: 50px;
-      line-height: 50px;
+      height: 45px;
+      line-height: 45px;
       border: 0;
       padding: 0 54px;
       background: linear-gradient(180deg, #00D7C4 0%, #01E3C2 100%);
       box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
       border-radius: 4px;
       color: #fff;
-      margin-top: 15px;
+      margin-top: 8px;
       margin-left: 40px;
     }   
     .top-link {
@@ -88,7 +91,7 @@ export default {
       margin: 0;
       width: 120px;
       text-align: center;
-      height: 80px;     
+      height: 60px;     
       font-style: normal;
       font-weight: 500;
       line-height: normal;

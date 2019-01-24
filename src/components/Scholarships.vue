@@ -39,7 +39,7 @@
                             Each batch, successful female applicants are selected to receive 
                             a partial scholarship toward any Stutern program.
                         </p>
-                        <h3 class="more">
+                        <h3 class="more" @click="toScholarship()">
                             Learn more and apply <img src="../assets/right-arrow.png" alt="">
                         </h3>
                     </div>
@@ -59,7 +59,7 @@
                             UX design. Each batch, successful female applicants 
                             are selected to receive a partial scholarship toward any Stutern program.
                         </p>
-                        <h3 class="more">
+                        <h3 class="more" @click="toScholarship()">
                             Learn more and apply <img src="../assets/right-arrow.png" alt="">
                         </h3>
                     </div>
@@ -92,7 +92,16 @@
 </template>
 <script>
 export default {
-    
+    data () {
+        return {
+            
+        }
+    },
+    methods: {
+        toScholarship () {
+            this.$router.push({name: 'ScholarshipChild', params: {scholarshipName: 'girlsInTech'}})
+        }
+    }
 }
 </script>
 <style lang="scss" scoped>
