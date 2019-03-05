@@ -476,5 +476,89 @@ export default {
                 }
             }
         }
+        @media (max-width: 767px) {
+            .top-banner {
+                height: auto;
+                margin-top: 60px;
+                img {
+                    height: 230px !important;
+                    margin-top: 0
+                }
+            }
+            .floating-box {
+                padding: 20px 50px !important;
+                height: 150px;
+                .floater {
+                    padding: 20px;
+                    margin-top: -50px;
+                    box-shadow: 3px 3px 3px #f5faf8;
+                    height: 130px;
+                    .floater-header {
+                        font-size: 26px
+                    }
+                }
+            }
+            .inner-nav {
+                padding: 0 20px !important;
+                .inner-content {
+                    .inner-link {
+                        width: auto;
+                        padding: 0 12px;
+                        font-size: 12px;
+                    }
+                }
+            }
+            .overview {
+                padding: 20px !important;
+                margin: 0 !important
+            }
+            .impact {
+                padding: 20px !important;
+                margin: 0 !important;
+                .impact-section {
+                    border: 0 !important
+                }
+            }
+            .mycard {
+                .right-card, .left-card {
+                    margin: 0
+                }
+                .texts {
+                    height: auto
+                }
+            }
+            .how-to-apply {
+                padding: 0px !important;
+                margin: 0 !important;
+                .content-heading {
+                    font-size: 20px;
+                    margin: 12px 0 0 20px;
+                }
+                .apply-img-wrap {
+                    height: 300px;
+                    margin-top: 30px;
+                    overflow: hidden;
+                }
+            }
+            .past-beneficiaries {
+                padding: 20px !important;
+                margin: 0 !important;
+                background-image: none;
+                .content-heading {
+                    margin: 10px 20px 0 0 !important;
+                    font-size: 20px;
+                }
+                .set-wrap {
+                    padding: 0 !important; ul {
+                        li {
+                            font-size: 14px;
+                        }
+                    }
+                }
+                .left-set {
+                    border: 0 !important
+                }
+            }
+        }
     }
 </style>

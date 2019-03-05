@@ -1,22 +1,54 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <img src="./assets/logo.png" alt="">
+    <!-- <div id="nav">
+      <router-link to="/">
+        <img src="./assets/logo.png" alt="">
+      </router-link>
 
-      <button class="apply-btn">
-        Apply
-      </button>
+      
+      <b-navbar-toggle target="nav_dropdown_collapse"></b-navbar-toggle>
+        <b-collapse is-nav id="nav_dropdown_collapse">
 
-      <button v-for="(link, i) in topLinks" :key="i" class="top-link" @click="makeActive(i)" :class="link.active ? 'active' : ''">{{link.name}}</button>
+          <button class="apply-btn">
+            Apply
+          </button>
 
-    </div>
+          <button v-for="(link, i) in topLinks" :key="i" class="top-link" @click="makeActive(i)" :class="link.active ? 'active' : ''">{{link.name}}</button>
+      </b-collapse>
+    </div> -->
+    <b-navbar toggleable="md" id="nav">
+
+      <b-navbar-toggle target="nav_collapse" class="coll-btn"></b-navbar-toggle>
+
+      <b-navbar-brand>
+          <router-link to="/">
+            <img src="./assets/logo.png" alt="">
+          </router-link>
+        </b-navbar-brand>
+
+      <b-collapse is-nav id="nav_collapse">
+
+        <!-- Right aligned nav items -->
+        <b-navbar-nav class="ml-auto">
+
+          <button v-for="(link, i) in topLinks" :key="i" class="top-link" @click="makeActive(i)" :class="link.active ? 'active' : ''">{{link.name}}</button>
+          
+          <button class="apply-btn">
+            Apply
+          </button>
+        </b-navbar-nav>
+
+      </b-collapse>
+    </b-navbar>
+
+
     <router-view/>
 
     <b-row class="footer">
-      <b-col sm="6" class="left-text">
+      <b-col col-6 class="left-text">
         Stutern Inc. © {{year}}
       </b-col>
-      <b-col sm="6" class="right-text">
+      <b-col col-6 class="right-text">
         <img src="./assets/facebook.png" class="socials" alt="">
         <img src="./assets/instagram.png" class="socials" alt="">
         <img src="./assets/twitter.png" class="socials" alt="">
@@ -26,13 +58,15 @@
 </template>
 
 <script>
+import axios from 'axios'
+import services from './services'
 export default {
   data () {
     return {
       topLinks: [
-        {name: 'Alumni', active: false},
+        {name: 'Hire', active: false},
         {name: 'Scholarships', active: false},
-        {name: 'Hire', active: true}
+        {name: 'Alumni', active: false}
       ],
     }
   },
@@ -40,6 +74,16 @@ export default {
     year () {
       let date = new Date()
       return date.getFullYear()
+    },
+    routeName () {
+      return this.$route.name
+    }
+  },
+  watch: {
+    routeName: function  () {
+      if (this.routeName === 'LandingPage') {
+        this.topLinks.map(link => (link.active = false))
+      }
     }
   },
   methods: {
@@ -48,6 +92,25 @@ export default {
       this.topLinks[i].active = true;
       this.$router.push({name: this.topLinks[i].name})
     }
+  },
+  mounted () {
+    // axios.get('http://localhost/stutern/wp-json/wp/v2/tracks')
+    // .then(function (response) {
+    //   let str = response
+    //   // [0].content.rendered
+    //   // console.log(str.replace(/<\/?[^>]+>/gi, ''));
+    //   console.log(str)
+    // })
+    // .catch(function (error) {
+    //   console.log(error);
+    // });
+    services.getTopData()
+    .then(res => {
+      // console.log(res)
+    })
+    .catch(err => {
+      console.log(err)
+    })
   }
 }
 </script>
@@ -69,12 +132,12 @@ export default {
     box-shadow: 0px 2.5px 5px rgba(0, 0, 0, 0.02);
     position: fixed;
     top: 0;
-    z-index: 10000000000000;
+    z-index: 10000000000000000000;
     img {
       height: 20px;
     }
     .apply-btn {
-      float: right;
+      // float: right;
       height: 45px;
       line-height: 45px;
       border: 0;
@@ -87,7 +150,7 @@ export default {
       margin-left: 40px;
     }   
     .top-link {
-      float: right;
+      // float: right;
       margin: 0;
       width: 120px;
       text-align: center;
@@ -134,5 +197,44 @@ export default {
     width: 30px;
     float: right;
     margin: 0 10px;
+  }
+  @media (max-width: 767px) {
+    #nav {
+      padding: 0 12px 50px 12px;
+      // overflow: hidden;
+      height: auto;
+      img {
+        height: 12px;
+        position: absolute;
+        top: 25px;
+        left: 10px;
+      }
+      button {
+        display: block;
+      }
+      .apply-btn, .top-link {
+        margin: 0 auto
+      }
+      .navbar-collapse {
+        padding-top: 60px !important;
+        text-align: right !important
+      }
+      .coll-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px
+      }
+    }
+    .active {
+      color: #00D7C4;
+      border-bottom: 0px solid transparent !important
+    }
+    .button:focus {
+      outline: none
+    }
+    .footer {
+      margin-top: 20px;
+      padding: 12px !important
+    }
   }
 </style>

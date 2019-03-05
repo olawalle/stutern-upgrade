@@ -11,10 +11,21 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 
 Vue.use(BootstrapVue);
 
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
 Vue.config.productionTip = false;
+
+router.beforeEach((to, from, next) => {
+  window.scrollTo(0, 0)
+  next()
+})
 
 new Vue({
   router,
   store,
+  created () {
+    AOS.init()
+  },
   render: h => h(App)
 }).$mount("#app");

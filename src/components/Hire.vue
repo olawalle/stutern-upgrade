@@ -2,7 +2,7 @@
     <div class="hire-wrap">
         <b-row class="top-sect">
             <b-col sm="6" class="top-sect-texts">
-                <p class="top-text">
+                <p class="top-text" data-aos-offset="200" data-aos="fade" data-aos-duration="1200">
                     Find <i>well-trained</i> talent for your team
                 </p>
                 <p class="text">
@@ -11,9 +11,11 @@
                     empowering them with the skillset to begin a great career
                 </p>
                 
-                <button class="apply-btn">
+                <!-- <a href="#explore"> -->
+                <button class="apply-btn" @click="test('explore')">
                     Explore candidates
                 </button>
+                <!-- </a> -->
                 
                 <button class="apply-btn-two">
                     Contact our team
@@ -23,14 +25,14 @@
                 <b-row class="left-grid-wrap">
                     <b-col sm="6" class="left-grid">
                         <b-col sm="12" class="left-grid-top">
-                            <img src="../assets/grid1.png" alt="">
+                            <img src="../assets/grid1.png" class="animated slideInDown" alt="">
                         </b-col>
                         <b-col sm="12" class="left-grid-btm">
-                            <img src="../assets/grid2.png" alt="">
+                            <img src="../assets/grid2.png" class="animated slideInUp" alt="">
                         </b-col>
                     </b-col>
                     <b-col sm="6"  class="right-grid">
-                        <img src="../assets/grid3.png" alt="">
+                        <img src="../assets/grid3.png" class="animated 	slideInRight" alt="">
                     </b-col>
                 </b-row>
             </b-col>
@@ -84,7 +86,7 @@
                 </p>
             </b-col>
         </b-row>
-        <b-row class="explore">
+        <b-row class="explore" ref="explore">
             <b-col sm="12">
                 <p class="explore-heading">
                 Explore candidates
@@ -112,7 +114,7 @@
                 </b-form-select>
             </b-col>
             <b-col sm="7" class="user-cards">
-                <b-row class="user-card">
+                <b-row class="user-card" @click="toSingle()">
                     <b-col sm="4" class="user-img">
                         <img src="../assets/user.png" alt="">
                     </b-col>
@@ -132,30 +134,36 @@
                             maids and the landlady, were all loitering by accidental places 
                             and there was a lot more.
                         </p>
-                        <span class="skill">
-                            <img src="../assets/figma.png" alt="">
-                        </span>
-                        <span class="skill">
-                            <img src="../assets/xd.png" alt="">
-                        </span>
-                        <span class="skill">
-                            <img src="../assets/invision.png" alt="">
-                        </span>
-                        <span class="skill">
-                            <img src="../assets/sketch.png" alt="">
-                        </span>
-                        <span class="skill">
-                            <img src="../assets/html.png" alt="">
-                        </span>
-                        <span class="skill text-skill">
-                            User research
-                        </span>
-                        <span class="skill text-skill">
-                            Design thinking
-                        </span>
+                        <b-row>
+                            <b-col  sm="6">
+                                <span class="skill">
+                                    <img src="../assets/figma.png" alt="">
+                                </span>
+                                <span class="skill">
+                                    <img src="../assets/xd.png" alt="">
+                                </span>
+                                <span class="skill">
+                                    <img src="../assets/invision.png" alt="">
+                                </span>
+                                <span class="skill">
+                                    <img src="../assets/sketch.png" alt="">
+                                </span>
+                                <span class="skill">
+                                    <img src="../assets/html.png" alt="">
+                                </span>
+                            </b-col>
+                            <b-col sm="6" class="text-skill-wrap">
+                                <span class="skill text-skill">
+                                    User research
+                                </span>
+                                <span class="skill text-skill">
+                                    Design thinking
+                                </span>
+                            </b-col>
+                        </b-row>
                     </b-col>
                 </b-row>
-                <b-row class="user-card">
+                <b-row class="user-card" @click="toSingle()">
                     <b-col sm="4" class="user-img">
                         <img src="../assets/user3.png" alt="">
                     </b-col>
@@ -175,30 +183,36 @@
                             maids and the landlady, were all loitering by accidental places 
                             and there was a lot more.
                         </p>
-                        <span class="skill">
-                            <img src="../assets/figma.png" alt="">
-                        </span>
-                        <span class="skill">
-                            <img src="../assets/xd.png" alt="">
-                        </span>
-                        <span class="skill">
-                            <img src="../assets/invision.png" alt="">
-                        </span>
-                        <span class="skill">
-                            <img src="../assets/sketch.png" alt="">
-                        </span>
-                        <span class="skill">
-                            <img src="../assets/html.png" alt="">
-                        </span>
-                        <span class="skill text-skill">
-                            User research
-                        </span>
-                        <span class="skill text-skill">
-                            Design thinking
-                        </span>
+                        <b-row>
+                            <b-col  sm="6">
+                                <span class="skill">
+                                    <img src="../assets/figma.png" alt="">
+                                </span>
+                                <span class="skill">
+                                    <img src="../assets/xd.png" alt="">
+                                </span>
+                                <span class="skill">
+                                    <img src="../assets/invision.png" alt="">
+                                </span>
+                                <span class="skill">
+                                    <img src="../assets/sketch.png" alt="">
+                                </span>
+                                <span class="skill">
+                                    <img src="../assets/html.png" alt="">
+                                </span>
+                            </b-col>
+                            <b-col sm="6" class="text-skill-wrap">
+                                <span class="skill text-skill">
+                                    User research
+                                </span>
+                                <span class="skill text-skill">
+                                    Design thinking
+                                </span>
+                            </b-col>
+                        </b-row>
                     </b-col>
                 </b-row>
-                <b-row class="user-card">
+                <b-row class="user-card" @click="toSingle()">
                     <b-col sm="4" class="user-img">
                         <img src="../assets/user2.png" alt="">
                     </b-col>
@@ -218,30 +232,36 @@
                             maids and the landlady, were all loitering by accidental places 
                             and there was a lot more.
                         </p>
-                        <span class="skill">
-                            <img src="../assets/figma.png" alt="">
-                        </span>
-                        <span class="skill">
-                            <img src="../assets/xd.png" alt="">
-                        </span>
-                        <span class="skill">
-                            <img src="../assets/invision.png" alt="">
-                        </span>
-                        <span class="skill">
-                            <img src="../assets/sketch.png" alt="">
-                        </span>
-                        <span class="skill">
-                            <img src="../assets/html.png" alt="">
-                        </span>
-                        <span class="skill text-skill">
-                            User research
-                        </span>
-                        <span class="skill text-skill">
-                            Design thinking
-                        </span>
+                        <b-row>
+                            <b-col  sm="6">
+                                <span class="skill">
+                                    <img src="../assets/figma.png" alt="">
+                                </span>
+                                <span class="skill">
+                                    <img src="../assets/xd.png" alt="">
+                                </span>
+                                <span class="skill">
+                                    <img src="../assets/invision.png" alt="">
+                                </span>
+                                <span class="skill">
+                                    <img src="../assets/sketch.png" alt="">
+                                </span>
+                                <span class="skill">
+                                    <img src="../assets/html.png" alt="">
+                                </span>
+                            </b-col>
+                            <b-col sm="6" class="text-skill-wrap">
+                                <span class="skill text-skill">
+                                    User research
+                                </span>
+                                <span class="skill text-skill">
+                                    Design thinking
+                                </span>
+                            </b-col>
+                        </b-row>
                     </b-col>
                 </b-row>
-                <b-row class="user-card">
+                <b-row class="user-card" @click="toSingle()">
                     <b-col sm="4" class="user-img">
                         <img src="../assets/user.png" alt="">
                     </b-col>
@@ -261,30 +281,36 @@
                             maids and the landlady, were all loitering by accidental places 
                             and there was a lot more.
                         </p>
-                        <span class="skill">
-                            <img src="../assets/figma.png" alt="">
-                        </span>
-                        <span class="skill">
-                            <img src="../assets/xd.png" alt="">
-                        </span>
-                        <span class="skill">
-                            <img src="../assets/invision.png" alt="">
-                        </span>
-                        <span class="skill">
-                            <img src="../assets/sketch.png" alt="">
-                        </span>
-                        <span class="skill">
-                            <img src="../assets/html.png" alt="">
-                        </span>
-                        <span class="skill text-skill">
-                            User research
-                        </span>
-                        <span class="skill text-skill">
-                            Design thinking
-                        </span>
+                        <b-row>
+                            <b-col  sm="6">
+                                <span class="skill">
+                                    <img src="../assets/figma.png" alt="">
+                                </span>
+                                <span class="skill">
+                                    <img src="../assets/xd.png" alt="">
+                                </span>
+                                <span class="skill">
+                                    <img src="../assets/invision.png" alt="">
+                                </span>
+                                <span class="skill">
+                                    <img src="../assets/sketch.png" alt="">
+                                </span>
+                                <span class="skill">
+                                    <img src="../assets/html.png" alt="">
+                                </span>
+                            </b-col>
+                            <b-col sm="6" class="text-skill-wrap">
+                                <span class="skill text-skill">
+                                    User research
+                                </span>
+                                <span class="skill text-skill">
+                                    Design thinking
+                                </span>
+                            </b-col>
+                        </b-row>
                     </b-col>
                 </b-row>
-                <b-row class="user-card">
+                <b-row class="user-card" @click="toSingle()">
                     <b-col sm="4" class="user-img">
                         <img src="../assets/user3.png" alt="">
                     </b-col>
@@ -304,30 +330,36 @@
                             maids and the landlady, were all loitering by accidental places 
                             and there was a lot more.
                         </p>
-                        <span class="skill">
-                            <img src="../assets/figma.png" alt="">
-                        </span>
-                        <span class="skill">
-                            <img src="../assets/xd.png" alt="">
-                        </span>
-                        <span class="skill">
-                            <img src="../assets/invision.png" alt="">
-                        </span>
-                        <span class="skill">
-                            <img src="../assets/sketch.png" alt="">
-                        </span>
-                        <span class="skill">
-                            <img src="../assets/html.png" alt="">
-                        </span>
-                        <span class="skill text-skill">
-                            User research
-                        </span>
-                        <span class="skill text-skill">
-                            Design thinking
-                        </span>
+                        <b-row>
+                            <b-col  sm="6">
+                                <span class="skill">
+                                    <img src="../assets/figma.png" alt="">
+                                </span>
+                                <span class="skill">
+                                    <img src="../assets/xd.png" alt="">
+                                </span>
+                                <span class="skill">
+                                    <img src="../assets/invision.png" alt="">
+                                </span>
+                                <span class="skill">
+                                    <img src="../assets/sketch.png" alt="">
+                                </span>
+                                <span class="skill">
+                                    <img src="../assets/html.png" alt="">
+                                </span>
+                            </b-col>
+                            <b-col sm="6" class="text-skill-wrap">
+                                <span class="skill text-skill">
+                                    User research
+                                </span>
+                                <span class="skill text-skill">
+                                    Design thinking
+                                </span>
+                            </b-col>
+                        </b-row>
                     </b-col>
                 </b-row>
-                <b-row class="user-card">
+                <b-row class="user-card" @click="toSingle()">
                     <b-col sm="4" class="user-img">
                         <img src="../assets/user4.png" alt="">
                     </b-col>
@@ -347,30 +379,36 @@
                             maids and the landlady, were all loitering by accidental places 
                             and there was a lot more.
                         </p>
-                        <span class="skill">
-                            <img src="../assets/figma.png" alt="">
-                        </span>
-                        <span class="skill">
-                            <img src="../assets/xd.png" alt="">
-                        </span>
-                        <span class="skill">
-                            <img src="../assets/invision.png" alt="">
-                        </span>
-                        <span class="skill">
-                            <img src="../assets/sketch.png" alt="">
-                        </span>
-                        <span class="skill">
-                            <img src="../assets/html.png" alt="">
-                        </span>
-                        <span class="skill text-skill">
-                            User research
-                        </span>
-                        <span class="skill text-skill">
-                            Design thinking
-                        </span>
+                        <b-row>
+                            <b-col  sm="6">
+                                <span class="skill">
+                                    <img src="../assets/figma.png" alt="">
+                                </span>
+                                <span class="skill">
+                                    <img src="../assets/xd.png" alt="">
+                                </span>
+                                <span class="skill">
+                                    <img src="../assets/invision.png" alt="">
+                                </span>
+                                <span class="skill">
+                                    <img src="../assets/sketch.png" alt="">
+                                </span>
+                                <span class="skill">
+                                    <img src="../assets/html.png" alt="">
+                                </span>
+                            </b-col>
+                            <b-col sm="6" class="text-skill-wrap">
+                                <span class="skill text-skill">
+                                    User research
+                                </span>
+                                <span class="skill text-skill">
+                                    Design thinking
+                                </span>
+                            </b-col>
+                        </b-row>
                     </b-col>
                 </b-row>
-                <b-row class="user-card">
+                <b-row class="user-card" @click="toSingle()">
                     <b-col sm="4" class="user-img">
                         <img src="../assets/user2.png" alt="">
                     </b-col>
@@ -390,27 +428,33 @@
                             maids and the landlady, were all loitering by accidental places 
                             and there was a lot more.
                         </p>
-                        <span class="skill">
-                            <img src="../assets/figma.png" alt="">
-                        </span>
-                        <span class="skill">
-                            <img src="../assets/xd.png" alt="">
-                        </span>
-                        <span class="skill">
-                            <img src="../assets/invision.png" alt="">
-                        </span>
-                        <span class="skill">
-                            <img src="../assets/sketch.png" alt="">
-                        </span>
-                        <span class="skill">
-                            <img src="../assets/html.png" alt="">
-                        </span>
-                        <span class="skill text-skill">
-                            User research
-                        </span>
-                        <span class="skill text-skill">
-                            Design thinking
-                        </span>
+                        <b-row>
+                            <b-col  sm="6">
+                                <span class="skill">
+                                    <img src="../assets/figma.png" alt="">
+                                </span>
+                                <span class="skill">
+                                    <img src="../assets/xd.png" alt="">
+                                </span>
+                                <span class="skill">
+                                    <img src="../assets/invision.png" alt="">
+                                </span>
+                                <span class="skill">
+                                    <img src="../assets/sketch.png" alt="">
+                                </span>
+                                <span class="skill">
+                                    <img src="../assets/html.png" alt="">
+                                </span>
+                            </b-col>
+                            <b-col sm="6" class="text-skill-wrap">
+                                <span class="skill text-skill">
+                                    User research
+                                </span>
+                                <span class="skill text-skill">
+                                    Design thinking
+                                </span>
+                            </b-col>
+                        </b-row>
                     </b-col>
                 </b-row>
             </b-col>
@@ -436,7 +480,26 @@ export default {
         { value: 'd', text: 'This one is disabled', disabled: true }
       ]
     }
-  }  
+  },
+  methods: {
+    test(refName) {
+        var element = this.$refs[refName];
+        var to = element.offsetTop;
+
+        let steps = to / 0.0000000000001
+
+        for (let index = 0; index < to; index += 1) {
+            window.scrollTo(0, index);
+            console.log(index)
+        }
+    },
+    int () {
+        
+    },
+    toSingle () {
+        this.$router.push({name: 'SingleHire', params: {username: 'username'}})
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
@@ -451,7 +514,7 @@ export default {
         color: #67747C;
     }
     .top-sect {
-        padding: 150px 100px !important;
+        padding: 150px 120px !important;
         background-color:  rgba(247, 255, 254, 0.25);
         height: 600px;
         .top-sect-texts {
@@ -482,6 +545,9 @@ export default {
             }
         }
         .img-grid-wrap {
+            img {               
+                animation-duration: 2s;
+            }
             .left-grid {
                 padding: 0 !important;
                 img {
@@ -508,7 +574,7 @@ export default {
         }
     }
     .tutors {
-        padding: 30px 100px !important;
+        padding: 30px 120px !important;
         .tutor-title {
             font-style: normal;
             font-weight: 600;
@@ -523,7 +589,7 @@ export default {
         }
     }
     .main-sect-wrap {
-        padding: 30px 100px !important; 
+        padding: 30px 120px !important; 
         .main-sect {
             padding: 10px 200px 0 10px !important;
             .mid-sect-heading {
@@ -538,7 +604,7 @@ export default {
         }
     }
     .explore {
-        padding: 100px 100px 40px 100px !important;
+        padding: 100px 120px 40px 120px !important;
         .explore-heading {
             font-family: 'Playfair Display', serif;
             font-style: normal;
@@ -582,9 +648,10 @@ export default {
             .user-card {
                 padding: 0 !important;
                 box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
-                // height: 210px;
+                min-height: 210px;
                 margin: 40px 0;
                 overflow: hidden;
+                cursor: pointer;
                 .user-img {
                     padding: 0 !important;
                     img {
@@ -660,5 +727,78 @@ export default {
         color: #fff;
         margin-top: 8px;
     }
- }
+    button:hover {
+        transform: translateY(-3px) !important;
+        transition: all 0.6s;
+        cursor: pointer
+    }
+  @media (max-width: 767px) {
+    .top-sect {
+        padding: 90px 12px 10px 12px !important;
+        height: auto;
+        .top-sect-texts {
+            padding: 40px 20px !important;
+            .top-text {
+            font-size: 28px;
+            line-height: 36px
+            }
+        }
+        .img-grid-wrap {
+            .left-grid {
+                display: none
+            }
+            .right-grid {
+                text-align: center
+            }
+        }
+    }
+    .tutors {
+      padding: 0px 12px !important;
+      margin: 0 !important;
+    }
+    .main-sect-wrap {
+        padding: 20px !important;
+        margin: 0 !important;
+        .main-sect {
+            padding: 0 !important;
+            margin-top: 20px;
+            box-shadow: 3px 3px 3px #f5faf8;
+        }
+    }
+    .explore {
+      padding: 0px 20px !important;
+      margin: 0 !important;
+      .filter {
+        padding: 0 !important
+      }
+      .user-cards {
+          padding: 0 !important;
+          .user-card {
+              .user-text {
+                  padding: 25px !important;
+                  .text-skill {
+                      margin-top: 10px;
+                  }
+                .text-skill-wrap {
+                    margin-top: 12px;
+                }
+              }
+          }
+      }
+    }
+    .apply-btn {
+        // padding: 0 10px !important;
+        width: 46%;
+        margin: 0 !important;
+        font-size: 10px
+    }
+    .apply-btn-two {
+        // padding: 0 10px !important;
+        width: 46%;
+        margin: 0 !important;
+        float: right;
+        font-size: 10px
+    }
+  }
+}
 </style>

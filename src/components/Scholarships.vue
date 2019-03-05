@@ -79,7 +79,7 @@
                 <input type="text" class="myinput" placeholder="Full name*">
                 <input type="text" class="myinput" placeholder="Email address*">
                 <input type="text" class="myinput" placeholder="How many students will you love to sponsor?*">
-                <textarea name="" id="" cols="30" rows="5" placeholder="Anything else you will like us to know?"></textarea>
+                <textarea name="" id="" cols="30" rows="4" placeholder="Anything else you will like us to know?"></textarea>
                 <button class="apply-btn">
                     Send
                 </button>
@@ -239,7 +239,7 @@ export default {
         .sponsor-sect {
             text-align: left;
             padding: 0 !important;
-            height: 800px;
+            height: 750px;
             overflow: hidden;
             .sponsor-sect-left {
                 padding: 30px 40px 0 260px;
@@ -260,7 +260,7 @@ export default {
                 }
                 .myinput {
                     border: 1px solid #C4C4C4;
-                    height: 70px;
+                    height: 60px;
                     width: 100%;
                     border-radius: 2px;
                     margin-top: 25px;
@@ -295,6 +295,94 @@ export default {
                 img {
                     width: 100%;
                     float: right
+                }
+            }
+        }
+        button:hover {
+            transform: translateY(-3px) !important;
+            transition: all 0.6s;
+            cursor: pointer
+        }
+        @media (max-width: 767px) {
+            .top-text {
+                padding: 90px 12px !important;
+                margin: 0 !important;
+                .top-text-heading {
+                    font-size: 28px
+                }
+                .sub-text {
+                    font-size: 16px;
+                    line-height: 24px
+                }
+            }
+            .banner {
+                height: 300px;
+                img {
+                    height: 90%;
+                    width: 220%;
+                    margin-left: -12%
+                }
+            }
+            .cards-wrap {
+                padding: 20px !important;
+                .cards-header {
+                    margin: 10px 0;
+                    text-align: center;
+                    .top-text-heading {
+                        margin: 0px auto;
+                        font-size: 20px;
+                    }
+                    .sub-text {
+                        padding: 0 !important;
+                        font-size: 16px;
+                        line-height: 24px;
+                        margin: 10px 20px;
+                    }
+                }
+                .cards {
+                    padding: 10px !important;
+                    .card-container {
+                        .card {
+                            margin-top: 20px;
+                            height: auto;
+                            .card-img {
+                                margin: 0 0 10px 0;
+                                height: 200px
+                            }
+                            .card-text-heading {
+                                font-size: 18px;
+                            }
+                            .card-text-subheading {
+                                font-size: 16px
+                            }
+                            .card-text-content {
+                                font-size: 14px
+                            }
+                            .more {
+                                font-size: 14px;
+                                img {
+                                    width: 20px;
+                                }
+                            }
+                        }
+                        p {
+                            margin: 5px 20px;
+                        }
+                    }
+                }
+            }
+            .sponsor-sect {
+                height: auto;
+                .sponsor-sect-left {
+                    padding: 12px 30px;
+                    margin: 0 !important;
+                    .myinput {
+                        margin-top: 10px;
+                        height: 50px;
+                    }
+                }
+                .sponsor-sect-right {
+                    display: none
                 }
             }
         }
