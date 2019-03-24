@@ -3,113 +3,100 @@
         <b-row class="top-sect">
             <b-col sm="6" class="top-sect-texts">
                 <p class="name">
-                    Michael Chinedu <span class="av">available for hire</span>
+                    {{activeUser.userName}} 
+                    <span class="av" v-if="activeUser.availability">available for hire</span>
+                    <span class="not-av" v-else>not available</span>
                 </p>
                 <p class="title">
-                    UI/UX Designer
+                    {{activeUser.jobTitle}}
                 </p>
                 <p class="self-text">
-                    Consequently, another drawer, and two porters, and several maids 
-                    and the landlady, were all loitering by accidental places and there was a lot more.
+                    {{activeUser.userDesc}}
                 </p>
                 <p class="skill-title">
                     SKILLS & TOOLS
                 </p>
                 
-                <span class="skill">
-                    <img src="../../assets/figma.png" alt="">
+                
+                <span class="skill" v-for="(skill, i) in skills" :key="'pskill'+i">
+                    <img v-if="skill.type === 'photo' && activeUser.userSkills.includes(skill.name)" :src="skill.skillPhoto" alt="">
                 </span>
-                <span class="skill">
-                    <img src="../../assets/xd.png" alt="">
-                </span>
-                <span class="skill">
-                    <img src="../../assets/invision.png" alt="">
-                </span>
-                <span class="skill">
-                    <img src="../../assets/sketch.png" alt="">
-                </span>
-                <span class="skill">
-                    <img src="../../assets/html.png" alt="">
-                </span>
-                <span class="skill text-skill">
-                    User research
-                </span>
-                <span class="skill text-skill">
-                    Design thinking
+                <span v-for="(skill, i) in skills" :key="'tskill'+i">
+                    <span class="skill text-skill" v-if="skill.type === 'text' && activeUser.userSkills.includes(skill.name)">
+                        {{skill.skillText}}
+                    </span>
                 </span>
                 <b-row class="top-btns">
-                    <button class="apply-btn" @click="test('explore')">
-                        Hire me
-                    </button>                
-                    <button class="apply-btn-two">
+                    <a :href='email'>
+                        <button class="apply-btn">
+                            Hire me
+                        </button>
+                    </a>               
+                    <button class="apply-btn-two" @click="hireMe()">
                         View CV
                     </button>
                 </b-row>
             </b-col>
             <b-col sm="6" class="img-grid-wrap">
-                <img src="../../assets/user3.png" class="animated 	slideInRight" alt="">
+                <img :src="activeUser.userPhoto" class="animated 	slideInRight" alt="">
             </b-col>
         </b-row>
         <b-row class="sect-two">
             <p class="sect-two-heading">
                 What I have worked on
             </p>
-            <b-col class="card-container" sm="6" xs="12">
+            <b-col class="card-container" v-for="(project, i) in projects" :key="i" sm="6" xs="12">
                 <div class="card">    
-                    <img class="card-img" src="../../assets/digital.png" alt="">
+                    <img class="card-img" :src="project.projectBanner" alt="">
                     <p class="card-text-heading">
-                        Project title
+                        {{project.projectTitle}}
                     </p>
                     <p class="card-text-content">
-                        Include a brief description of the project here. This will serve to 
-                        provide viewers with a sense of what the project was about
+                        {{project.projectDesc}}
                     </p>
                 </div>
             </b-col>
-            <b-col class="card-container" sm="6" xs="12">
-                <div class="card">    
-                    <img class="card-img" src="../../assets/digital.png" alt="">
-                    <p class="card-text-heading">
-                        Project title
-                    </p>
-                    <p class="card-text-content">
-                        Include a brief description of the project here. This will serve to 
-                        provide viewers with a sense of what the project was about
-                    </p>
-                </div>
-            </b-col>
-            <b-col class="card-container" sm="6" xs="12">
-                <div class="card">    
-                    <img class="card-img" src="../../assets/digital.png" alt="">
-                    <p class="card-text-heading">
-                        Project title
-                    </p>
-                    <p class="card-text-content">
-                        Include a brief description of the project here. This will serve to 
-                        provide viewers with a sense of what the project was about
-                    </p>
-                </div>
-            </b-col>
-            <b-col class="card-container" sm="6" xs="12">
-                <div class="card">    
-                    <img class="card-img" src="../../assets/digital.png" alt="">
-                    <p class="card-text-heading">
-                        Project title
-                    </p>
-                    <p class="card-text-content">
-                        Include a brief description of the project here. This will serve to 
-                        provide viewers with a sense of what the project was about
-                    </p>
-                </div>
+            <b-col class="card-container" v-if="projects.length === 0" sm="12" xs="12" style="text-align: center">
+                This user has no projects on display
             </b-col>
         </b-row>
     </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
+import services from '../../services'
 export default {
     data () {
         return {
-            
+            projects: [],
+            email: ''
+        }
+    },
+    computed: {
+        ...mapGetters({
+            sets: 'getSets',
+            students: 'getStudents',
+            skills: 'getSkills'
+        }),
+        activeUser () {
+            return this.students.find(user => user._id === this.$route.params.userId)
+        }
+    },
+    mounted () {
+        this.email = `mailto:accelerator@stutern.com?subject=Request to Hire&cc=${this.activeUser.userEmail}`
+        services.getUserProjects(this.$route.params.userId)
+        .then(res => {
+            this.projects = res.data.userProjects
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    },
+    methods: {
+        hireMe () {
+            window.open(
+                this.activeUser.userCV, '_blank'
+            )
         }
     }
 }
@@ -118,18 +105,23 @@ export default {
     .singlehire-page-wrap {
         width: 100%;
     .top-sect {
-        padding: 150px 100px !important;
+        padding: 150px 120px !important;
         background-color:  rgba(247, 255, 254, 0.25);
         height: 600px;
         .top-sect-texts {
-            padding-right: 150px !important;
+            padding-right: 120px !important;
+            padding-left: 0 !important;
+            overflow: hidden;
+            .top-btns {
+                margin: 0 !important
+            }
             .name {
                 font-family: 'Playfair Display', serif;
                 font-style: normal;
                 font-weight: bold;
                 line-height: 27px;
                 font-size: 18px;
-
+                text-transform: capitalize;
                 color: #222829;
                 i {
                     color: #67747C;
@@ -147,6 +139,21 @@ export default {
                     margin-left: 30px;
                     font-weight: 600;
                     color: #EB002A;
+                    text-transform: lowercase
+                }
+                .not-av {
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 27px;
+                    font-size: 12px;
+                    text-align: center;
+                    background: rgba(59, 68, 79, 0.05);
+                    border-radius: 50px;
+                    padding: 5px 20px;
+                    margin-left: 30px;
+                    font-weight: 600;
+                    color: #3B444F;
+                    text-transform: lowercase
                 }
             }
             .title {
@@ -154,14 +161,13 @@ export default {
                 font-weight: normal;
                 line-height: 24px;
                 font-size: 14px;
-
                 color: #222829;
             }
             .self-text {
-                font-style: italic;
+                // font-style: italic;
                 font-weight: normal;
-                line-height: 32px;
-                font-size: 24px;
+                line-height: 26px;
+                font-size: 18px;
 
                 color: #67747C;
             }
@@ -217,9 +223,9 @@ export default {
         }
         .img-grid-wrap {
                 background-image: url('../../assets/pattern3.png');
-                background-position: 90% 0px; 
+                background-position: 97% 0px; 
                 background-repeat: no-repeat;
-                padding: 0 100px 0 0 !important;
+                padding: 0 50px 0 0 !important;
                 height: 430px;
                 img {
                     height: 370px;
@@ -311,7 +317,7 @@ export default {
         }
         @media (max-width: 767px) {
             .top-sect {
-                padding: 150px 20px 30px 20px !important;
+                padding: 100px 20px 30px 20px !important;
                 margin: 0 !important;
                 height: auto;
                 .top-sect-texts {
@@ -323,10 +329,12 @@ export default {
                 }
                 .top-btns {
                     padding: 12px;
-                    text-align: center
+                    text-align: center;
+                    // margin: 0 !important
                 }
                 .img-grid-wrap {
                     padding: 0px !important;
+                    overflow: hidden;
                     img {
                         margin: 20px auto !important
                     }

@@ -24,7 +24,7 @@ export default new Router({
         import("./components/Hire")
     },
     {
-      path: "/hire/:username",
+      path: "/hire/:userId",
       name: "SingleHire",
       component: () =>
         import("./components/HireComponents/SingleHire")

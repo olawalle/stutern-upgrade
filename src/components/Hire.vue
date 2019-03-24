@@ -12,14 +12,20 @@
                 </p>
                 
                 <!-- <a href="#explore"> -->
-                <button class="apply-btn" @click="test('explore')">
+                <button class="apply-btn" v-scroll-to="{
+                                                el: '#candidates',
+                                                duration: 1000,
+                                                easing: 'linear'
+                                            }">
                     Explore candidates
                 </button>
                 <!-- </a> -->
                 
-                <button class="apply-btn-two">
-                    Contact our team
-                </button>
+                <a href="mailto:accelerator@stutern.com">
+                    <button class="apply-btn-two">
+                        Contact our team
+                    </button>
+                </a>
             </b-col>
             <b-col sm="6" class="img-grid-wrap">
                 <b-row class="left-grid-wrap">
@@ -41,29 +47,29 @@
             <p class="tutor-title">
                 Our graduates have been hired by leading companies
             </p>
-            <b-col sm="2" class="img">
-                <img src="../assets/sterling.png" alt="">
+            <b-col class="img">
+                <img src="../assets/sterling.svg" alt="">
             </b-col>
-            <b-col sm="2" class="img">
-                <img src="../assets/cowerywise.png" alt="">
+            <b-col class="img">
+                <img src="../assets/cowerywise.svg" alt="">
                 
             </b-col>
-            <b-col sm="2" class="img">
-                <img src="../assets/paystack.png" alt="">
+            <b-col class="img">
+                <img src="../assets/paystack.svg" alt="">
             </b-col>
-            <b-col sm="2" class="img">
-                <img src="../assets/signalaliance.png" alt="">
+            <b-col class="img">
+                <img src="../assets/signalaliance.svg" alt="">
             </b-col>
-            <b-col sm="2" class="img">
-                <img src="../assets/seamfix.png" alt="">
+            <b-col class="img">
+                <img src="../assets/seamfix.svg" alt="">
             </b-col>
-            <b-col sm="2" class="img">
-                <img src="../assets/suregifts.png" alt="">
+            <b-col class="img">
+                <img src="../assets/suregifts.svg" alt="">
             </b-col>
         </b-row>
         <b-row class="main-sect-wrap">
             <b-col sm="6" class="main-sect">
-                <img src="../assets/fit.png" alt="">
+                <img src="../assets/circ.svg" alt="">
                 <p class="mid-sect-heading">
                     Find a great fit for your team
                 </p>
@@ -75,7 +81,7 @@
                 </p>
             </b-col>
             <b-col sm="6" class="main-sect">
-                <img src="../assets/hire.png" alt="">
+                <img src="../assets/circ2.svg" alt="">
                 <p class="mid-sect-heading">
                     Hire verified and qualified talent
                 </p>
@@ -86,402 +92,124 @@
                 </p>
             </b-col>
         </b-row>
-        <b-row class="explore" ref="explore">
+        <b-row class="explore" ref="explore" id="candidates">
             <b-col sm="12">
-                <p class="explore-heading">
-                Explore candidates
-            </p>
-            <p class="text">
-                Find amazing talent for your team
-            </p>
+                <p class="explore-heading" @click="log()">
+                    Explore candidates
+                </p>
+                <p class="text">
+                    Find amazing talent for your team
+                </p>
             </b-col>
             <b-col sm="5" class="filter">
-                <img src="../assets/filter.png" alt="">
+                <img src="../assets/filter.svg" alt="">
                 <span class="filter-heading">
                     Apply filters
                 </span>
+                <p class="filter-heading2" @click="test()">
+                    <b>Cohourt</b>
+                </p>
+                <b-form-select @change="switchSet($event)" v-model="selected2" :options="options2" class="mb-3">
+                </b-form-select>
                 <p class="filter-heading2">
                     <b>Discipline</b>
                 </p>
                 <b-form-group>
-                    <b-form-checkbox-group stacked v-model="selected" :options="options">
-                    </b-form-checkbox-group>
+                    <!-- <b-form-checkbox-group stacked v-model="selected" :options="options">
+                    </b-form-checkbox-group> -->
+                    
+                    <b-form-radio-group @change="reLoad($event)" v-model="selected" :options="jobTitles" stacked name="radiosStacked" />
                 </b-form-group>
-                <p class="filter-heading2">
-                    <b>Cohourt</b>
-                </p>
-                <b-form-select v-model="selected2" :options="options2" class="mb-3">
-                </b-form-select>
+
+                <!-- <b-form-radio-group v-model="selected2" :options="options2" stacked name="radiosStacked" /> -->
             </b-col>
-            <b-col sm="7" class="user-cards">
-                <b-row class="user-card" @click="toSingle()">
+            
+            <b-col sm="12" md="7" class="user-cards" v-if="lastSet.students && lastSet.students.length > 0">
+                <b-row class="user-card" @click="toSingle(user)" v-for="(user, i) in lastSet.students" :key="'student'+i">
                     <b-col sm="4" class="user-img">
-                        <img src="../assets/user.png" alt="">
+                        <img :src="user.userPhoto" alt="">
                     </b-col>
-                    <b-col sm="8" class="user-text">
+                    <b-col md="8" sm="12" class="user-text">
                         <b-col sm="12" class="username">
-                            <span>Cynthia Morgan</span>
+                            <span>{{user.userName}}</span>
                             
                             <button class="apply-btn">
                                 Hire me
                             </button>
                         </b-col>
                         <p class="user-job">
-                            UI/UX Designer
+                            {{user.jobTitle}}
                         </p>
                         <p class="user-desc">
-                            Consequently, another drawer, and two porters, and several 
-                            maids and the landlady, were all loitering by accidental places 
-                            and there was a lot more.
+                            {{user.userDesc}}
                         </p>
                         <b-row>
-                            <b-col  sm="6">
-                                <span class="skill">
-                                    <img src="../assets/figma.png" alt="">
+                            <b-col  md="12" sm="12">
+                                <span class="skill" v-for="(skill, i) in skills" :key="'pskill'+i">
+                                    <img v-if="skill.type === 'photo' && user.userSkills.includes(skill.name)" :src="skill.skillPhoto" alt="">
                                 </span>
-                                <span class="skill">
-                                    <img src="../assets/xd.png" alt="">
-                                </span>
-                                <span class="skill">
-                                    <img src="../assets/invision.png" alt="">
-                                </span>
-                                <span class="skill">
-                                    <img src="../assets/sketch.png" alt="">
-                                </span>
-                                <span class="skill">
-                                    <img src="../assets/html.png" alt="">
-                                </span>
-                            </b-col>
-                            <b-col sm="6" class="text-skill-wrap">
-                                <span class="skill text-skill">
-                                    User research
-                                </span>
-                                <span class="skill text-skill">
-                                    Design thinking
+                            <!-- </b-col>
+                            <b-col sm="8" class="text-skill-wrap"> -->
+                                <span v-for="(skill, i) in skills" :key="'tskill'+i">
+                                    <span class="skill text-skill" v-if="skill.type === 'text' && user.userSkills.includes(skill.name)">
+                                        {{skill.skillText}}
+                                    </span>
                                 </span>
                             </b-col>
                         </b-row>
                     </b-col>
                 </b-row>
-                <b-row class="user-card" @click="toSingle()">
-                    <b-col sm="4" class="user-img">
-                        <img src="../assets/user3.png" alt="">
-                    </b-col>
-                    <b-col sm="8" class="user-text">
-                        <b-col sm="12" class="username">
-                            <span>Cynthia Morgan</span>
-                            
-                            <button class="apply-btn">
-                                Hire me
-                            </button>
-                        </b-col>
-                        <p class="user-job">
-                            UI/UX Designer
-                        </p>
-                        <p class="user-desc">
-                            Consequently, another drawer, and two porters, and several 
-                            maids and the landlady, were all loitering by accidental places 
-                            and there was a lot more.
-                        </p>
-                        <b-row>
-                            <b-col  sm="6">
-                                <span class="skill">
-                                    <img src="../assets/figma.png" alt="">
-                                </span>
-                                <span class="skill">
-                                    <img src="../assets/xd.png" alt="">
-                                </span>
-                                <span class="skill">
-                                    <img src="../assets/invision.png" alt="">
-                                </span>
-                                <span class="skill">
-                                    <img src="../assets/sketch.png" alt="">
-                                </span>
-                                <span class="skill">
-                                    <img src="../assets/html.png" alt="">
-                                </span>
-                            </b-col>
-                            <b-col sm="6" class="text-skill-wrap">
-                                <span class="skill text-skill">
-                                    User research
-                                </span>
-                                <span class="skill text-skill">
-                                    Design thinking
-                                </span>
-                            </b-col>
-                        </b-row>
-                    </b-col>
-                </b-row>
-                <b-row class="user-card" @click="toSingle()">
-                    <b-col sm="4" class="user-img">
-                        <img src="../assets/user2.png" alt="">
-                    </b-col>
-                    <b-col sm="8" class="user-text">
-                        <b-col sm="12" class="username">
-                            <span>Cynthia Morgan</span>
-                            
-                            <button class="apply-btn">
-                                Hire me
-                            </button>
-                        </b-col>
-                        <p class="user-job">
-                            UI/UX Designer
-                        </p>
-                        <p class="user-desc">
-                            Consequently, another drawer, and two porters, and several 
-                            maids and the landlady, were all loitering by accidental places 
-                            and there was a lot more.
-                        </p>
-                        <b-row>
-                            <b-col  sm="6">
-                                <span class="skill">
-                                    <img src="../assets/figma.png" alt="">
-                                </span>
-                                <span class="skill">
-                                    <img src="../assets/xd.png" alt="">
-                                </span>
-                                <span class="skill">
-                                    <img src="../assets/invision.png" alt="">
-                                </span>
-                                <span class="skill">
-                                    <img src="../assets/sketch.png" alt="">
-                                </span>
-                                <span class="skill">
-                                    <img src="../assets/html.png" alt="">
-                                </span>
-                            </b-col>
-                            <b-col sm="6" class="text-skill-wrap">
-                                <span class="skill text-skill">
-                                    User research
-                                </span>
-                                <span class="skill text-skill">
-                                    Design thinking
-                                </span>
-                            </b-col>
-                        </b-row>
-                    </b-col>
-                </b-row>
-                <b-row class="user-card" @click="toSingle()">
-                    <b-col sm="4" class="user-img">
-                        <img src="../assets/user.png" alt="">
-                    </b-col>
-                    <b-col sm="8" class="user-text">
-                        <b-col sm="12" class="username">
-                            <span>Cynthia Morgan</span>
-                            
-                            <button class="apply-btn">
-                                Hire me
-                            </button>
-                        </b-col>
-                        <p class="user-job">
-                            UI/UX Designer
-                        </p>
-                        <p class="user-desc">
-                            Consequently, another drawer, and two porters, and several 
-                            maids and the landlady, were all loitering by accidental places 
-                            and there was a lot more.
-                        </p>
-                        <b-row>
-                            <b-col  sm="6">
-                                <span class="skill">
-                                    <img src="../assets/figma.png" alt="">
-                                </span>
-                                <span class="skill">
-                                    <img src="../assets/xd.png" alt="">
-                                </span>
-                                <span class="skill">
-                                    <img src="../assets/invision.png" alt="">
-                                </span>
-                                <span class="skill">
-                                    <img src="../assets/sketch.png" alt="">
-                                </span>
-                                <span class="skill">
-                                    <img src="../assets/html.png" alt="">
-                                </span>
-                            </b-col>
-                            <b-col sm="6" class="text-skill-wrap">
-                                <span class="skill text-skill">
-                                    User research
-                                </span>
-                                <span class="skill text-skill">
-                                    Design thinking
-                                </span>
-                            </b-col>
-                        </b-row>
-                    </b-col>
-                </b-row>
-                <b-row class="user-card" @click="toSingle()">
-                    <b-col sm="4" class="user-img">
-                        <img src="../assets/user3.png" alt="">
-                    </b-col>
-                    <b-col sm="8" class="user-text">
-                        <b-col sm="12" class="username">
-                            <span>Cynthia Morgan</span>
-                            
-                            <button class="apply-btn">
-                                Hire me
-                            </button>
-                        </b-col>
-                        <p class="user-job">
-                            UI/UX Designer
-                        </p>
-                        <p class="user-desc">
-                            Consequently, another drawer, and two porters, and several 
-                            maids and the landlady, were all loitering by accidental places 
-                            and there was a lot more.
-                        </p>
-                        <b-row>
-                            <b-col  sm="6">
-                                <span class="skill">
-                                    <img src="../assets/figma.png" alt="">
-                                </span>
-                                <span class="skill">
-                                    <img src="../assets/xd.png" alt="">
-                                </span>
-                                <span class="skill">
-                                    <img src="../assets/invision.png" alt="">
-                                </span>
-                                <span class="skill">
-                                    <img src="../assets/sketch.png" alt="">
-                                </span>
-                                <span class="skill">
-                                    <img src="../assets/html.png" alt="">
-                                </span>
-                            </b-col>
-                            <b-col sm="6" class="text-skill-wrap">
-                                <span class="skill text-skill">
-                                    User research
-                                </span>
-                                <span class="skill text-skill">
-                                    Design thinking
-                                </span>
-                            </b-col>
-                        </b-row>
-                    </b-col>
-                </b-row>
-                <b-row class="user-card" @click="toSingle()">
-                    <b-col sm="4" class="user-img">
-                        <img src="../assets/user4.png" alt="">
-                    </b-col>
-                    <b-col sm="8" class="user-text">
-                        <b-col sm="12" class="username">
-                            <span>Cynthia Morgan</span>
-                            
-                            <button class="apply-btn">
-                                Hire me
-                            </button>
-                        </b-col>
-                        <p class="user-job">
-                            UI/UX Designer
-                        </p>
-                        <p class="user-desc">
-                            Consequently, another drawer, and two porters, and several 
-                            maids and the landlady, were all loitering by accidental places 
-                            and there was a lot more.
-                        </p>
-                        <b-row>
-                            <b-col  sm="6">
-                                <span class="skill">
-                                    <img src="../assets/figma.png" alt="">
-                                </span>
-                                <span class="skill">
-                                    <img src="../assets/xd.png" alt="">
-                                </span>
-                                <span class="skill">
-                                    <img src="../assets/invision.png" alt="">
-                                </span>
-                                <span class="skill">
-                                    <img src="../assets/sketch.png" alt="">
-                                </span>
-                                <span class="skill">
-                                    <img src="../assets/html.png" alt="">
-                                </span>
-                            </b-col>
-                            <b-col sm="6" class="text-skill-wrap">
-                                <span class="skill text-skill">
-                                    User research
-                                </span>
-                                <span class="skill text-skill">
-                                    Design thinking
-                                </span>
-                            </b-col>
-                        </b-row>
-                    </b-col>
-                </b-row>
-                <b-row class="user-card" @click="toSingle()">
-                    <b-col sm="4" class="user-img">
-                        <img src="../assets/user2.png" alt="">
-                    </b-col>
-                    <b-col sm="8" class="user-text">
-                        <b-col sm="12" class="username">
-                            <span>Cynthia Morgan</span>
-                            
-                            <button class="apply-btn">
-                                Hire me
-                            </button>
-                        </b-col>
-                        <p class="user-job">
-                            UI/UX Designer
-                        </p>
-                        <p class="user-desc">
-                            Consequently, another drawer, and two porters, and several 
-                            maids and the landlady, were all loitering by accidental places 
-                            and there was a lot more.
-                        </p>
-                        <b-row>
-                            <b-col  sm="6">
-                                <span class="skill">
-                                    <img src="../assets/figma.png" alt="">
-                                </span>
-                                <span class="skill">
-                                    <img src="../assets/xd.png" alt="">
-                                </span>
-                                <span class="skill">
-                                    <img src="../assets/invision.png" alt="">
-                                </span>
-                                <span class="skill">
-                                    <img src="../assets/sketch.png" alt="">
-                                </span>
-                                <span class="skill">
-                                    <img src="../assets/html.png" alt="">
-                                </span>
-                            </b-col>
-                            <b-col sm="6" class="text-skill-wrap">
-                                <span class="skill text-skill">
-                                    User research
-                                </span>
-                                <span class="skill text-skill">
-                                    Design thinking
-                                </span>
-                            </b-col>
-                        </b-row>
-                    </b-col>
-                </b-row>
+            </b-col>
+            <b-col sm="7" class="user-cards" v-else>
+                No candidates meet your specified criteria
             </b-col>
         </b-row>
     </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
+import * as mutationTypes from '../mutationTypes'
+import services from '../services'
 export default {
   data () {
     return {
-      selected: [], // Must be an array reference!
-      options: [
-        {text: 'UI/UX Designer', value: 'UI/UX Designer'},
-        {text: 'Front End Web Developer', value: 'Front End Web Developer'},
-        {text: 'Digital Marketer', value: 'Digital Marketer'}
-      ],
-      selected2: null,
-      options2: [
-        { value: null, text: 'Select cohort' },
-        { value: 'a', text: 'This is First option' },
-        { value: 'b', text: 'Default Selected Option' },
-        { value: 'c', text: 'This is another option' },
-        { value: 'd', text: 'This one is disabled', disabled: true }
-      ]
+      lastSet: {},
+      selected: 0,
+      activeSet: {},
+      selected2: null
+    }
+  },
+  computed: {
+    ...mapGetters({
+        sets: 'getSets',
+        skills: 'getSkills',
+        jobTitles: 'getJobTitles'
+    }),
+    // lastSet () {
+    //     // return this.activeSet
+    // },
+    options2 () {
+        return this.sets
     }
   },
   methods: {
+    reLoad (e) {
+        let split = this.jobTitles[e].text.toLowerCase().split(' ')
+        let rejoined = {}
+        if (e === 0) {
+            rejoined = this.activeSet
+        } else {
+            let filtered = this.activeSet.students.filter(user => {
+                return user.jobTitle.toLowerCase().includes(split[0])
+            })
+            rejoined = {
+                setName: this.activeSet.setName,
+                students: filtered
+            }
+        } 
+        this.lastSet = rejoined
+    },
+
     test(refName) {
         var element = this.$refs[refName];
         var to = element.offsetTop;
@@ -490,15 +218,36 @@ export default {
 
         for (let index = 0; index < to; index += 1) {
             window.scrollTo(0, index);
-            console.log(index)
+            // console.log(index)
         }
     },
-    int () {
-        
+    toSingle (user) {
+        this.$router.push({name: 'SingleHire', params: {userId: user._id}})
     },
-    toSingle () {
-        this.$router.push({name: 'SingleHire', params: {username: 'username'}})
+    switchSet (e) {
+        // console.log(e)
+        services.getSetStudents(e)
+        .then(res => {
+            this.activeSet = res.data
+            this.reLoad(1)
+            console.log(this.activeSet)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    },
+    log() {
+        console.log(this.activeSet)
     }
+  },
+  beforeMount () {
+    this.selected2 = this.sets[0].setName
+    services.getSetStudents(this.sets[0].setName)
+    .then(res => {
+        this.activeSet = res.data
+        this.reLoad(1)
+        console.log(this.activeSet)
+    })
   }
 }
 </script>
@@ -519,6 +268,7 @@ export default {
         height: 600px;
         .top-sect-texts {
             padding-right: 150px !important;
+            padding-left: 0 !important;
             .top-text {
                 font-family: 'Playfair Display', serif;
                 font-style: normal;
@@ -545,6 +295,7 @@ export default {
             }
         }
         .img-grid-wrap {
+            padding: 0 !important;
             img {               
                 animation-duration: 2s;
             }
@@ -562,7 +313,7 @@ export default {
             }
             .right-grid {
                 background-image: url('../assets/pattern3.png');
-                background-position: 90% 0px; 
+                background-position: 95% 0px; 
                 background-repeat: no-repeat;
                 padding: 0 !important;
                 height: 430px;
@@ -575,6 +326,7 @@ export default {
     }
     .tutors {
         padding: 30px 120px !important;
+        margin-top: -25px;
         .tutor-title {
             font-style: normal;
             font-weight: 600;
@@ -591,7 +343,7 @@ export default {
     .main-sect-wrap {
         padding: 30px 120px !important; 
         .main-sect {
-            padding: 10px 200px 0 10px !important;
+            padding: 10px 200px 0 0px !important;
             .mid-sect-heading {
                 font-family: 'Playfair Display', serif;
                 font-style: normal;
@@ -645,21 +397,25 @@ export default {
             }
         }
         .user-cards {
+            padding: 0 !important;
             .user-card {
                 padding: 0 !important;
                 box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
-                min-height: 210px;
+                height: 220px;
                 margin: 40px 0;
                 overflow: hidden;
                 cursor: pointer;
                 .user-img {
                     padding: 0 !important;
+                    height: 100%;
+                    overflow: hidden;
                     img {
-                        width: 100%
+                        width: 130%;
+                        margin-top: -10px;
                     }
                 }
                 .user-text {
-                    padding-top: 25px !important;
+                    padding-top: 35px !important;
                     .username {
                         padding: 0 !important;
                         span {
@@ -669,6 +425,7 @@ export default {
                             font-size: 16px;
                             font-family: 'Playfair Display', serif;
                             color: #222829;
+                            text-transform: capitalize
                         }
                         button {
                             float: right !important;
@@ -684,16 +441,21 @@ export default {
                         font-weight: normal;
                         line-height: 24px;
                         font-size: 14px;
-
+                        // text-transform: titl
                         color: #3B444F;
                     }
                     .user-desc {
-                        font-style: italic;
+                        // font-style: italic;
                         font-weight: normal;
                         line-height: 21px;
-                        font-size: 14px;
+                        font-size: 12px;
                         margin-bottom: 20px;
                         color: #67747C;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 2;  /* Number of lines displayed before it truncate */
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                     }
                     .skill {
                         img {
@@ -755,14 +517,23 @@ export default {
     .tutors {
       padding: 0px 12px !important;
       margin: 0 !important;
+      
+      .img {
+        padding: 10px 0 !important;
+        height: 30px;
+        img {
+              height: 22px;
+              margin: 10px 10px 10px 0
+            }
+      }
     }
     .main-sect-wrap {
         padding: 20px !important;
         margin: 0 !important;
-        .main-sect {
-            padding: 0 !important;
-            margin-top: 20px;
-            box-shadow: 3px 3px 3px #f5faf8;
+        .main-sect {    
+            padding: 12px !important;
+            margin-top: 39px;
+            // box-shadow: 3px 3px 3px #f5faf8;
         }
     }
     .explore {
@@ -773,31 +544,55 @@ export default {
       }
       .user-cards {
           padding: 0 !important;
+          height: auto;
           .user-card {
-              .user-text {
-                  padding: 25px !important;
-                  .text-skill {
-                      margin-top: 10px;
-                  }
-                .text-skill-wrap {
-                    margin-top: 12px;
+              height: 500px !important;
+                .user-img {
+                    width: auto;
+                    height: 210px;
+                    overflow: hidden;
+                    img {
+                        width: 100%;
+                        height: auto !important
+                    }
                 }
-              }
-          }
-      }
+                .user-text {
+                    padding: 25px !important;
+                    .text-skill {
+                        margin-top: 10px;
+                    }
+                    .text-skill-wrap {
+                        margin-top: 12px;
+                    }
+                    .username {
+                        span {
+                            font-size: 14px;
+                        }
+                    }
+                    .user-desc {
+                        margin-bottom: 15px
+                    }
+                }
+            }
+        }
     }
     .apply-btn {
         // padding: 0 10px !important;
         width: 46%;
         margin: 0 !important;
-        font-size: 10px
+        font-size: 15px ;
+        padding: 0 !important;
+        text-align: center
     }
     .apply-btn-two {
         // padding: 0 10px !important;
         width: 46%;
         margin: 0 !important;
         float: right;
-        font-size: 10px
+        font-size: 15px;
+        white-space: nowrap;
+        padding: 0 !important;
+        text-align: center
     }
   }
 }

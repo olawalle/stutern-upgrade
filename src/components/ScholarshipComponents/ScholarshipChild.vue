@@ -1,36 +1,56 @@
 <template>
     <div class="scholarship-wrap">
         <b-row class="top-banner">
-            <img src="../../assets/banner2.png" alt="">
+            <img :src="activeScholarship.banner" alt="">
+            <!-- <img src="../../assets/banner3.png" alt=""> -->
         </b-row>
         <b-row class="floating-box">
             <div class="floater">
                 <p class="floater-header">
-                    Girls in Technology
+                    {{activeScholarship.scholarshipName}}
                 </p>
                 <p class="floater-subtext">
-                    Omolara Awoyemi
+                    {{activeScholarship.scholarshipFacilitator}}
                 </p>
             </div>
         </b-row>
         <b-row class="inner-nav">
             <div class="inner-content">
-                <button v-for="(link, i) in innerLinks" :key="i" class="inner-link" @click="makeActive(i)" :class="link.active ? 'active' : ''">{{link.name}}</button>
+                <button v-for="(link, i) in innerLinks" :key="i" 
+                        class="inner-link" 
+                        @click="makeActive(i)" 
+                        :class="link.active ? 'active' : ''"
+                         v-scroll-to="{
+                                    el: '#'+link.id,
+                                    duration: 1000,
+                                    offset: -60,
+                                    easing: 'linear'
+                                }"
+                    >{{link.name}}</button>
             </div>
         </b-row>
-        <b-row class="overview">
+        <b-row class="overview" id="overview">
             <p class="content-heading">
                 Overview
             </p>
             <p class="texts">
-                Stutern partnered with <b>Girls in Technology</b> to create an ongoing scholarship 
-                fund to promote diversity in software development and UX design. Each batch, 
-                successful female applicants are selected to receive a partial scholarship 
-                toward any Stutern program. To-date, Girls in Technology has funded close to 
-                <b>$1,000</b> in scholarships for Stutern students. 
+                {{activeScholarship.overview}}
             </p>
         </b-row>
-        <b-row class="impact">
+        <!-- <b-row class="overview" id="vision">
+            <p class="content-heading">
+                Vision
+            </p>
+            <ul>
+                <li>
+                    To significantly help to increase the number of girls in technology in Nigeria
+                </li>
+                <li>
+                     To mentor young girls to establish careers in STEM
+                </li>
+            </ul>
+        </b-row> -->
+        <b-row class="impact" id="impact">
             <p class="content-heading">
                 Impact
             </p>
@@ -102,7 +122,37 @@
                 </b-col>
             <!-- </b-row> -->
         </b-row>
-        <b-row class="how-to-apply">
+        <!-- <b-row class="overview" id="profile">
+            <p class="content-heading">
+                Visioner Profile
+            </p>
+            <p class="visioner-name">
+                Omolara (Ajele) Awoyemi
+            </p>
+            <p class="texts">
+                <b-row>
+                    <b-col sm="8">
+                        Omolara is a technology professional with years of experience in the ecommerce and fintech sectors. She currently serves as the Managing Director of SureGroup, a group of leading global platforms for non-cash value transfer. SureGroup has 3 business in its portfolio - SureGifts, SureRemit and SureCredit. SureGifts is the leading provider of retail and corporate gift cards in Nigeria and Kenya with clientele such as Airtel, Oando, Dangote, Diamond Bank and others. SureRemit is a blockchain enabled global remittance platforms that allows people buy vouchers for their relatives in more than 23 countries - the company became the first Nigerian company to float an ICO raising $7m in the process. SureCredit is a corporate short term loan solution being used by corporates in Nigeria. 
+
+                        She previously served as  Country Manager of JumiaPay - Jumia’s payments, financial services and financial inclusion company, and the Head of Partnerships for the Jumua Group.
+
+                        Lara serves on the advisory board of Nigerian Women Techsters and is an associate member of  Women in Management, Business and Public Service (WIMBIZ) and Women-In-Tech Africa. She is an Obama Foundation African Leader (the inaugural class of 2018).
+
+                        She is very passionate about building tech for women and supporting women in tech and as a result founded GIrls In Technology, an initiative where girls are funded to get trained in web design and software engineering. Fund sources include personal funds, friends, and corporate organizations who desire to support females in tech as part of their CSR. After training, they are mentored and placed in supporting organizations for hands-on experience.
+
+                        Omolara has a BSc. degree in Computer Science from the Federal University of Technology, Akure, Nigeria, a Harvard Business School Online Certificate in Business Readiness and attended executive education for CIOs at UC Berkeley, California, USA.
+
+                        Prior to SureGroup and Jumia, Omolara worked at leading African technology companies such as Iroko TV and MTech Communications.
+
+                        She is married with two children.
+                    </b-col>
+                    <b-col sm="4" class="vision-img">
+                        <img src="../../assets/user.png" alt="">
+                    </b-col>
+                </b-row>
+            </p>
+        </b-row> -->
+        <b-row class="how-to-apply" id="Apply">
             <p class="content-heading">
                 How to apply
             </p>
@@ -157,44 +207,18 @@
                 <img src="../../assets/banner5.png" alt="">
             </b-col>
         </b-row>
-        <b-row class="past-beneficiaries">
+        <b-row class="past-beneficiaries" id="beneficiaries">
             <p class="content-heading">
                 Past beneficiaries
             </p>
-            <b-col sm="6" class="set-wrap">
+            <b-col sm="6" class="set-wrap" v-for="(set, i) in beneficiaries" :key="i">
                 <p class="set">
-                    SGA 0.4
+                    {{i}}
                 </p>
                 <ul>
-                    <li><b>Jokotade Adewale</b> - UI/UX Designer</li>
-                    <li><b>Taiwo Osokoya</b> - UI/UX Designer</li>
-                    <li><b>Aghama Jesurobo</b> - UI/UX Designer</li>
-                    <li><b>Oluwaseyi Abiodun</b> - UI/UX Designer</li>
-                    <li><b>Opeyemi Olatoye</b> - UI/UX Designer</li>
-                </ul>
-            </b-col>
-            <b-col sm="6" class="set-wrap left-set">
-                <p class="set">
-                    SGA 0.4
-                </p>
-                <ul>
-                    <li><b>Jokotade Adewale</b> - UI/UX Designer</li>
-                    <li><b>Taiwo Osokoya</b> - UI/UX Designer</li>
-                    <li><b>Aghama Jesurobo</b> - UI/UX Designer</li>
-                    <li><b>Oluwaseyi Abiodun</b> - UI/UX Designer</li>
-                    <li><b>Opeyemi Olatoye</b> - UI/UX Designer</li>
-                </ul>
-            </b-col>
-            <b-col sm="6" class="set-wrap">
-                <p class="set">
-                    SGA 0.4
-                </p>
-                <ul>
-                    <li><b>Jokotade Adewale</b> - UI/UX Designer</li>
-                    <li><b>Taiwo Osokoya</b> - UI/UX Designer</li>
-                    <li><b>Aghama Jesurobo</b> - UI/UX Designer</li>
-                    <li><b>Oluwaseyi Abiodun</b> - UI/UX Designer</li>
-                    <li><b>Opeyemi Olatoye</b> - UI/UX Designer</li>
+                    <li v-for="(user, i) in set" :key="i">
+                        <b>{{user.userName}}</b> - {{user.jobTitle}}
+                    </li>
                 </ul>
             </b-col>
         </b-row>
@@ -202,16 +226,30 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import services from '../../services'
 export default {
     data () {
         return {
+            activeScholarship: {},
+            reducedSets: [],
+            beneficiaries: [],
             innerLinks: [
-                {name: 'Overview', active: true},
-                {name: 'Impact', active: false},
-                {name: 'Apply', active: false},
-                {name: 'Past beneficiaries', active: false},
+                {name: 'Overview', active: true, id: 'overview'},
+                // {name: 'Vision', active: false, id: 'vision'},
+                {name: 'Impact', active: false, id: 'impact'},
+                // {name: 'Visioner Profile', active: false, id: 'profile'},
+                {name: 'Apply', active: false, id: 'Apply'},
+                {name: 'Past beneficiaries', active: false, id: 'beneficiaries'}
             ]
         }
+    },
+    computed: {
+        ...mapGetters({
+            scholarships: 'getAllScholarships',
+            students: 'getStudents',
+            sets: 'getSets'
+        })
     },
     methods: {
         makeActive(i) {
@@ -219,6 +257,20 @@ export default {
             this.innerLinks[i].active = true;
             // this.$router.push({name: this.innerLinks[i].name})
         }
+    },
+    mounted () {
+        services.getScholarships()
+        this.activeScholarship = this.scholarships.find(scholarship => scholarship._id === this.$route.params.scholarshipName)
+        let filteredStudents = [] 
+        this.students.find(student => {
+            if (student.userScholarship.includes(this.$route.params.scholarshipName)) {
+                filteredStudents.push(student)
+            }
+        })
+        this.beneficiaries = filteredStudents.reduce((agg, curr) => {  
+            agg[curr.userSet] = agg[curr.userSet] ? agg[curr.userSet].concat(curr) : [curr];
+            return agg
+        }, {})
     }
 }
 </script>
@@ -228,17 +280,23 @@ export default {
         width: 100%;
         min-height: 100vh;
         .top-banner {
-            height: 450px;
+            // min-height: 500px;
+            height: 520px;
+            width: 100%;
+            // display: flex;
+            margin: 0 !important;
             overflow: hidden;
             img {
-                width: 110% !important;
-                height: 650px !important;
-                margin-top: -100px;
+                // height: auto !important;
+                // width: 100%;
+                // width: 100%;
+                height: 140% !important;
+                margin-top: 30px;
             }
         }
         .floating-box {
             padding: 0 200px !important;
-            height: 200px;
+            // height: 200px;
             .floater {
                 height: 200px;
                 margin-top: -100px;
@@ -310,6 +368,21 @@ export default {
         }
         .impact-section {
             border-right: 1px solid  #67747C;
+        }
+        .visioner-name {
+            color: #00D7C4;
+            text-align: left;
+            font-size: 20px;
+            margin-top: -10px;
+        }
+        .vision-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .vision-img img {
+            width: 100%
         }
         .content-heading {
             font-style: normal;

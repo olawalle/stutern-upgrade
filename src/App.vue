@@ -22,7 +22,7 @@
 
       <b-navbar-brand>
           <router-link to="/">
-            <img src="./assets/logo.png" alt="">
+            <img src="./assets/logo (1).png" alt="" class="logo">
           </router-link>
         </b-navbar-brand>
 
@@ -49,9 +49,9 @@
         Stutern Inc. © {{year}}
       </b-col>
       <b-col col-6 class="right-text">
-        <img src="./assets/facebook.png" class="socials" alt="">
-        <img src="./assets/instagram.png" class="socials" alt="">
-        <img src="./assets/twitter.png" class="socials" alt="">
+        <img src="./assets/facebook.svg" class="socials" alt="">
+        <img src="./assets/instagram.svg" class="socials" alt="">
+        <img src="./assets/twitter.svg" class="socials" alt="">
       </b-col>
     </b-row>
   </div>
@@ -83,6 +83,10 @@ export default {
     routeName: function  () {
       if (this.routeName === 'LandingPage') {
         this.topLinks.map(link => (link.active = false))
+      } else {
+        this.topLinks.find(link => {
+          link.name.includes(this.routeName) ? link.active = true : link.active = false
+        })
       }
     }
   },
@@ -94,23 +98,11 @@ export default {
     }
   },
   mounted () {
-    // axios.get('http://localhost/stutern/wp-json/wp/v2/tracks')
-    // .then(function (response) {
-    //   let str = response
-    //   // [0].content.rendered
-    //   // console.log(str.replace(/<\/?[^>]+>/gi, ''));
-    //   console.log(str)
-    // })
-    // .catch(function (error) {
-    //   console.log(error);
-    // });
-    services.getTopData()
-    .then(res => {
-      // console.log(res)
-    })
-    .catch(err => {
-      console.log(err)
-    })
+    services.getUsers()
+    services.getSets()
+    services.getScholarships()
+    services.getSkills()
+    services.getJobTitles()
   }
 }
 </script>
@@ -126,7 +118,7 @@ export default {
   #nav {
     width: 100%;
     height: 60px;
-    padding: 0 108px;
+    padding: 0 102px;
     line-height: 60px;
     background: #FFFFFF;
     box-shadow: 0px 2.5px 5px rgba(0, 0, 0, 0.02);
@@ -134,7 +126,7 @@ export default {
     top: 0;
     z-index: 10000000000000000000;
     img {
-      height: 20px;
+      height: 40px;
     }
     .apply-btn {
       // float: right;
@@ -147,6 +139,7 @@ export default {
       border-radius: 4px;
       color: #fff;
       margin-top: 8px;
+      cursor: pointer;
       margin-left: 40px;
     }   
     .top-link {
@@ -176,6 +169,9 @@ export default {
       border-bottom: 3px solid #00D7C4
     }
   }
+  button:focus {
+    outline: none !important
+  }
   .footer {
     // height: 60px;
     padding: 40px 100px;
@@ -204,13 +200,14 @@ export default {
       // overflow: hidden;
       height: auto;
       img {
-        height: 12px;
+        height: 25px;
         position: absolute;
-        top: 25px;
-        left: 10px;
+        top: 17px;
+        left: 23px;
       }
       button {
         display: block;
+        cursor: pointer;
       }
       .apply-btn, .top-link {
         margin: 0 auto
@@ -222,7 +219,7 @@ export default {
       .coll-btn {
         position: absolute;
         top: 10px;
-        right: 10px
+        right: 21px;
       }
     }
     .active {

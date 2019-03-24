@@ -11,8 +11,13 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 
 Vue.use(BootstrapVue);
 
+// ANIMATE ON SCROLL
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+
+// VUE SCROLL TO
+var VueScrollTo = require('vue-scrollto');
+Vue.use(VueScrollTo)
 
 Vue.config.productionTip = false;
 

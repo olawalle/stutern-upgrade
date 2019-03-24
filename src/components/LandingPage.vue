@@ -16,9 +16,11 @@
                       Apply
                     </button>
             </b-col>
-            <b-col sm="6" class="left-img" data-aos="fade">
+            <b-col sm="6" class="left-img">
               <!-- <iframe src="https://www.youtube.com/watch?v=Ww1x0QCeGV8&t=6s" frameborder="0"></iframe> -->
-              <img src="../assets/banner4.png" alt="">
+              <!-- <img src="../assets/banner4.png" alt=""> -->
+              <!-- <iframe src="https://www.youtube.com/watch?v=Ww1x0QCeGV8" frameborder="0"></iframe> -->
+              <iframe width="921" height="518" src="https://www.youtube-nocookie.com/embed/Ww1x0QCeGV8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <!-- <b-row class="left-grid-wrap">
                     <b-col sm="6" class="left-grid">
                         <b-col sm="12" class="left-grid-top">
@@ -38,10 +40,31 @@
             <p class="tutor-title">
               Our tutors and mentors come from leading companies
             </p>
-            <b-col col-4 class="img" v-for="(tutor, i) in tutors" :key="i">
-                <img :src="tutor.better_featured_image.source_url" alt="">
+            <b-col class="img">
+                <img src="../assets/jumia.svg" alt="">
             </b-col>
+            <b-col class="img">
+                <img src="../assets/google.svg" alt="">
+            </b-col>
+            <b-col class="img">
+                <img src="../assets/intelia.svg" alt="">
+            </b-col>
+            <b-col class="img">
+                <img src="../assets/paystack.svg" alt="">
+            </b-col>
+            <b-col class="img">
+                <img src="../assets/andela.svg" alt="">
+            </b-col>
+            <b-col class="img">
+                <img src="../assets/flutterwave.svg" alt="">
+            </b-col>
+            <br>
         </b-row>
+        <!-- <b-row>
+          <b-col col-4 class="img" v-for="(tutor, i) in tutors" :key="i">
+              <img :src="tutor.better_featured_image.source_url" alt="">
+          </b-col>
+        </b-row> -->
         <b-row class="impact">
           <b-col class="impact-section" sm="4">
               <p class="colored">
@@ -68,7 +91,7 @@
               </p>
           </b-col>
         </b-row>
-        <b-row class="main-sect-wrap">
+        <!-- <b-row class="main-sect-wrap">
             <b-col sm="6" class="main-sect main-sect-top" v-for="(point, i) in sellingPoints" :key="i">
                 <img :src="point.better_featured_image.source_url" alt="">
                 <p class="mid-sect-heading">
@@ -78,7 +101,53 @@
                     {{point.pointText}}
                 </p>
             </b-col>
+        </b-row> -->
+        
+        <b-row class="main-sect-wrap">
+            <b-col sm="6" class="main-sect main-sect-top">
+                <img src="../assets/skill.svg" alt="">
+                <p class="mid-sect-heading">
+                  Learn valuable skills for today’s world﻿
+                </p>
+                <p class="text">
+                    As the world rapidly evolves, the career landscape is 
+                    experiencing a hige shift. Get equipped with skills that 
+                    are relevant and valuable for the 21st century.
+                </p>
+            </b-col>
+            <b-col sm="6" class="main-sect main-sect-top main-sect-right">
+                <img src="../assets/funds.svg" alt="">
+                <p class="mid-sect-heading">
+                  Can’t pay upfront? No worries
+                </p>
+                <p class="text">
+                    The Stutern Graduate Accelerator enables you launch your 
+                    career without upfront tuition. You pay back a percentage 
+                    of your income according to an income sharing agreement.
+                </p>
+            </b-col>
+            <b-col sm="6" class="main-sect">
+                <img src="../assets/monitor.svg" alt="">
+                <p class="mid-sect-heading">
+                  Join in from anywhere
+                </p>
+                <p class="text">
+                    You can participate in the program from anywhere 
+                    (provided you have internet access). Location is not a barrier.
+                </p>
+            </b-col>
+            <b-col sm="6" class="main-sect main-sect-right">
+                <img src="../assets/battery.svg" alt="">
+                <p class="mid-sect-heading">
+                  No experience required
+                </p>
+                <p class="text">
+                    The curriculum is structured to help you get started with the basics. 
+                    No previous knowledge or experience is required to join the program.
+                </p>
+            </b-col>
         </b-row>
+
         <b-row class="change">
           <div class="overlay"></div>
           <div class="change-content">
@@ -86,15 +155,49 @@
               Want to change your life today?
             </p>
             <b-row>
-              <b-col sm="12" class="single-change" v-for="(change, i) in changes" :key="i">
-                <img :src="change.better_featured_image.source_url" alt="">
+              <b-col sm="12" class="single-change">
+                <img src="../assets/notes.svg" alt="">
                 <p class="single-change-heading">
-                  {{change.title.rendered}}
+                  Complete free application
                 </p>
                 <p class="single-change-store">
-                  {{change.changeText}}
+                  We look forward to learning about you through your application. Join thousands of ambitious 
+                  university graduates by telling us about your interest, motivation and goals.
                 </p>
-              </b-col>         
+              </b-col> 
+              <b-col sm="12" class="single-change">
+                <img src="../assets/messages.svg" alt="">
+                <p class="single-change-heading">
+                  Schedule an interview
+                </p>
+                <p class="single-change-store">
+                  If we find your application exciting, we will invite you for the next stage interview. The 
+                  outcome of the interview will decide if you get an offer from us or not.
+                </p>
+              </b-col>
+              <b-col sm="12" class="single-change">
+                <img src="../assets/calendar.svg" alt="">
+                <p class="single-change-heading">
+                  Reserve your spot
+                </p>
+                <p class="single-change-store">
+                  To reserve your spot, you will need to complete your income sharing 
+                  ageement and complete necessary requirements. 
+                  Join us in class and begin your personalized immersive learning with hands on projects..
+                </p>
+              </b-col>
+              <b-col sm="12" class="single-change-last">
+                <img src="../assets/briefcase.svg" alt="">
+                <p class="single-change-heading">
+                  Join offline and online classes
+                </p>
+                <p class="single-change-store">
+                  At the end of your weeks of learning, you will be attached to a team to an internship. 
+                  Afterward, you will begin to interview for jobs. Our team 
+                  will keep an eye on your growth even while on the job.
+                </p>
+              </b-col>
+
               <b-col sm="12" style="text-align: center">
                 <button class="apply-btn-two">
                   Apply
@@ -112,32 +215,30 @@
           </p>
           <b-row class="users">
             <b-col sm="3" class="user">
-              <div class="overlay"></div>
-              <img src="../assets/silas.png" alt="">
               <div class="user-details">
                 <p class="name">
-                  Hakeeb Bashorun 
+                  Ayowole Adenuga 
                 </p>
                 <p class="job-title">
-                  Product Designer, Cowrywise
+                  Web developer, Interswitch
                 </p>
               </div>
+              <div class="overlay"></div>
+              <img src="../assets/people/ayowole.png" alt="">
             </b-col>
             <b-col sm="3" class="user">
-              <div class="overlay"></div>
-              <img src="../assets/silas.png" alt="">
               <div class="user-details">
                 <p class="name">
-                  Hakeeb Bashorun 
+                  Chininso Raymond 
                 </p>
                 <p class="job-title">
-                  Product Designer, Cowrywise
+                  UI/UX Designer, Paystack
                 </p>
               </div>
+              <div class="overlay"></div>
+              <img src="../assets/people/chinonso.jpg" alt="">
             </b-col>
             <b-col sm="3" class="user">
-              <div class="overlay"></div>
-              <img src="../assets/silas.png" alt="">
               <div class="user-details">
                 <p class="name">
                   Hakeeb Bashorun 
@@ -146,24 +247,26 @@
                   Product Designer, Cowrywise
                 </p>
               </div>
+              <div class="overlay"></div>
+              <img src="../assets/people/hakeeb.png" alt="">
             </b-col>
             <b-col sm="3" class="user">
-              <div class="overlay"></div>
-              <img src="../assets/silas.png" alt="">
               <div class="user-details">
                 <p class="name">
-                  Hakeeb Bashorun 
+                  Bomanaziba Josiah
                 </p>
                 <p class="job-title">
-                  Product Designer, Cowrywise
+                  UI/UX Designer, Sela labs
                 </p>
               </div>
+              <div class="overlay"></div>
+              <img src="../assets/people/boma.jpg" alt="">
             </b-col>
           </b-row>
         </b-row>
         <b-row class="checkers">
           <b-col sm="6" class="checkers-photo checkers-photo-left" order-sm="1">
-            <img src="../assets/silas.png" alt="">
+            <img src="../assets/people/silas.jpg" alt="">
           </b-col>
           <b-col sm="6" class="checkers-text checkers-text-right" order-sm="1">
             <p class="quote">
@@ -220,50 +323,20 @@
             <b-row class="cards">
                 <b-col class="card-container" sm="6" xs="12" v-for="(track, i) in tracks" :key="i">
                     <div class="card">    
-                        <img class="card-img" :src="track.better_featured_image.source_url" alt="">
-                        <p class="card-text-heading">
-                          {{track.title.rendered}}
-                        </p>
-                        <p class="card-text-content">
-                          {{track.trackText}}
-                        </p>
-                        <h3 class="more" @click="toScholarship()">
-                            Apply now <img src="../assets/right-arrow.png" alt="">
-                        </h3>
+                      <div class="card-img-wrap">
+                        <img class="card-img" :src="track.banner" alt="">
+                      </div>
+                      <p class="card-text-heading">
+                        {{track.trackName}}
+                      </p>
+                      <p class="card-text-content">
+                        {{track.trackDesc}}
+                      </p>
+                      <h3 class="more" @click="toTrack(track.trackUrl)">
+                          Apply now <img src="../assets/right-arrow.png" alt="">
+                      </h3>
                     </div>
                 </b-col>
-                <!-- <b-col class="card-container" sm="6" xs="12">
-                    <div class="card">    
-                        <img class="card-img" src="../assets/dev.png" alt="">
-                        <p class="card-text-heading">
-                          Front End Web Development
-                        </p>
-                        <p class="card-text-content">
-                          Build a career in programming. This track equips you with essential skills 
-                          in developing the user-facing component of websites and applications. 
-                          using HTML, CSS and JavaScript.
-                        </p>
-                        <h3 class="more" @click="toScholarship()">
-                            Apply now <img src="../assets/right-arrow.png" alt="">
-                        </h3>
-                    </div>
-                </b-col>
-                <b-col class="card-container" sm="6" xs="12">
-                    <div class="card">    
-                        <img class="card-img" src="../assets/digital.png" alt="">
-                        <p class="card-text-heading">
-                          Digital Marketing
-                        </p>
-                        <p class="card-text-content">
-                          Learn how to use the internet to attract, engage and monetize your 
-                          target audience. Acquire skills in search engine optimization, 
-                          email marketing, social media marketing and more.
-                        </p>
-                        <h3 class="more" @click="toScholarship()">
-                            Apply now <img src="../assets/right-arrow.png" alt="">
-                        </h3>
-                    </div>
-                </b-col> -->
             </b-row>
         </b-row>
         <b-row class="in-touch">
@@ -285,6 +358,7 @@
 </template>
 <script>
 import services from '../services'
+import {mapGetters} from 'vuex'
 export default {
   data () {
     return {
@@ -302,18 +376,28 @@ export default {
         { value: 'c', text: 'This is another option' },
         { value: 'd', text: 'This one is disabled', disabled: true }
       ],
-      tracks: [],
       tutors: [],
       sellingPoints: [],
-      changes: []
+      changes: [],
+      tracks: []
     }
   },
+  computed: {
+    ...mapGetters({
+      jobTitles: 'getJobTitles'
+    })
+  },
   mounted () {
-    this.getTopData()
-    this.getTracks()
-    this.getTutors()
-    this.getSellingPoints()
-    this.getChange()
+    services.getUsers()
+    services.getSets()
+    services.getScholarships()
+    services.getSkills()
+    let test = []
+    this.jobTitles.forEach((track, i) => {
+      if (i !== 0) {
+        this.tracks.push(track)
+      }
+    })
   },
   methods: {
     test(refName) {
@@ -330,63 +414,8 @@ export default {
     int () {
         
     },
-
-    getTopData () {
-      services.getTopData()
-      .then(res => {
-        // console.log(res.data)
-      })
-      .catch(err => {
-        console.log(err)
-      })
-    },
-
-    getTracks () {
-      services.getTracksData()
-      .then(res => {
-        this.tracks = res.data.map(track => {
-          return {...track, trackText: track.content.rendered.replace(/<\/?[^>]+>/gi, '')}
-        }).reverse()
-        // console.log(this.tracks)
-      })
-      .catch(err => {
-        console.log(err)
-      })
-    },
-    
-    getSellingPoints () {
-      services.getSellingPoints()
-      .then(res => {
-        this.sellingPoints = res.data.map(point => {
-          return {...point, pointText: point.content.rendered.replace(/<\/?[^>]+>/gi, '')}
-        }).reverse()
-        console.log(this.sellingPoints)
-      })
-      .catch(err => {
-        console.log(err)
-      })
-    },
-
-    getChange () {
-      services.getChange()
-      .then(res => {
-        this.changes = res.data.map(change => {
-          return {...change, changeText: change.content.rendered.replace(/<\/?[^>]+>/gi, '')}
-        })
-      })
-      .catch(err => {
-        console.log(err)
-      })
-    },
-
-    getTutors () {
-      services.getTutors()
-      .then(res => {
-        this.tutors = res.data.reverse()
-      })
-      .catch(err => {
-        console.log(err)
-      })
+    toTrack (url) {
+      window.open(url, '_blank')
     }
   }
 }
@@ -403,10 +432,12 @@ export default {
         color: #67747C;
     }
     .top-sect {
-        padding: 150px 0px 150px 100px !important;
+        padding: 150px 0px 150px 120px !important;
         background-color:  rgba(247, 255, 254, 0.25);
         height: 600px;
         .top-sect-texts {
+        // line-height: 600px;
+          padding-left: 0 !important;
           padding-right: 150px !important;
           .top-text {
             font-family: 'Playfair Display', serif;
@@ -415,6 +446,7 @@ export default {
             line-height: 48px;
             font-size: 32px;
             color: #222829;
+            margin-top: 100px;
             i {
                 color: #67747C;
                 font-style: italic;
@@ -425,11 +457,12 @@ export default {
           padding: 0 !important;
           overflow: hidden;
           height: 450px;
-          img {
+          iframe {
             filter: none;
             -webkit-filter: grayscale(0);
             filter: grayscale(0);
             width: 100%;
+            height: 450px;
             transition: linear all 0.5s
           }
           img:hover {
@@ -454,6 +487,10 @@ export default {
         }
         .img {
             padding: 20px 0 !important;
+            height: 80px;
+            img {
+              height: 25px;
+            }
             // img:last-c
         }
         .up{
@@ -463,7 +500,7 @@ export default {
     .main-sect-wrap {
       padding: 30px 120px !important; 
       .main-sect {
-        padding: 30px 200px 50px 10px !important;
+        padding: 30px 200px 50px 0px !important;
         .mid-sect-heading {
           font-family: 'Playfair Display', serif;
           font-style: normal;
@@ -520,8 +557,9 @@ export default {
       // padding: 30px 300px !important;
       padding: 0 !important;
       color: #fff;
-      background-image: url('../assets/banner4.png');
-      // background-repeat: no-repeat;
+      background-image: url('../assets/banner11.png');
+      background-repeat: no-repeat;
+      background-size: cover;
       .overlay {
         background: rgba(0, 35, 32, 0.96);
         width: 100%;
@@ -544,9 +582,6 @@ export default {
         // ul {
           // list-style-type: circle;
           text-align: left;
-          .single-change:last-child {
-              border-right: 0px solid #fff !important;
-          }
           .single-change {
             // border-left: 1px solid #fff;
             // padding: 0 30px;
@@ -584,8 +619,25 @@ export default {
               font-size: 18px;
             }
           }
-          .single-change:last-child {
-              border-right: 0px solid #fff !important;
+          .single-change-last {
+              padding-left: 88px;
+              padding-bottom: 12px;
+            ::after {
+              content: url('../assets/ring.png');
+              height: 100%;
+              left: 3.3%;
+              position: absolute;
+              top: 0;
+              z-index: 10000000;
+            }
+            .single-change-heading {
+              font-family: 'Playfair Display', serif;
+              margin: 10px 0;
+              font-style: normal;
+              font-weight: bold;
+              line-height: normal;
+              font-size: 18px;
+            }
           }
         // }
         .apply-btn-two {
@@ -642,35 +694,35 @@ export default {
         overflow: hidden;
         color: #FFFFFF;
         .overlay {
-          width: 150%;
-          height: 300px;
-          // background: linear-gradient(1.25deg, rgba(0, 0, 0, 0.9) 0.99%, rgba(0, 0, 0, 0) 93.54%);
-          opacity: 0.5;
-          position: relative;
-          z-index: 4;
-          cursor: pointer;
+              width: 150%;
+            height: 300px;
+            opacity: 0.5;
+            position: relative;
+            top: -300px;
+            z-index: 4;
+            cursor: pointer;
         }
         .overlay:hover {
           // background: transparent;
           transition: linear all 0.3s
         }
         img {
-          height: 100%;
-          margin-top: -310px;
-          position: relative;
-          z-index: 3;
+            width: 110%;
+            position: relative;
+            top: -610px;
+            z-index: 3;
         }
         .user-details {
-          margin: -320px 0 0 0;
-          position: relative;
-          width: 140%;
-          height: 100%;
-          // background-color: red;
-          background: linear-gradient(1.25deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 23.54%);
-          z-index: 5;
-          padding: 12px;
-          padding-top: 230px;
-          cursor: pointer;
+            margin: 0px 0 0 0;
+            position: relative;
+            top: 0;
+            width: 140%;
+            height: 100%;
+            background: linear-gradient(1.25deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 23.54%);
+            z-index: 5;
+            padding: 12px;
+            padding-top: 230px;
+            cursor: pointer;
           .name {
             font-family: 'Playfair Display', serif;
             font-style: normal;
@@ -692,14 +744,7 @@ export default {
           padding-top: 220px;
           transition: linear all 0.3s
         }
-        // .user-details {
-        //   background-color: #292929;
-        //   opacity: 0.6;
-        // }
       }
-      // .user:hover {
-      //   color: #00D7C4 !important
-      // }
     }
   }
   .checkers {
@@ -712,10 +757,14 @@ export default {
       background-repeat: no-repeat;   
       img {
         width: 100%;
+        filter: grayscale(0.9)
       }   
     }
     .checkers-photo-left {
       background-position: right; 
+      img {
+        margin-top: -70px !important
+      }
     }
     .checkers-photo-right {
       background-position: left; 
@@ -727,7 +776,7 @@ export default {
       // background-position: 8% 0px; 
     }
     .checkers-text {
-      padding: 130px 200px 0 100px !important;
+      padding: 130px 200px 0 120px !important;
       background-image: url('../assets/pattern3.png');
       background-repeat: no-repeat;
       background-position: right;
@@ -768,9 +817,6 @@ export default {
   .accelerate {
     padding: 100px 200px !important;
     text-align: center !important;
-    // background: rgba(247, 255, 254, 0.5);
-    // background-image: url('../assets/pattern1.png');
-    
     background-repeat: no-repeat;
     background-position: left; 
     .accelerate-header {
@@ -809,15 +855,22 @@ export default {
                 background: #FFFFFF;
                 box-shadow: 0px 2.5px 5px rgba(0, 0, 0, 0.05);  
                 padding: 0 !important;      
-                height: 570px;
+                min-height: 500px;
                 border: 0 !important;
                 border-radius: 0 !important;
                 overflow: hidden;
-                .card-img {
-                    height: 290px;
-                    margin: 0;
-                    border-radius: 0;
-                    margin-bottom: 30px
+                .card-img-wrap {
+                  width: 100%;
+                  height: 290px;
+                  overflow: hidden;
+                  .card-img {
+                      // height: 290px;
+                      width: 120%;
+                      height: auto;
+                      margin: 0;
+                      border-radius: 0;
+                      margin-bottom: 30px
+                  }
                 }
                 .card-text-heading {
                     font-style: normal;
@@ -840,7 +893,11 @@ export default {
                     font-weight: normal;
                     line-height: 24px;
                     font-size: 16px;
-
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 4;  /* Number of lines displayed before it truncate */
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                     color: #67747C;
                 }
                 .more {
@@ -864,10 +921,7 @@ export default {
   .in-touch {
     text-align: center;
     background-image: url('../assets/banner1.png');
-    // background-repeat: no-repeat;   
-    // background-color: green;
     height: 300px;
-    // padding: 100px;
     .overlay {
       background: rgba(0, 35, 32, 0.95);
       width: 100%;
@@ -910,8 +964,9 @@ export default {
       padding: 90px 12px 10px 12px !important;
       height: auto;
       .top-sect-texts {
-        padding: 40px 20px 80px 20px !important;
+        padding: 20px 30px 80px 30px !important;
         .top-text {
+          margin-top: 30px;
           font-size: 28px;
           line-height: 36px
         }
@@ -921,13 +976,16 @@ export default {
       padding: 0px 12px !important;
       margin: 0 !important;
       .tutor-title {
-        text-align: center
+        // text-align: center
       }
       .img {
-        padding: 5px 0 !important
+        padding: 5px 0 !important;
+        height: 30px;
       }
       img {
-        width: 70px
+        width: auto;
+        height: 18px !important;
+        margin: 0 20px 0 0;
       }
       .up {
         margin-top: -5px !important
@@ -935,7 +993,7 @@ export default {
     }
     .impact {
       padding: 0 12px !important;
-      margin: 0 !important;
+      margin: 40px 0 !important;
       .impact-section {
         border: 0;
         // border-bottom: 1px solid rgba(103, 116, 124, 0.15)
@@ -946,7 +1004,7 @@ export default {
       margin: 0 !important;
       .main-sect {
         padding: 12px 5px !important;
-        box-shadow: 3px 3px 3px #f5faf8;
+        // box-shadow: 3px 3px 3px #f5faf8;
         border: 1px solid #f5faf887;
         margin: 20px 0 0 0;
         border-radius: 4px;
@@ -967,7 +1025,7 @@ export default {
         }
       .change-content {
         padding: 0 10px;
-        margin-top: -1050px;
+        margin-top: -1098px;
         .change-heading {
           font-size: 18px;
           margin: 12px 0 20px 0;
@@ -1006,22 +1064,46 @@ export default {
             margin-top: -20px;
           }
         }
+        .single-change-last {
+          margin-top: 20px;
+          padding-left: 58px !important;
+              padding-left: 88px;
+              padding-bottom: 12px;
+            ::after {
+              content: url('../assets/ring.png');
+              height: 100%;
+              left: 5.3%;
+              position: absolute;
+              top: 0;
+              z-index: 10000000;
+            }
+          img {
+            margin-top: -20px;
+          }
+        }
       }
     }
     .success-stories {
-      padding: 30px 12px 0 12px !important;
+      padding: 30px 20px 0 20px !important;
       margin: 0 !important;
       overflow: hidden;
       .users {
         overflow: hidden;
         margin-top: -15px;
         .user {
+          margin: 10px 0;
           .overlay {
             width: 100%
           }
           img {
             width: 100%;
             height: auto
+          }
+          .user-details {
+              margin: 0px 0 0 0;
+              position: relative;
+              top: 0;
+              width: 100%;
           }
         }
       }
@@ -1033,7 +1115,7 @@ export default {
         margin: 0 !important
       }
       .checkers-text {
-        padding: 10px 30px !important;
+        padding: 10px 40px !important;
         margin: 0 !important;
         background: none;
         .name {
@@ -1048,21 +1130,34 @@ export default {
     .accelerate {
       padding: 20px 12px !important;
       .accelerate-header {
-        margin-left: 12px;
+        margin-left: 25px;
       }
       .accelerate-header-text {
-        padding: 0 20px !important;
+        padding: 0 30px !important;
         text-align: left
       }
       .cards {
         padding: 10px !important;
+        .card-container {
+          padding: 0 30px !important;
+          p {
+            margin-bottom: 5px !important
+          }
+        }
         .card {
           height: auto !important;
-          width: 93%;
-          .card-img {
-            width: auto;
-            height: 200px !important;
-            margin: 0 !important
+          width: 100%;
+          .card-img-wrap {
+            width: 100%;
+            height: 290px;
+            overflow: hidden;
+            .card-img {
+                height: auto !important;
+                width: 130% !important;
+                margin: 0;
+                border-radius: 0;
+                margin-bottom: 0 !important
+            }
           }
         }
         .more {
@@ -1091,6 +1186,11 @@ export default {
     }
     .text {
       font-size: 14px;
+    }
+    .checkers-photo-left {
+      img {
+        margin-top: 0px !important
+      }
     }
   }
  }

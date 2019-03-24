@@ -24,27 +24,26 @@
                 </p>
             </b-row>
             <b-row class="cards">
-                <b-col class="card-container" sm="6" xs="12">
-                    <div class="card">    
-                        <img class="card-img" src="../assets/banner2.png" alt="">
+                <b-col class="card-container" sm="6" xs="12" v-for="(scholarship, i) in scholarships" :key="i">
+                    <div class="mycard">    
+                        <div class="card-img-wrap">
+                            <img class="card-img" :src="scholarship.banner" alt="">
+                        </div>
                         <p class="card-text-heading">
-                            Girls in Technology
+                            {{scholarship.scholarshipName}}
                         </p>
-                        <p class="card-text-subheading">
-                            Omolara Awoyemi
-                        </p>
+                        <!-- <p class="card-text-subheading">
+                            {{scholarship.scholarshipFacilitator}}
+                        </p> -->
                         <p class="card-text-content">
-                            Stutern partnered with Girls in Technology to create an ongoing 
-                            scholarship fund to promote diversity in software development and UX design. 
-                            Each batch, successful female applicants are selected to receive 
-                            a partial scholarship toward any Stutern program.
+                            {{scholarship.scholarshipDesc}}
                         </p>
-                        <h3 class="more" @click="toScholarship()">
-                            Learn more and apply <img src="../assets/right-arrow.png" alt="">
+                        <h3 class="more" @click="toScholarship(scholarship._id)">
+                            Learn more and apply <img src="../assets/arrow-right.svg" alt="">
                         </h3>
                     </div>
                 </b-col>
-                <b-col class="card-container" sm="6" xs="12">
+                <!-- <b-col class="card-container" sm="6" xs="12">
                     <div class="card">    
                         <img class="card-img" src="../assets/banner3.png" alt="">
                         <p class="card-text-heading">
@@ -63,7 +62,7 @@
                             Learn more and apply <img src="../assets/right-arrow.png" alt="">
                         </h3>
                     </div>
-                </b-col>
+                </b-col> -->
             </b-row>
         </b-row>
         <b-row class="sponsor-sect">
@@ -91,16 +90,26 @@
     </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
+import services from '../services'
 export default {
     data () {
         return {
             
         }
     },
+    computed: {
+        ...mapGetters({
+            scholarships: 'getAllScholarships'
+        })
+    },
     methods: {
-        toScholarship () {
-            this.$router.push({name: 'ScholarshipChild', params: {scholarshipName: 'girlsInTech'}})
+        toScholarship (id) {
+            this.$router.push({name: 'ScholarshipChild', params: {scholarshipName: id}})
         }
+    },
+    mounted () {
+        services.getScholarships()
     }
 }
 </script>
@@ -171,28 +180,42 @@ export default {
             .cards {
                 padding: 40px 50px 0 50px;
                 text-align: left;
+                overflow: hidden;
                 .pattern {
                     position: relative;
                     z-index: 1;
                 }
                 .card-container {
+                    width: 100%;
                     padding: 0 20px;
                     p {
                         margin: 12px 20px
                     }
-                    .card {        
+                    .mycard {
+                        width: 100%;
                         background: #FFFFFF;
                         box-shadow: 0px 2.5px 5px rgba(0, 0, 0, 0.05);  
                         padding: 0 !important;      
-                        height: 610px;
+                        height: 500px;
                         border: 0 !important;
                         border-radius: 0 !important;
+                        margin-bottom: 10px;
                         overflow: hidden;
-                        .card-img {
+                        .card-img-wrap {
+                            width: 100%;
                             height: 290px;
-                            margin: 0;
-                            border-radius: 0;
-                            margin-bottom: 30px
+                            overflow: hidden;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            .card-img {
+                                // height: 310px;
+                                // margin-left: -20px;
+                                width: 100%;
+                                margin: 0;
+                                border-radius: 0;
+                                margin-bottom: 0px
+                            }
                         }
                         .card-text-heading {
                             font-style: normal;
@@ -215,7 +238,11 @@ export default {
                             font-weight: normal;
                             line-height: 24px;
                             font-size: 16px;
-
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 3;  /* Number of lines displayed before it truncate */
+                            overflow: hidden;
+                            text-overflow: ellipsis;
                             color: #67747C;
                         }
                         .more {
@@ -341,10 +368,13 @@ export default {
                 }
                 .cards {
                     padding: 10px !important;
+                    overflow: hidden;
                     .card-container {
-                        .card {
+                        width: 100%;
+                        .mycard {
                             margin-top: 20px;
                             height: auto;
+                            width: 100%;
                             .card-img {
                                 margin: 0 0 10px 0;
                                 height: 200px

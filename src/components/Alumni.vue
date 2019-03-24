@@ -13,317 +13,114 @@
         <b-row class="banner">
             <img src="../assets/banner6.png" alt="">
         </b-row>
-        <b-row class="sets">    
+        <!-- <b-row class="sets" v-for="(set, i) in reducedSets" :key="i">    
             <p class="set">
-                SGA 0.1
+                {{ i }}
             </p>
-            <div class="scrolling-wrapper" :ref="v1">
-                <span class="card  btn-wrap">
-                    <button class="my-btn" @click="toLeft(v1)">
-                        left
-                    </button>
-                </span>
-                <div class="card-wrap">
-                    <div class="card">
-                        <img src="../assets/jessica.jpg" alt="">
-                        <div class="user-details">
-                            <p class="name">
-                            Hakeeb Bashorun 
-                            </p>
-                            <p class="job-title">
-                            Product Designer, Cowrywise
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="../assets/silas.png" alt="">
-                        <div class="user-details">
-                            <p class="name">
-                            Hakeeb Bashorun 
-                            </p>
-                            <p class="job-title">
-                            Product Designer, Cowrywise
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="../assets/silas.png" alt="">
-                        <div class="user-details">
-                            <p class="name">
-                            Hakeeb Bashorun 
-                            </p>
-                            <p class="job-title">
-                            Product Designer, Cowrywise
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="../assets/silas.png" alt="">
-                        <div class="user-details">
-                            <p class="name">
-                            Hakeeb Bashorun 
-                            </p>
-                            <p class="job-title">
-                            Product Designer, Cowrywise
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="../assets/silas.png" alt="">
-                        <div class="user-details">
-                            <p class="name">
-                            Hakeeb Bashorun 
-                            </p>
-                            <p class="job-title">
-                            Product Designer, Cowrywise
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="../assets/silas.png" alt="">
-                        <div class="user-details">
-                            <p class="name">
-                            Hakeeb Bashorun 
-                            </p>
-                            <p class="job-title">
-                            Product Designer, Cowrywise
-                            </p>
-                        </div>
-                    </div>
-                    <br>
-                </div>
-                <div class="card  btn-wrap">
-                    <button class="my-btn" @click="toRight(v1)">
-                        right
-                    </button>
-                </div>
-            </div>
-            <p class="set">
-                SGA 0.2
-            </p>
-            <div class="scrolling-wrapper" :ref="v2">
+            <div class="scrolling-wrapper" :ref="'set'+i">
                 <div class="card btn-wrap">
-                    <button class="my-btn" @click="toLeft(v2)">
+                    <button class="my-btn" @click="toLeft('set'+i)">
                         left
                     </button>
                 </div>
                 <div class="card-wrap">
-                    <div class="card">
-                        <img src="../assets/jessica.jpg" alt="">
-                        <div class="user-details">
-                            <p class="name">
-                            Hakeeb Bashorun 
-                            </p>
-                            <p class="job-title">
-                            Product Designer, Cowrywise
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="../assets/silas.png" alt="">
-                        <div class="user-details">
-                            <p class="name">
-                            Hakeeb Bashorun 
-                            </p>
-                            <p class="job-title">
-                            Product Designer, Cowrywise
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="../assets/silas.png" alt="">
-                        <div class="user-details">
-                            <p class="name">
-                            Hakeeb Bashorun 
-                            </p>
-                            <p class="job-title">
-                            Product Designer, Cowrywise
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="../assets/silas.png" alt="">
-                        <div class="user-details">
-                            <p class="name">
-                            Hakeeb Bashorun 
-                            </p>
-                            <p class="job-title">
-                            Product Designer, Cowrywise
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="../assets/silas.png" alt="">
-                        <div class="user-details">
-                            <p class="name">
-                            Hakeeb Bashorun 
-                            </p>
-                            <p class="job-title">
-                            Product Designer, Cowrywise
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="../assets/silas.png" alt="">
-                        <div class="user-details">
-                            <p class="name">
-                            Hakeeb Bashorun 
-                            </p>
-                            <p class="job-title">
-                            Product Designer, Cowrywise
-                            </p>
-                        </div>
-                    </div>
-                <br>
-                    <div class="card">
-                        <img src="../assets/jessica.jpg" alt="">
-                        <div class="user-details">
-                            <p class="name">
-                            Hakeeb Bashorun 
-                            </p>
-                            <p class="job-title">
-                            Product Designer, Cowrywise
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="../assets/silas.png" alt="">
-                        <div class="user-details">
-                            <p class="name">
-                            Hakeeb Bashorun 
-                            </p>
-                            <p class="job-title">
-                            Product Designer, Cowrywise
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="../assets/silas.png" alt="">
-                        <div class="user-details">
-                            <p class="name">
-                            Hakeeb Bashorun 
-                            </p>
-                            <p class="job-title">
-                            Product Designer, Cowrywise
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="../assets/silas.png" alt="">
-                        <div class="user-details">
-                            <p class="name">
-                            Hakeeb Bashorun 
-                            </p>
-                            <p class="job-title">
-                            Product Designer, Cowrywise
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="../assets/silas.png" alt="">
-                        <div class="user-details">
-                            <p class="name">
-                            Hakeeb Bashorun 
-                            </p>
-                            <p class="job-title">
-                            Product Designer, Cowrywise
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="../assets/silas.png" alt="">
-                        <div class="user-details">
-                            <p class="name">
-                            Hakeeb Bashorun 
-                            </p>
-                            <p class="job-title">
-                            Product Designer, Cowrywise
-                            </p>
+                    <div class="card-inner-wrapper" style="width: 100%; white-space: initial">
+                        <div class="card" v-for="(user, i) in set" :key="'user'+i" @click="toSingle(user)">
+                            <img :src="user.userPhoto" alt="">
+                            <div class="user-details">
+                                <p class="name">
+                                {{user.userName}} 
+                                </p>
+                                <p class="job-title">
+                                {{user.jobTitle}}
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="card btn-wrap">
-                    <button class="my-btn" @click="toRight(v2)">
-                        right
-                    </button>
-                </div>
-            </div>
-        </b-row>
-        <!-- <b-row class="sets">    
-            <p class="set">
-                SGA 0.1
-            </p>
-            <div class="scrolling-wrapper" ref="scroll-wrapper">
-                <div class="card">
-                    <button class="my-btn" @click="toLeft()">
-                        left
-                    </button>
-                </div>
-                <div class="card">
-                    <img src="../assets/silas.png" alt="">
-                </div>
-                <div class="card">
-                    <img src="../assets/silas.png" alt="">
-                </div>
-                <div class="card">
-                    <img src="../assets/silas.png" alt="">
-                </div>
-                <div class="card">
-                    <img src="../assets/silas.png" alt="">
-                </div>
-                <div class="card">
-                    <img src="../assets/silas.png" alt="">
-                </div>
-                <div class="card">
-                    <img src="../assets/silas.png" alt="">
-                </div>
-                <br>
-                <div class="card">
-                    <img src="../assets/silas.png" alt="">
-                </div>
-                <div class="card">
-                    <img src="../assets/silas.png" alt="">
-                </div>
-                <div class="card">
-                    <img src="../assets/silas.png" alt="">
-                </div>
-                <div class="card">
-                    <img src="../assets/silas.png" alt="">
-                </div>
-                <div class="card">
-                    <img src="../assets/silas.png" alt="">
-                </div>
-                <div class="card">
-                    <img src="../assets/silas.png" alt="">
-                </div>
-                <div class="card">
-                    <button class="my-btn" @click="toRight()">
+                    <button class="my-btn" @click="toRight('set'+i)">
                         right
                     </button>
                 </div>
             </div>
         </b-row> -->
+        
+        <b-row class="sets" v-for="(set, i) in reducedSets" :key="i">    
+            <b-col sm="12">
+                <p class="set">
+                    {{ i }}
+                </p>
+            </b-col>
+            <!-- <div class="scrolling-wrapper" :ref="'set'+i"> -->
+                <b-col sm="1" class="side-btn" @click="toRight('set'+i)">
+                    <div class="full" v-if="set.length > 6">
+                        <button>
+                            <img src="../assets/arrow-right.svg" class="left-img" alt="">
+                        </button>
+                    </div>
+                </b-col>
+                <b-col sm="10" class="content-holder" :ref="'set'+i">
+                    <div class="card-wrap">
+                        <div class="card-inner-wrapper" style="width: 100%; white-space: initial">
+                            <div class="card" v-for="(user, i) in set" :key="'user'+i" @click="toSingle(user)">
+                                <img :src="user.userPhoto" alt="">
+                                <div class="user-details">
+                                    <p class="name">
+                                    {{user.userName}} 
+                                    </p>
+                                    <p class="job-title">
+                                    {{user.jobTitle}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </b-col>
+                <b-col sm="1" class="side-btn">
+                    <div class="full"  v-if="set.length > 6" @click="toLeft('set'+i)">
+                        <button>
+                            <img src="../assets/arrow-right.svg" class="" alt="">
+                        </button>
+                    </div>
+                </b-col>
+            <!-- </div> -->
+        </b-row>
     </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 export default {
     data () {
         return {
+            reducedSets: {},
             v1: 'scroll-wrapper',
             v2: 'scroll-wrapper2'
         }
+    },
+    computed: {
+        ...mapGetters({
+            sets: 'getSets',
+            students: 'getStudents'
+        })
     },
     methods: {
         toScholarship () {
             this.$router.push({name: 'ScholarshipChild', params: {scholarshipName: 'girlsInTech'}})
         },
         toLeft (i) {
-            let cont = this.$refs[i]
+            console.log(i)
+            console.log(this.$refs)
+            let cont = this.$refs[i][0]
+            console.log(cont.scrollLeft)
             cont.scrollLeft = cont.scrollWidth - cont.clientWidth
         },
         toRight (i) {
-            let cont = this.$refs[i]
+            let cont = this.$refs[i][0]
             cont.scrollLeft = 0
+        },
+        toSingle (user) {
+            this.$router.push({name: 'SingleHire', params: {userId: user._id}})
         },
         log () {
             // this.right = 'btn-none'
@@ -340,7 +137,25 @@ export default {
         // }
     },
     mounted () {
-        console.log(this.$refs)
+        console.log(this.students)
+        this.reducedSets = this.students.reduce((agg, curr) => {  
+          agg[curr.userSet] = agg[curr.userSet] ? agg[curr.userSet].concat(curr) : [curr];
+          return agg
+        }, {})
+
+        // let rejoined = []
+        // // console.log(this.reducedSets[Object.keys(this.reducedSet)])
+        // let test = Object.keys(this.reducedSets).map((set, i) => {
+        //     rejoined[i] = {set}
+        //     return {set}
+        // })
+        // let test2 = Object.values(this.reducedSets).map((set, i) => {
+        //     return {set}
+        // })
+        // console.log(rejoined)
+        // console.log(test2)'yuewzewi'
+        // }
+        console.log(this.reducedSets)
     }
 }
 </script>
@@ -391,7 +206,7 @@ export default {
                 background-color: red;
                 overflow: hidden;
                 img {
-                    // width: 100%
+                    width: 100%
                 } 
             }
             .inside {
@@ -436,51 +251,70 @@ export default {
                 }
             }
         }
+        ::-webkit-scrollbar {
+            width: 0px;  /* remove scrollbar space */
+            background: transparent;  /* optional: just make scrollbar invisible */
+        }
+
         .sets {
-            padding: 20px 0 !important;
-            margin: 0 !important;
             .set {
                 font-family: 'Playfair Display', serif;
                 font-style: normal;
                 font-weight: bold;
                 line-height: normal;
                 font-size: 24px;
-                margin: 70px 0 0 110px;
+                margin: 70px 0 15px 110px;
                 color: #00D7C4;
             }
-            .scrolling-wrapper {
-                overflow-x: auto;
-                overflow-y: hidden;
-                white-space: nowrap;
-                min-height: 350px;
-                padding: 20px 0;
-                background-image: url('../assets/pattern4.png');
-                background-repeat: no-repeat;
-                background-position: 90% 20px;
-                // -webkit-overflow-scrolling: touch;
-                scroll-behavior: smooth;
+                .side-btn {
+                    .full {
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-content: center;
+                        margin-top: -30px;
+                        button {
+                            background-color: #fff;
+                            border: 0 !important;
+                            img {
+                                height: 25px;
+                            }
+                            .left-img {
+                                -ms-transform: rotate(180deg); /* IE 9 */
+                                -webkit-transform: rotate(180deg); /* Safari 3-8 */
+                                transform: rotate(180deg);
+                            }
+                        }
+                    }
+                }
+                .content-holder {
+                    white-space: nowrap;
+                    overflow-y: auto;
+                    scroll-behavior: smooth;
                 .card-wrap {
                     width: 125%;
-                    display: inline-block
+                    display: inline-block;
                 }
                 .card {
                     display: inline-block;
                     max-width: 300px;
+                    min-width: 300px;
                     height: 300px;
                     border: 0 !important;
                     border-radius: 4px !important;
                     // background-color: #67747C;
-                    margin: 0 15px 30px 0;
+                    margin: 0 15px 10px 0;
                     overflow: hidden;
-                    // scroll-behavior: smooth;
+                    cursor: pointer;
+                    scroll-behavior: smooth;
                     .user-details {
                             position: relative;
-                            top: -300px;
+                            top: -375px;
                             margin: 0 0 0 0px;
                             padding-left: 20px;
                             height: 100%;
-                            padding-top: 235px;
-                            background: linear-gradient(1.25deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 25.54%);
+                            padding-top: 240px;
+                            background: linear-gradient(1.25deg, rgba(0, 0, 0, 0.9) 0%, rgba(54, 54, 54, 0) 45.54%);
                             color: #fff;
                         .name {
                             font-family: 'Playfair Display', serif;
@@ -500,11 +334,13 @@ export default {
                     
                     .user-details:hover {
                     // margin: -100px 0 0 0;
-                        padding-top: 225px;
-                        transition: linear all 0.3s
+                        padding-top: 230px;
+                        transition: linear all 0.4s
                     }
                     img {
-                        height: 100%
+                        height: 125%;
+                        filter: grayscale(0.99);
+                        transition: all 0.5s
                     }
                     button {
                         border: 0;
@@ -516,16 +352,10 @@ export default {
                     }
                 }
                 .card:hover img {
-                    filter: grayscale(0.9)
+                    transform: scale(1.05);
+                    filter: grayscale(0.1)
                 }
-                .my-btn {
-                    height: 600px !important;
-                    margin-top: -600px;
-                    margin-right: 0 !important
-                }
-                &::-webkit-scrollbar {
-                    display: none;
-                }
+                // }
             }
         }
         button:hover {
@@ -562,14 +392,29 @@ export default {
                     overflow: hidden;
                     .card {
                         display: block;
-                        min-width: 85%;
+                        min-width: 90%;
                         max-height: 300px;
+                        margin: 10px 0 !important;
                         .btn-wrap {
                             display: none !important
                         }
+                        img {
+                            height: 125%
+                        }
+                        .user-details {
+                            position: relative;
+                            top: -355px;
+                            margin: 0 0 0 0px;
+                            padding-left: 20px;
+                            height: 100%;
+                            padding-top: 220px;
+                            background: linear-gradient(1.25deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 25.54%);
+                            color: #fff;
+                        }
                     }
                     .btn-wrap {
-                        display: none !important
+                        display: none !important;
+                        height: 100% !important
                     }
                     button {
                         display: none
