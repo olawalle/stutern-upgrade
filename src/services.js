@@ -16,8 +16,8 @@ let getUsers = () => {
         var keyA = a.userSet,
             keyB = b.userSet;
             // Compare the 2 dates
-            if(keyA < keyB) return -1;
-            if(keyA > keyB) return 1;
+            if(keyA < keyB) return 1;
+            if(keyA > keyB) return -1;
             return 0;
         });
        store.commit(mutationTypes.ALL_STUDENTS, students)
@@ -42,8 +42,8 @@ let getSets = () => {
             var keyA = a.setName,
                 keyB = b.setName;
             // Compare the 2 dates
-            if(keyA < keyB) return -1;
-            if(keyA > keyB) return 1;
+            if(keyA < keyB) return 1;
+            if(keyA > keyB) return -1;
             return 0;
         });
        store.commit(mutationTypes.ALL_SETS, data)

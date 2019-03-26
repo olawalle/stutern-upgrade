@@ -53,12 +53,12 @@
                 </p>
             </b-col>
             <!-- <div class="scrolling-wrapper" :ref="'set'+i"> -->
-                <b-col sm="1" class="side-btn" @click="toLeft('set'+i)">
-                    <div class="full" v-if="set.length > 6">
+                <b-col sm="1" class="side-btn" >
+                    <!-- <div class="full" v-if="set.length > 6" @click="toLeft('set'+i)">
                         <button>
                             <img src="../assets/arrow-right.svg" class="left-img" alt="">
                         </button>
-                    </div>
+                    </div> -->
                 </b-col>
                 <b-col sm="10" class="content-holder" :ref="'set'+i">
                     <div class="card-wrap">
@@ -77,12 +77,12 @@
                         </div>
                     </div>
                 </b-col>
-                <b-col sm="1" class="side-btn" @click="toRight('set'+i)">
-                    <div class="full"  v-if="set.length > 6">
+                <b-col sm="1" class="side-btn">
+                    <!-- <div class="full" @click="toRight('set'+i)"  v-if="set.length > 6">
                         <button>
                             <img src="../assets/arrow-right.svg" class="" alt="">
                         </button>
-                    </div>
+                    </div> -->
                 </b-col>
             <!-- </div> -->
         </b-row>

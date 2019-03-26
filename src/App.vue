@@ -33,7 +33,7 @@
 
           <button v-for="(link, i) in topLinks" :key="i" class="top-link" @click="makeActive(i)" :class="link.active ? 'active' : ''">{{link.name}}</button>
           
-          <button class="apply-btn">
+          <button class="apply-btn" @click="apply()">
             Apply
           </button>
         </b-navbar-nav>
@@ -49,9 +49,9 @@
         Stutern Inc. © {{year}}
       </b-col>
       <b-col col-6 class="right-text">
-        <img src="./assets/facebook.svg" class="socials" alt="">
-        <img src="./assets/instagram.svg" class="socials" alt="">
-        <img src="./assets/twitter.svg" class="socials" alt="">
+        <a href="https://web.facebook.com/stutern" target="_blank"><img src="./assets/facebook.svg" class="socials" alt=""></a>
+        <a href="https://www.instagram.com/stuternhq/" target="_blank"><img src="./assets/instagram.svg" class="socials" alt=""></a>
+        <a href="https://twitter.com/stutern" target="_blank"><img src="./assets/twitter.svg" class="socials" alt=""></a>
       </b-col>
     </b-row>
   </div>
@@ -95,6 +95,9 @@ export default {
       this.topLinks.map(link => link.active = false)
       this.topLinks[i].active = true;
       this.$router.push({name: this.topLinks[i].name})
+    },
+    apply() {
+      window.open('https://stuternhq.vervoe.com/job-opportunity/frontend-development-or-ui-ux-design-application', '_blank')
     }
   },
   mounted () {
@@ -232,6 +235,19 @@ export default {
     .footer {
       margin-top: 20px;
       padding: 12px !important
+    }
+    .left-text {
+      font-style: normal;
+      font-weight: normal;
+      line-height: 25px;
+      font-size: 14px;
+
+      color: #67747C;
+    }
+    .socials {
+      width: 16px;
+      float: right;
+      margin: 0 10px;
     }
   }
 </style>

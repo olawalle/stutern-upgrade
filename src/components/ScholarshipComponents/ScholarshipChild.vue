@@ -122,36 +122,26 @@
                 </b-col>
             <!-- </b-row> -->
         </b-row>
-        <!-- <b-row class="overview" id="profile">
+        <b-row class="overview" id="profile">
             <p class="content-heading">
                 Visioner Profile
             </p>
             <p class="visioner-name">
-                Omolara (Ajele) Awoyemi
+                {{activeScholarship.scholarshipFacilitator}}
             </p>
             <p class="texts">
                 <b-row>
-                    <b-col sm="8">
-                        Omolara is a technology professional with years of experience in the ecommerce and fintech sectors. She currently serves as the Managing Director of SureGroup, a group of leading global platforms for non-cash value transfer. SureGroup has 3 business in its portfolio - SureGifts, SureRemit and SureCredit. SureGifts is the leading provider of retail and corporate gift cards in Nigeria and Kenya with clientele such as Airtel, Oando, Dangote, Diamond Bank and others. SureRemit is a blockchain enabled global remittance platforms that allows people buy vouchers for their relatives in more than 23 countries - the company became the first Nigerian company to float an ICO raising $7m in the process. SureCredit is a corporate short term loan solution being used by corporates in Nigeria. 
-
-                        She previously served as  Country Manager of JumiaPay - Jumia’s payments, financial services and financial inclusion company, and the Head of Partnerships for the Jumua Group.
-
-                        Lara serves on the advisory board of Nigerian Women Techsters and is an associate member of  Women in Management, Business and Public Service (WIMBIZ) and Women-In-Tech Africa. She is an Obama Foundation African Leader (the inaugural class of 2018).
-
-                        She is very passionate about building tech for women and supporting women in tech and as a result founded GIrls In Technology, an initiative where girls are funded to get trained in web design and software engineering. Fund sources include personal funds, friends, and corporate organizations who desire to support females in tech as part of their CSR. After training, they are mentored and placed in supporting organizations for hands-on experience.
-
-                        Omolara has a BSc. degree in Computer Science from the Federal University of Technology, Akure, Nigeria, a Harvard Business School Online Certificate in Business Readiness and attended executive education for CIOs at UC Berkeley, California, USA.
-
-                        Prior to SureGroup and Jumia, Omolara worked at leading African technology companies such as Iroko TV and MTech Communications.
-
-                        She is married with two children.
+                    <!-- <b-col sm="2" class="vision-img">
+                    </b-col> -->
+                    <b-col sm="12">
+                        {{activeScholarship.visionerProfile}}
                     </b-col>
-                    <b-col sm="4" class="vision-img">
+                    <!-- <b-col sm="2" class="vision-img">
                         <img src="../../assets/user.png" alt="">
-                    </b-col>
+                    </b-col> -->
                 </b-row>
             </p>
-        </b-row> -->
+        </b-row>
         <b-row class="how-to-apply" id="Apply">
             <p class="content-heading">
                 How to apply
@@ -238,9 +228,9 @@ export default {
                 {name: 'Overview', active: true, id: 'overview'},
                 // {name: 'Vision', active: false, id: 'vision'},
                 {name: 'Impact', active: false, id: 'impact'},
-                // {name: 'Visioner Profile', active: false, id: 'profile'},
+                {name: 'Visioner Profile', active: false, id: 'profile'},
                 {name: 'Apply', active: false, id: 'Apply'},
-                {name: 'Past beneficiaries', active: false, id: 'beneficiaries'}
+                {name: 'Beneficiaries', active: false, id: 'beneficiaries'}
             ]
         }
     },

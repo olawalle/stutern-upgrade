@@ -229,7 +229,7 @@ export default {
         services.getSetStudents(e)
         .then(res => {
             this.activeSet = res.data
-            this.reLoad(1)
+            this.reLoad(0)
             console.log(this.activeSet)
         })
         .catch(err => {
@@ -415,7 +415,7 @@ export default {
                     }
                 }
                 .user-text {
-                    padding-top: 20px !important;
+                    padding-top: 7px !important;
                     .username {
                         padding: 0 !important;
                         span {
@@ -453,7 +453,7 @@ export default {
                         color: #67747C;
                         display: -webkit-box;
                         -webkit-box-orient: vertical;
-                        -webkit-line-clamp: 2;  /* Number of lines displayed before it truncate */
+                        -webkit-line-clamp: 3;  /* Number of lines displayed before it truncate */
                         overflow: hidden;
                         text-overflow: ellipsis;
                     }
@@ -515,7 +515,7 @@ export default {
         }
     }
     .tutors {
-      padding: 0px 12px !important;
+      padding: 0px 20px !important;
       margin: 0 !important;
       
       .img {
@@ -557,7 +557,8 @@ export default {
                     }
                 }
                 .user-text {
-                    padding: 25px !important;
+                    margin-top: -12px;
+                    padding: 15px !important;
                     .text-skill {
                         margin-top: 10px;
                     }
@@ -570,7 +571,12 @@ export default {
                         }
                     }
                     .user-desc {
-                        margin-bottom: 15px
+                        margin-bottom: 15px;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 5;  /* Number of lines displayed before it truncate */
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                     }
                 }
             }

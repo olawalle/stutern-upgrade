@@ -1005,7 +1005,7 @@ export default {
       .main-sect {
         padding: 12px 5px !important;
         // box-shadow: 3px 3px 3px #f5faf8;
-        border: 1px solid #f5faf887;
+        // border: 1px solid #f5faf887;
         margin: 20px 0 0 0;
         border-radius: 4px;
         .mid-sect-heading {

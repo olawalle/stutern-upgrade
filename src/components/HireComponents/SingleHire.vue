@@ -193,6 +193,7 @@ export default {
                 line-height: 21px;
                 font-size: 10px;
                 text-align: center;
+                white-space: nowrap;
                 padding: 12px 30px !important;
                 margin-right: 12px;
                 color: #0163DB;
@@ -345,7 +346,7 @@ export default {
                 margin: 0 !important;
                 .card-container {
                     padding: 0 !important;
-                    box-shadow: 3px 3px 3px #f5faf8;
+                    // box-shadow: 3px 3px 3px #f5faf8;
                     .card {
                         height: auto;
                         .card-img {

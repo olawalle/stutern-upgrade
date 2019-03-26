@@ -75,13 +75,16 @@
                     a skills development and job placement training that connects the most ambitious
                     university graduates with long-term employment..
                 </p>
-                <input type="text" class="myinput" placeholder="Full name*">
-                <input type="text" class="myinput" placeholder="Email address*">
-                <input type="text" class="myinput" placeholder="How many students will you love to sponsor?*">
-                <textarea name="" id="" cols="30" rows="4" placeholder="Anything else you will like us to know?"></textarea>
-                <button class="apply-btn">
+                <form action="mailto:accelerator@stutern.com" method="post" enctype="text/plain">
+                <input type="text" class="myinput" name="full name" placeholder="Full name*">
+                <input type="text" class="myinput" name="email address" placeholder="Email address*">
+                <input type="text" class="myinput" name="no of students to sponsor" placeholder="How many students will you love to sponsor?*">
+                <textarea id="" cols="30" name="additional info" rows="4" placeholder="Anything else you will like us to know?"></textarea>
+                <input type="submit" value="Send" class="apply-btn">
+                <!-- <button class="apply-btn">
                     Send
-                </button>
+                </button> -->
+                </form>
             </b-col>
             <b-col sm="6" class="sponsor-sect-right">
                 <img src="../assets/banner4.png" alt="">
@@ -314,6 +317,7 @@ export default {
                 border-radius: 4px;
                 color: #fff;
                 margin-top: 15px;
+                cursor: pointer;
                 // margin-left: 40px;
                 } 
             }
@@ -371,28 +375,35 @@ export default {
                     overflow: hidden;
                     .card-container {
                         width: 100%;
+                        overflow: hidden;
                         .mycard {
                             margin-top: 20px;
                             height: auto;
                             width: 100%;
-                            .card-img {
-                                margin: 0 0 10px 0;
-                                height: 200px
-                            }
-                            .card-text-heading {
-                                font-size: 18px;
-                            }
-                            .card-text-subheading {
-                                font-size: 16px
-                            }
-                            .card-text-content {
-                                font-size: 14px
-                            }
-                            .more {
-                                font-size: 14px;
-                                img {
-                                    width: 20px;
+                            .card-img-wrap {
+                                align-items: unset;
+                                height: 250px;
+                                .card-img {
+                                    margin: 0 0 10px 0;
+                                    height: 240px;
+                                    width: auto
                                 }
+                                .card-text-heading {
+                                    font-size: 18px;
+                                }
+                                .card-text-subheading {
+                                    font-size: 16px
+                                }
+                                .card-text-content {
+                                    font-size: 14px
+                                }
+                                .more {
+                                    font-size: 14px;
+                                    img {
+                                        width: 20px;
+                                    }
+                                }
+
                             }
                         }
                         p {
@@ -404,7 +415,7 @@ export default {
             .sponsor-sect {
                 height: auto;
                 .sponsor-sect-left {
-                    padding: 12px 30px;
+                    padding: 12px 37px;
                     margin: 0 !important;
                     .myinput {
                         margin-top: 10px;
