@@ -53,7 +53,7 @@
                 </p>
             </b-col>
             <!-- <div class="scrolling-wrapper" :ref="'set'+i"> -->
-                <b-col sm="1" class="side-btn" @click="toRight('set'+i)">
+                <b-col sm="1" class="side-btn" @click="toLeft('set'+i)">
                     <div class="full" v-if="set.length > 6">
                         <button>
                             <img src="../assets/arrow-right.svg" class="left-img" alt="">
@@ -77,8 +77,8 @@
                         </div>
                     </div>
                 </b-col>
-                <b-col sm="1" class="side-btn">
-                    <div class="full"  v-if="set.length > 6" @click="toLeft('set'+i)">
+                <b-col sm="1" class="side-btn" @click="toRight('set'+i)">
+                    <div class="full"  v-if="set.length > 6">
                         <button>
                             <img src="../assets/arrow-right.svg" class="" alt="">
                         </button>
@@ -292,13 +292,13 @@ export default {
                     overflow-y: auto;
                     scroll-behavior: smooth;
                 .card-wrap {
-                    width: 125%;
+                    width: 120%;
                     display: inline-block;
                 }
                 .card {
                     display: inline-block;
-                    max-width: 300px;
-                    min-width: 300px;
+                    max-width: 280px;
+                    min-width: 280px;
                     height: 300px;
                     border: 0 !important;
                     border-radius: 4px !important;
@@ -309,7 +309,7 @@ export default {
                     scroll-behavior: smooth;
                     .user-details {
                             position: relative;
-                            top: -375px;
+                            top: -325px;
                             margin: 0 0 0 0px;
                             padding-left: 20px;
                             height: 100%;
@@ -338,7 +338,7 @@ export default {
                         transition: linear all 0.4s
                     }
                     img {
-                        height: 125%;
+                        height: 110%;
                         filter: grayscale(0.99);
                         transition: all 0.5s
                     }

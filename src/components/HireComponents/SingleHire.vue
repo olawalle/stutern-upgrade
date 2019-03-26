@@ -19,7 +19,7 @@
                 
                 
                 <span class="skill" v-for="(skill, i) in skills" :key="'pskill'+i">
-                    <img v-if="skill.type === 'photo' && activeUser.userSkills.includes(skill.name)" :src="skill.skillPhoto" alt="">
+                    <img v-if="skill.type === 'photo' && activeUser.userSkills.includes(skill.name)" style="width: 30px" :src="skill.skillPhoto" alt="">
                 </span>
                 <span v-for="(skill, i) in skills" :key="'tskill'+i">
                     <span class="skill text-skill" v-if="skill.type === 'text' && activeUser.userSkills.includes(skill.name)">

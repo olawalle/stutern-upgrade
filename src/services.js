@@ -12,7 +12,15 @@ let getUsers = () => {
         url: urls.allUsers
     })
     .then(res => {
-       store.commit(mutationTypes.ALL_STUDENTS, res.data)
+      let students = res.data.sort(function(a, b){
+        var keyA = a.userSet,
+            keyB = b.userSet;
+            // Compare the 2 dates
+            if(keyA < keyB) return -1;
+            if(keyA > keyB) return 1;
+            return 0;
+        });
+       store.commit(mutationTypes.ALL_STUDENTS, students)
     })
     .catch(err => console.log(err))
 }
@@ -30,7 +38,14 @@ let getSets = () => {
                 text: set.setName,
                 value: set.setName
             }
-        })
+        }).sort(function(a, b){
+            var keyA = a.setName,
+                keyB = b.setName;
+            // Compare the 2 dates
+            if(keyA < keyB) return -1;
+            if(keyA > keyB) return 1;
+            return 0;
+        });
        store.commit(mutationTypes.ALL_SETS, data)
     })
     .catch(err => console.log(err))
@@ -98,7 +113,6 @@ let getJobTitles = () => {
             value: i + 1,
           })
       });
-      console.log(titles)
       store.commit(mutationTypes.JOB_TITLES, titles);
     })
     .catch(err => console.log(err));

@@ -146,7 +146,7 @@
                         <b-row>
                             <b-col  md="12" sm="12">
                                 <span class="skill" v-for="(skill, i) in skills" :key="'pskill'+i">
-                                    <img v-if="skill.type === 'photo' && user.userSkills.includes(skill.name)" :src="skill.skillPhoto" alt="">
+                                    <img v-if="skill.type === 'photo' && user.userSkills.includes(skill.name)" style="width: 20px;" :src="skill.skillPhoto" alt="">
                                 </span>
                             <!-- </b-col>
                             <b-col sm="8" class="text-skill-wrap"> -->
@@ -246,7 +246,7 @@ export default {
     .then(res => {
         this.activeSet = res.data
         this.reLoad(1)
-        console.log(this.activeSet)
+        // console.log(this.activeSet)
     })
   }
 }
@@ -410,12 +410,12 @@ export default {
                     height: 100%;
                     overflow: hidden;
                     img {
-                        width: 130%;
+                        width: 110%;
                         margin-top: -10px;
                     }
                 }
                 .user-text {
-                    padding-top: 35px !important;
+                    padding-top: 20px !important;
                     .username {
                         padding: 0 !important;
                         span {

@@ -290,7 +290,8 @@ export default {
                 // height: auto !important;
                 // width: 100%;
                 // width: 100%;
-                height: 140% !important;
+                width: 108% !important;
+                height: auto !important;
                 margin-top: 30px;
             }
         }

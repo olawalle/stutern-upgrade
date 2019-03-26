@@ -895,7 +895,7 @@ export default {
                     font-size: 16px;
                         display: -webkit-box;
                         -webkit-box-orient: vertical;
-                        -webkit-line-clamp: 4;  /* Number of lines displayed before it truncate */
+                        -webkit-line-clamp: 3;  /* Number of lines displayed before it truncate */
                         overflow: hidden;
                         text-overflow: ellipsis;
                     color: #67747C;
