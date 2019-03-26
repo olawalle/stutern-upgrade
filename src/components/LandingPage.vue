@@ -3,7 +3,7 @@
         <b-row class="top-sect">
             <b-col sm="6" class="top-sect-texts">
                 <p class="top-text" data-aos="slide-up" data-aos-duration="700">
-                    Launch your new career with no  <i>upfront tuition</i>
+                  Go from zero experience to landing your dream job with no  <i>upfront tuition</i>
                 </p>
                 <p class="text" data-aos="slide-up" data-aos-duration="800">
                   Stutern is a skills development and job placement platform 
@@ -12,7 +12,7 @@
                 </p>
                 
                 <!-- <a href="#explore"> -->
-                    <button class="apply-btn" data-aos="slide-up" data-aos-duration="1000">
+                    <button class="apply-btn" @click="apply()" data-aos="slide-up" data-aos-duration="1000">
                       Apply
                     </button>
             </b-col>
@@ -414,6 +414,10 @@ export default {
     int () {
         
     },
+    apply() {
+      window.open('https://stuternhq.vervoe.com/job-opportunity/frontend-development-or-ui-ux-design-application', '_blank')
+    },
+    
     toTrack (url) {
       window.open(url, '_blank')
     }
