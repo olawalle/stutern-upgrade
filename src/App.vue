@@ -97,7 +97,7 @@ export default {
       this.$router.push({name: this.topLinks[i].name})
     },
     apply() {
-      window.open('https://stuternhq.vervoe.com/job-opportunity/frontend-development-or-ui-ux-design-application', '_blank')
+      window.open('https://stuternhq.vervoe.net/job-page/frontend-development-or-ui-ux-design-application/1548928271', '_blank')
     }
   },
   mounted () {
