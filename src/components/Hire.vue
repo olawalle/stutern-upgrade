@@ -107,7 +107,7 @@
                     Apply filters
                 </span>
                 <p class="filter-heading2" @click="test()">
-                    <b>Cohourt</b>
+                    <b>Cohort</b>
                 </p>
                 <b-form-select @change="switchSet($event)" v-model="selected2" :options="options2" class="mb-3">
                 </b-form-select>

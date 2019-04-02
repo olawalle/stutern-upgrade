@@ -220,7 +220,7 @@
                   Ayowole Adenuga 
                 </p>
                 <p class="job-title">
-                  Web developer, Interswitch
+                  Software Engineer, Interswitch
                 </p>
               </div>
               <div class="overlay"></div>
@@ -256,7 +256,7 @@
                   Bomanaziba Josiah
                 </p>
                 <p class="job-title">
-                  UI/UX Designer, Sela labs
+                  Product Designer, Sela Labs
                 </p>
               </div>
               <div class="overlay"></div>
