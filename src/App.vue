@@ -1,21 +1,5 @@
 <template>
   <div id="app">
-    <!-- <div id="nav">
-      <router-link to="/">
-        <img src="./assets/logo.png" alt="">
-      </router-link>
-
-      
-      <b-navbar-toggle target="nav_dropdown_collapse"></b-navbar-toggle>
-        <b-collapse is-nav id="nav_dropdown_collapse">
-
-          <button class="apply-btn">
-            Apply
-          </button>
-
-          <button v-for="(link, i) in topLinks" :key="i" class="top-link" @click="makeActive(i)" :class="link.active ? 'active' : ''">{{link.name}}</button>
-      </b-collapse>
-    </div> -->
     <b-navbar toggleable="md" id="nav">
 
       <b-navbar-toggle target="nav_collapse" class="coll-btn"></b-navbar-toggle>

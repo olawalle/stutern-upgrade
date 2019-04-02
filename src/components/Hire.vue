@@ -106,22 +106,22 @@
                 <span class="filter-heading">
                     Apply filters
                 </span>
-                <p class="filter-heading2" @click="test()">
+                <p class="filter-heading2">
                     <b>Cohourt</b>
                 </p>
-                <b-form-select @change="switchSet($event)" v-model="selected2" :options="options2" class="mb-3">
+                <b-form-select @change="switchSet($event)" v-model="activeSetName" :options="allSets" class="mb-3">
                 </b-form-select>
                 <p class="filter-heading2">
                     <b>Discipline</b>
                 </p>
                 <b-form-group>
-                    <!-- <b-form-checkbox-group stacked v-model="selected" :options="options">
+                    <!-- <b-form-checkbox-group stacked v-model="jobTitle" :options="options">
                     </b-form-checkbox-group> -->
                     
-                    <b-form-radio-group @change="reLoad($event)" v-model="selected" :options="jobTitles" stacked name="radiosStacked" />
+                    <b-form-radio-group @change="reLoad($event)" v-model="jobTitle" :options="jobTitles" stacked name="radiosStacked" />
                 </b-form-group>
 
-                <!-- <b-form-radio-group v-model="selected2" :options="options2" stacked name="radiosStacked" /> -->
+                <!-- <b-form-radio-group v-model="activeSetName" :options="allSets" stacked name="radiosStacked" /> -->
             </b-col>
             
             <b-col sm="12" md="7" class="user-cards" v-if="lastSet.students && lastSet.students.length > 0">
@@ -174,9 +174,9 @@ export default {
   data () {
     return {
       lastSet: {},
-      selected: 0,
+      jobTitle: 0,
       activeSet: {},
-      selected2: null
+      activeSetName: null
     }
   },
   computed: {
@@ -185,10 +185,7 @@ export default {
         skills: 'getSkills',
         jobTitles: 'getJobTitles'
     }),
-    // lastSet () {
-    //     // return this.activeSet
-    // },
-    options2 () {
+    allSets () {
         return this.sets
     }
   },
@@ -206,47 +203,47 @@ export default {
                 setName: this.activeSet.setName,
                 students: filtered
             }
-        } 
+        }
         this.lastSet = rejoined
     },
 
-    test(refName) {
-        var element = this.$refs[refName];
-        var to = element.offsetTop;
-
-        let steps = to / 0.0000000000001
-
-        for (let index = 0; index < to; index += 1) {
-            window.scrollTo(0, index);
-            // console.log(index)
-        }
-    },
     toSingle (user) {
         this.$router.push({name: 'SingleHire', params: {userId: user._id}})
     },
+
     switchSet (e) {
-        // console.log(e)
         services.getSetStudents(e)
         .then(res => {
             this.activeSet = res.data
-            this.reLoad(0)
-            console.log(this.activeSet)
+            this.activeSet['students']
+            .sort(function(a,b) {
+                // .replace(/\s/g, '') => NEEDED BECAUSE SOME OF THE NAMES HAD SPACES IN THEM AND THAT WAS MESSING WITH THE SORTING
+                if (a.userName.replace(/\s/g, '') > b.userName.replace(/\s/g, '')) return 1
+                if (a.userName.replace(/\s/g, '') < b.userName.replace(/\s/g, '')) return -1
+                return 0
+            })
+            this.reLoad(this.jobTitle)
         })
         .catch(err => {
             console.log(err)
         })
     },
     log() {
-        console.log(this.activeSet)
     }
   },
   beforeMount () {
-    this.selected2 = this.sets[0].setName
+    this.activeSetName = this.sets[0].setName
     services.getSetStudents(this.sets[0].setName)
     .then(res => {
         this.activeSet = res.data
-        this.reLoad(1)
-        // console.log(this.activeSet)
+        this.activeSet['students']
+        .sort(function(a,b) {
+            // .replace(/\s/g, '') => NEEDED BECAUSE SOME OF THE NAMES HAD SPACES IN THEM AND THAT WAS MESSING WITH THE SORTING
+            if (a.userName.replace(/\s/g, '') > b.userName.replace(/\s/g, '')) return 1
+            if (a.userName.replace(/\s/g, '') < b.userName.replace(/\s/g, '')) return -1
+            return 0
+        })
+        this.reLoad(0)
     })
   }
 }

@@ -305,7 +305,7 @@
             <p class="title">
               UI/UX Designer, PocketMoni
             </p>
-            <button class="apply-btn">
+            <button class="apply-btn" @click="apply()">
               Apply
             </button>
           </b-col>
@@ -1017,7 +1017,7 @@ export default {
         }
       }
       .main-sect-top, .main-sect-right {
-        border: 1px solid #f5faf887;
+        // border: 1px solid #f5faf887;
       }
     }
     .change {

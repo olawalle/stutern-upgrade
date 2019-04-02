@@ -43,26 +43,6 @@
                         </h3>
                     </div>
                 </b-col>
-                <!-- <b-col class="card-container" sm="6" xs="12">
-                    <div class="card">    
-                        <img class="card-img" src="../assets/banner3.png" alt="">
-                        <p class="card-text-heading">
-                            Ignite Scholarships
-                        </p>
-                        <p class="card-text-subheading">
-                            Tonia Osadebe
-                        </p>
-                        <p class="card-text-content">
-                            Stutern partnered with Ignite Scholarships to create an 
-                            ongoing scholarship fund to promote diversity in software development and 
-                            UX design. Each batch, successful female applicants 
-                            are selected to receive a partial scholarship toward any Stutern program.
-                        </p>
-                        <h3 class="more" @click="toScholarship()">
-                            Learn more and apply <img src="../assets/right-arrow.png" alt="">
-                        </h3>
-                    </div>
-                </b-col> -->
             </b-row>
         </b-row>
         <b-row class="sponsor-sect">
@@ -76,14 +56,11 @@
                     university graduates with long-term employment..
                 </p>
                 <form action="mailto:accelerator@stutern.com" method="post" enctype="text/plain">
-                <input type="text" class="myinput" name="full name" placeholder="Full name*">
-                <input type="text" class="myinput" name="email address" placeholder="Email address*">
-                <input type="text" class="myinput" name="no of students to sponsor" placeholder="How many students will you love to sponsor?*">
-                <textarea id="" cols="30" name="additional info" rows="4" placeholder="Anything else you will like us to know?"></textarea>
-                <input type="submit" value="Send" class="apply-btn">
-                <!-- <button class="apply-btn">
-                    Send
-                </button> -->
+                    <input type="text" class="myinput" name="full name" placeholder="Full name*">
+                    <input type="text" class="myinput" name="email address" placeholder="Email address*">
+                    <input type="text" class="myinput" name="no of students to sponsor" placeholder="How many students will you love to sponsor?*">
+                    <textarea id="" cols="30" name="additional info" rows="4" placeholder="Anything else you will like us to know?"></textarea>
+                    <input type="submit" value="Send" class="apply-btn">
                 </form>
             </b-col>
             <b-col sm="6" class="sponsor-sect-right">

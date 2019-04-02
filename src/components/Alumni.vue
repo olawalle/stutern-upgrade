@@ -1,7 +1,7 @@
 <template>
     <div class="scholarships-wrap">
         <b-row class="top-text">
-            <h3 class="top-text-heading" @click="log()">
+            <h3 class="top-text-heading">
                 Alumni
             </h3>
             <p class="sub-text">
@@ -13,38 +13,6 @@
         <b-row class="banner">
             <img src="../assets/banner6.png" alt="">
         </b-row>
-        <!-- <b-row class="sets" v-for="(set, i) in reducedSets" :key="i">    
-            <p class="set">
-                {{ i }}
-            </p>
-            <div class="scrolling-wrapper" :ref="'set'+i">
-                <div class="card btn-wrap">
-                    <button class="my-btn" @click="toLeft('set'+i)">
-                        left
-                    </button>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-inner-wrapper" style="width: 100%; white-space: initial">
-                        <div class="card" v-for="(user, i) in set" :key="'user'+i" @click="toSingle(user)">
-                            <img :src="user.userPhoto" alt="">
-                            <div class="user-details">
-                                <p class="name">
-                                {{user.userName}} 
-                                </p>
-                                <p class="job-title">
-                                {{user.jobTitle}}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card btn-wrap">
-                    <button class="my-btn" @click="toRight('set'+i)">
-                        right
-                    </button>
-                </div>
-            </div>
-        </b-row> -->
         
         <b-row class="sets" v-for="(set, i) in reducedSets" :key="i">    
             <b-col sm="12">
@@ -78,13 +46,7 @@
                     </div>
                 </b-col>
                 <b-col sm="1" class="side-btn">
-                    <!-- <div class="full" @click="toRight('set'+i)"  v-if="set.length > 6">
-                        <button>
-                            <img src="../assets/arrow-right.svg" class="" alt="">
-                        </button>
-                    </div> -->
                 </b-col>
-            <!-- </div> -->
         </b-row>
     </div>
 </template>
@@ -123,18 +85,9 @@ export default {
             this.$router.push({name: 'SingleHire', params: {userId: user._id}})
         },
         log () {
-            // this.right = 'btn-none'
-            // this.left = 'btn-block'
-            // this.farLeft = 'card-block'
-            // this.farRight = 'card-none'
-            // this.shift = {'margin-left': '0%'}
             let cont = this.$refs['scroll-wrapper']
             cont.scrollLeft = cont.scrollWidth - cont.clientWidth
         },
-        // log () {
-        //     console.log(this.$refs['scroll-wrapper'].scrollWidth - this.$refs['scroll-wrapper'].clientWidth)
-        //     console.log(this.$refs['scroll-wrapper'].scrollLeft)
-        // }
     },
     mounted () {
         console.log(this.students)
@@ -143,19 +96,15 @@ export default {
           return agg
         }, {})
 
-        // let rejoined = []
-        // // console.log(this.reducedSets[Object.keys(this.reducedSet)])
-        // let test = Object.keys(this.reducedSets).map((set, i) => {
-        //     rejoined[i] = {set}
-        //     return {set}
-        // })
-        // let test2 = Object.values(this.reducedSets).map((set, i) => {
-        //     return {set}
-        // })
-        // console.log(rejoined)
-        // console.log(test2)'yuewzewi'
-        // }
-        console.log(this.reducedSets)
+
+        for (let i = 0; i < this.sets.length; i++) {
+            this.reducedSets[this.sets[i].setName]
+            .sort(function(a,b) {
+                if (a.userName > b.userName) return 1
+                if (a.userName < b.userName) return -1
+                return 0
+            })
+        }
     }
 }
 </script>
@@ -292,7 +241,7 @@ export default {
                     overflow-y: auto;
                     scroll-behavior: smooth;
                 .card-wrap {
-                    width: 120%;
+                    width: 100%;
                     display: inline-block;
                 }
                 .card {
