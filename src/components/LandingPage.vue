@@ -3,7 +3,7 @@
         <b-row class="top-sect">
             <b-col sm="6" class="top-sect-texts">
                 <p class="top-text" data-aos="slide-up" data-aos-duration="700">
-                  Go from zero experience to landing your dream job with no  <i>upfront tuition</i>
+                  Go from <i>zero experience</i> to landing your <i>dream job</i>
                 </p>
                 <p class="text" data-aos="slide-up" data-aos-duration="800">
                   Stutern is a skills development and job placement platform 
