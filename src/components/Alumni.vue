@@ -336,37 +336,39 @@ export default {
                 .set {
                     margin: 10px 20px
                 }
-                .scrolling-wrapper {
-                    padding: 10px 20px !important;
-                    overflow: hidden;
-                    .card {
-                        display: block;
-                        min-width: 90%;
-                        max-height: 300px;
-                        margin: 10px 0 !important;
-                        .btn-wrap {
-                            display: none !important
+                .content-holder {
+                    .card-wrap {
+                        .card-inner-wrapper {
+                            padding: 10px 20px !important;
+                            .card {
+                                display: inline-block;
+                                height: 300px;
+                                border: 0 !important;
+                                border-radius: 4px !important;
+                                overflow: hidden;
+                                cursor: pointer;
+                                margin: 12px auto;
+                                min-width: 100% !important;
+                                scroll-behavior: smooth;
+                                img {
+                                    height: 130%;
+                                    -webkit-filter: grayscale(0.99);
+                                    filter: grayscale(0.99);
+                                    -webkit-transition: all 0.5s;
+                                    transition: all 0.5s;
+                                }
+                                .user-details {
+                                    position: relative;
+                                    top: -325px;
+                                    margin: 0 0 0 0px;
+                                    padding-left: 20px;
+                                    height: 100%;
+                                    padding-top: 169px;
+                                    background: linear-gradient(1.25deg, rgba(0, 0, 0, 0.9) 0%, rgba(54, 54, 54, 0) 45.54%);
+                                    color: #fff;
+                                }
+                            }
                         }
-                        img {
-                            height: 125%
-                        }
-                        .user-details {
-                            position: relative;
-                            top: -355px;
-                            margin: 0 0 0 0px;
-                            padding-left: 20px;
-                            height: 100%;
-                            padding-top: 220px;
-                            background: linear-gradient(1.25deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 25.54%);
-                            color: #fff;
-                        }
-                    }
-                    .btn-wrap {
-                        display: none !important;
-                        height: 100% !important
-                    }
-                    button {
-                        display: none
                     }
                 }
             }

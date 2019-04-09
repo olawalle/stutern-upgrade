@@ -32,9 +32,9 @@
                             Hire me
                         </button>
                     </a>               
-                    <button class="apply-btn-two" @click="hireMe()">
+                    <!-- <button class="apply-btn-two" @click="hireMe()">
                         View CV
-                    </button>
+                    </button> -->
                 </b-row>
             </b-col>
             <b-col sm="6" class="img-grid-wrap">
@@ -83,7 +83,8 @@ export default {
         }
     },
     mounted () {
-        this.email = `mailto:accelerator@stutern.com?subject=Request to Hire&cc=${this.activeUser.userEmail}`
+        this.email = `mailto:hire@stutern.com?subject=Request to Hire`
+        // &cc=${this.activeUser.userEmail}
         services.getUserProjects(this.$route.params.userId)
         .then(res => {
             this.projects = res.data.userProjects
