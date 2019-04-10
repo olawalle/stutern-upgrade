@@ -93,339 +93,339 @@
     </div>
 </template>
 <script>
-import { mapGetters } from 'vuex'
-import services from '../services'
+import { mapGetters } from "vuex";
+import services from "../services";
 export default {
-    data () {
-        return {
-            
-        }
-    },
-    computed: {
-        ...mapGetters({
-            scholarships: 'getAllScholarships'
-        })
-    },
-    methods: {
-        toScholarship (id) {
-            this.$router.push({name: 'ScholarshipChild', params: {scholarshipName: id}})
-        }
-    },
-    mounted () {
-        services.getScholarships()
+  data() {
+    return {};
+  },
+  computed: {
+    ...mapGetters({
+      scholarships: "getAllScholarships"
+    })
+  },
+  methods: {
+    toScholarship(id) {
+      this.$router.push({
+        name: "ScholarshipChild",
+        params: { scholarshipName: id }
+      });
     }
-}
+  },
+  mounted() {
+    services.getScholarships();
+  }
+};
 </script>
 <style lang="scss" scoped>
-    .scholarships-wrap {
-        .top-text {
-            padding: 100px 460px !important;
-            text-align: center !important;
-            background: rgba(247, 255, 254, 0.5);
-            .top-text-heading {
-                font-family: 'Playfair Display', serif;
-                font-style: normal;
-                font-weight: bold;
-                // line-height: normal;
-                font-size: 32px;
-                text-align: center;
-                margin: 10px auto;
-                color: #222829;
-            }
-            .sub-text {
-                font-style: normal;
-                font-weight: normal;
-                line-height: 28px;
-                font-size: 18px;
-                text-align: center;
-                color: #67747C;
-            }
-        }
-        .banner {
-            height: 450px;
-            overflow: hidden;
-            img {
-                width: 100%
-                // height: 360px
-            }
-        }
-        .cards-wrap {
-            padding: 100px 200px !important;
-            text-align: center !important;
-            // background: rgba(247, 255, 254, 0.5);
-            background-image: url('../assets/pattern1.png');
-            
-            background-repeat: no-repeat;
-            background-position: left; 
-            .cards-header {
-                margin: 0 !important;
-                text-align: center !important;
-                .top-text-heading {
-                    font-family: 'Playfair Display', serif;
-                    font-style: normal;
-                    font-weight: bold;
-                    // line-height: normal;
-                    font-size: 32px;
-                    text-align: center;
-                    margin: 10px auto;
-                    color: #222829;
-                }
-                .sub-text {
-                    font-style: normal;
-                    font-weight: normal;
-                    line-height: 28px;
-                    font-size: 18px;
-                    margin: 10px auto;
-                    padding: 0 280px;
-                    color: #67747C;
-                }
-            }
-            .cards {
-                padding: 40px 50px 0 50px;
-                text-align: left;
-                overflow: hidden;
-                .pattern {
-                    position: relative;
-                    z-index: 1;
-                }
-                .card-container {
-                    width: 100%;
-                    padding: 0 20px;
-                    p {
-                        margin: 12px 20px
-                    }
-                    .mycard {
-                        width: 100%;
-                        background: #FFFFFF;
-                        box-shadow: 0px 2.5px 5px rgba(0, 0, 0, 0.05);  
-                        padding: 0 !important;      
-                        height: 500px;
-                        border: 0 !important;
-                        border-radius: 0 !important;
-                        margin-bottom: 10px;
-                        overflow: hidden;
-                        .card-img-wrap {
-                            width: 100%;
-                            height: 290px;
-                            overflow: hidden;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            .card-img {
-                                // height: 310px;
-                                // margin-left: -20px;
-                                width: 100%;
-                                margin: 0;
-                                border-radius: 0;
-                                margin-bottom: 0px
-                            }
-                        }
-                        .card-text-heading {
-                            font-style: normal;
-                            font-weight: bold;
-                            line-height: normal;
-                            font-size: 20px;
-                            font-family: 'Playfair Display', serif;
-                            color: #222829;
-                        }
-                        .card-text-subheading {
-                            font-style: normal;
-                            font-weight: 600;
-                            line-height: normal;
-                            font-size: 18px;
-                            margin-top: 0 !important;
-                            color: #67747C;
-                        }
-                        .card-text-content {
-                            font-style: normal;
-                            font-weight: normal;
-                            line-height: 24px;
-                            font-size: 16px;
-                            display: -webkit-box;
-                            -webkit-box-orient: vertical;
-                            -webkit-line-clamp: 3;  /* Number of lines displayed before it truncate */
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                            color: #67747C;
-                        }
-                        .more {
-                            font-style: normal;
-                            font-weight: 600;
-                            line-height: 26px;
-                            font-size: 18px;
-                            margin: 20px;
-                            color: #00D7C4;
-                            cursor: pointer;
-                            img {
-                                width: 30px;
-                                height: auto;
-                                margin-left: 12px
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        .sponsor-sect {
-            text-align: left;
-            padding: 0 !important;
-            height: 750px;
-            overflow: hidden;
-            .sponsor-sect-left {
-                padding: 30px 40px 0 260px;
-                .sponsor-text-heading {
-                    font-family: 'Playfair Display', serif;
-                    font-style: normal;
-                    font-weight: bold;
-                    line-height: normal;
-                    font-size: 28px;
-                    color: #222829;
-                }
-                .sponsor-text-content {
-                    font-style: normal;
-                    font-weight: normal;
-                    line-height: 24px;
-                    font-size: 16px;
-                    color: #67747C;
-                }
-                .myinput {
-                    border: 1px solid #C4C4C4;
-                    height: 60px;
-                    width: 100%;
-                    border-radius: 2px;
-                    margin-top: 25px;
-                    padding: 0 20px;
-                }
-                .myinput:focus {
-                    border: 1px solid #00D7C4 !important;
-                }
-                textarea {
-                    border: 1px solid #C4C4C4;
-                    width: 100%;
-                    border-radius: 2px;
-                    padding: 20px;
-                    margin-top: 25px;
-                }
-                .apply-btn {
-                // float: right;
-                height: 50px;
-                line-height: 50px;
-                border: 0;
-                padding: 0 54px;
-                background: linear-gradient(180deg, #00D7C4 0%, #01E3C2 100%);
-                box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
-                border-radius: 4px;
-                color: #fff;
-                margin-top: 15px;
-                cursor: pointer;
-                // margin-left: 40px;
-                } 
-            }
-            .sponsor-sect-right {
-                padding: 0 !important;
-                img {
-                    width: 100%;
-                    float: right
-                }
-            }
-        }
-        button:hover {
-            transform: translateY(-3px) !important;
-            transition: all 0.6s;
-            cursor: pointer
-        }
-        @media (max-width: 767px) {
-            .top-text {
-                padding: 90px 12px !important;
-                margin: 0 !important;
-                .top-text-heading {
-                    font-size: 28px
-                }
-                .sub-text {
-                    font-size: 16px;
-                    line-height: 24px
-                }
-            }
-            .banner {
-                height: 300px;
-                img {
-                    height: 90%;
-                    width: 220%;
-                    margin-left: -12%
-                }
-            }
-            .cards-wrap {
-                padding: 20px !important;
-                .cards-header {
-                    margin: 10px 0;
-                    text-align: center;
-                    .top-text-heading {
-                        margin: 0px auto;
-                        font-size: 20px;
-                    }
-                    .sub-text {
-                        padding: 0 !important;
-                        font-size: 16px;
-                        line-height: 24px;
-                        margin: 10px 20px;
-                    }
-                }
-                .cards {
-                    padding: 10px !important;
-                    overflow: hidden;
-                    .card-container {
-                        width: 100%;
-                        overflow: hidden;
-                        .mycard {
-                            margin-top: 20px;
-                            height: auto;
-                            width: 100%;
-                            .card-img-wrap {
-                                align-items: unset;
-                                height: 250px;
-                                .card-img {
-                                    margin: 0 0 10px 0;
-                                    height: 240px;
-                                    width: auto
-                                }
-                                .card-text-heading {
-                                    font-size: 18px;
-                                }
-                                .card-text-subheading {
-                                    font-size: 16px
-                                }
-                                .card-text-content {
-                                    font-size: 14px
-                                }
-                                .more {
-                                    font-size: 14px;
-                                    img {
-                                        width: 20px;
-                                    }
-                                }
-
-                            }
-                        }
-                        p {
-                            margin: 5px 20px;
-                        }
-                    }
-                }
-            }
-            .sponsor-sect {
-                height: auto;
-                .sponsor-sect-left {
-                    padding: 12px 37px;
-                    margin: 0 !important;
-                    .myinput {
-                        margin-top: 10px;
-                        height: 50px;
-                    }
-                }
-                .sponsor-sect-right {
-                    display: none
-                }
-            }
-        }
+.scholarships-wrap {
+  .top-text {
+    padding: 100px 460px !important;
+    text-align: center !important;
+    background: rgba(247, 255, 254, 0.5);
+    .top-text-heading {
+      font-family: "Playfair Display", serif;
+      font-style: normal;
+      font-weight: bold;
+      // line-height: normal;
+      font-size: 32px;
+      text-align: center;
+      margin: 10px auto;
+      color: #222829;
     }
+    .sub-text {
+      font-style: normal;
+      font-weight: normal;
+      line-height: 28px;
+      font-size: 18px;
+      text-align: center;
+      color: #67747c;
+    }
+  }
+  .banner {
+    height: 450px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      // height: 360px
+    }
+  }
+  .cards-wrap {
+    padding: 100px 200px !important;
+    text-align: center !important;
+    // background: rgba(247, 255, 254, 0.5);
+    background-image: url("../assets/pattern1.png");
+
+    background-repeat: no-repeat;
+    background-position: left;
+    .cards-header {
+      margin: 0 !important;
+      text-align: center !important;
+      .top-text-heading {
+        font-family: "Playfair Display", serif;
+        font-style: normal;
+        font-weight: bold;
+        // line-height: normal;
+        font-size: 32px;
+        text-align: center;
+        margin: 10px auto;
+        color: #222829;
+      }
+      .sub-text {
+        font-style: normal;
+        font-weight: normal;
+        line-height: 28px;
+        font-size: 18px;
+        margin: 10px auto;
+        padding: 0 280px;
+        color: #67747c;
+      }
+    }
+    .cards {
+      padding: 40px 50px 0 50px;
+      text-align: left;
+      overflow: hidden;
+      .pattern {
+        position: relative;
+        z-index: 1;
+      }
+      .card-container {
+        width: 100%;
+        padding: 0 20px;
+        p {
+          margin: 12px 20px;
+        }
+        .mycard {
+          width: 100%;
+          background: #ffffff;
+          box-shadow: 0px 2.5px 5px rgba(0, 0, 0, 0.05);
+          padding: 0 !important;
+          height: 500px;
+          border: 0 !important;
+          border-radius: 0 !important;
+          margin-bottom: 10px;
+          overflow: hidden;
+          .card-img-wrap {
+            width: 100%;
+            height: 290px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .card-img {
+              // height: 310px;
+              // margin-left: -20px;
+              width: 100%;
+              margin: 0;
+              border-radius: 0;
+              margin-bottom: 0px;
+            }
+          }
+          .card-text-heading {
+            font-style: normal;
+            font-weight: bold;
+            line-height: normal;
+            font-size: 20px;
+            font-family: "Playfair Display", serif;
+            color: #222829;
+          }
+          .card-text-subheading {
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            font-size: 18px;
+            margin-top: 0 !important;
+            color: #67747c;
+          }
+          .card-text-content {
+            font-style: normal;
+            font-weight: normal;
+            line-height: 24px;
+            font-size: 16px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3; /* Number of lines displayed before it truncate */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #67747c;
+          }
+          .more {
+            font-style: normal;
+            font-weight: 600;
+            line-height: 26px;
+            font-size: 18px;
+            margin: 20px;
+            color: #00d7c4;
+            cursor: pointer;
+            img {
+              width: 30px;
+              height: auto;
+              margin-left: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .sponsor-sect {
+    text-align: left;
+    padding: 0 !important;
+    height: 750px;
+    overflow: hidden;
+    .sponsor-sect-left {
+      padding: 30px 40px 0 260px;
+      .sponsor-text-heading {
+        font-family: "Playfair Display", serif;
+        font-style: normal;
+        font-weight: bold;
+        line-height: normal;
+        font-size: 28px;
+        color: #222829;
+      }
+      .sponsor-text-content {
+        font-style: normal;
+        font-weight: normal;
+        line-height: 24px;
+        font-size: 16px;
+        color: #67747c;
+      }
+      .myinput {
+        border: 1px solid #c4c4c4;
+        height: 60px;
+        width: 100%;
+        border-radius: 2px;
+        margin-top: 25px;
+        padding: 0 20px;
+      }
+      .myinput:focus {
+        border: 1px solid #00d7c4 !important;
+      }
+      textarea {
+        border: 1px solid #c4c4c4;
+        width: 100%;
+        border-radius: 2px;
+        padding: 20px;
+        margin-top: 25px;
+      }
+      .apply-btn {
+        // float: right;
+        height: 50px;
+        line-height: 50px;
+        border: 0;
+        padding: 0 54px;
+        background: linear-gradient(180deg, #00d7c4 0%, #01e3c2 100%);
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
+        border-radius: 4px;
+        color: #fff;
+        margin-top: 15px;
+        cursor: pointer;
+        // margin-left: 40px;
+      }
+    }
+    .sponsor-sect-right {
+      padding: 0 !important;
+      img {
+        width: 100%;
+        float: right;
+      }
+    }
+  }
+  button:hover {
+    transform: translateY(-3px) !important;
+    transition: all 0.6s;
+    cursor: pointer;
+  }
+  @media (max-width: 767px) {
+    .top-text {
+      padding: 90px 12px !important;
+      margin: 0 !important;
+      .top-text-heading {
+        font-size: 28px;
+      }
+      .sub-text {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+    .banner {
+      height: 300px;
+      img {
+        height: 90%;
+        width: 220%;
+        margin-left: -12%;
+      }
+    }
+    .cards-wrap {
+      padding: 20px !important;
+      .cards-header {
+        margin: 10px 0;
+        text-align: center;
+        .top-text-heading {
+          margin: 0px auto;
+          font-size: 20px;
+        }
+        .sub-text {
+          padding: 0 !important;
+          font-size: 16px;
+          line-height: 24px;
+          margin: 10px 20px;
+        }
+      }
+      .cards {
+        padding: 10px !important;
+        overflow: hidden;
+        .card-container {
+          width: 100%;
+          overflow: hidden;
+          .mycard {
+            margin-top: 20px;
+            height: auto;
+            width: 100%;
+            .card-img-wrap {
+              align-items: unset;
+              height: 250px;
+              .card-img {
+                margin: 0 0 10px 0;
+                height: 240px;
+                width: auto;
+              }
+              .card-text-heading {
+                font-size: 18px;
+              }
+              .card-text-subheading {
+                font-size: 16px;
+              }
+              .card-text-content {
+                font-size: 14px;
+              }
+              .more {
+                font-size: 14px;
+                img {
+                  width: 20px;
+                }
+              }
+            }
+          }
+          p {
+            margin: 5px 20px;
+          }
+        }
+      }
+    }
+    .sponsor-sect {
+      height: auto;
+      .sponsor-sect-left {
+        padding: 12px 37px;
+        margin: 0 !important;
+        .myinput {
+          margin-top: 10px;
+          height: 50px;
+        }
+      }
+      .sponsor-sect-right {
+        display: none;
+      }
+    }
+  }
+}
 </style>
