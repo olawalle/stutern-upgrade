@@ -17,9 +17,6 @@
                     </button>
             </b-col>
             <b-col sm="6" class="left-img">
-              <!-- <iframe src="https://www.youtube.com/watch?v=Ww1x0QCeGV8&t=6s" frameborder="0"></iframe> -->
-              <!-- <img src="../assets/banner4.png" alt=""> -->
-              <!-- <iframe src="https://www.youtube.com/watch?v=Ww1x0QCeGV8" frameborder="0"></iframe> -->
               <iframe width="921" height="518" src="https://www.youtube-nocookie.com/embed/Ww1x0QCeGV8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <!-- <b-row class="left-grid-wrap">
                     <b-col sm="6" class="left-grid">
