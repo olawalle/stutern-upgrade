@@ -363,7 +363,7 @@ export default {
                                     margin: 0 0 0 0px;
                                     padding-left: 20px;
                                     height: 100%;
-                                    padding-top: 169px;
+                                    padding-top: 170px;
                                     background: linear-gradient(1.25deg, rgba(0, 0, 0, 0.9) 0%, rgba(54, 54, 54, 0) 45.54%);
                                     color: #fff;
                                 }
