@@ -176,13 +176,8 @@ export default {
       lastSet: {},
       jobTitle: 0,
       activeSet: {},
-<<<<<<< HEAD
-      activeSetName: null
-    }
-=======
       selected2: null
     };
->>>>>>> 98ab13a199bd5a0fd892bfcf048ffa66041bd684
   },
   computed: {
     ...mapGetters({
@@ -190,46 +185,6 @@ export default {
       skills: "getSkills",
       jobTitles: "getJobTitles"
     }),
-<<<<<<< HEAD
-    allSets () {
-        return this.sets
-    }
-  },
-  methods: {
-    reLoad (e) {
-        let split = this.jobTitles[e].text.toLowerCase().split(' ')
-        let rejoined = {}
-        if (e === 0) {
-            rejoined = this.activeSet
-        } else {
-            let filtered = this.activeSet.students.filter(user => {
-                return user.jobTitle.toLowerCase().includes(split[0])
-            })
-            rejoined = {
-                setName: this.activeSet.setName,
-                students: filtered
-            }
-        }
-        this.lastSet = rejoined
-    },
-
-    toSingle (user) {
-        this.$router.push({name: 'SingleHire', params: {userId: user._id}})
-    },
-
-    switchSet (e) {
-        services.getSetStudents(e)
-        .then(res => {
-            this.activeSet = res.data
-            this.activeSet['students']
-            .sort(function(a,b) {
-                // .replace(/\s/g, '') => NEEDED BECAUSE SOME OF THE NAMES HAD SPACES IN THEM AND THAT WAS MESSING WITH THE SORTING
-                if (a.userName.replace(/\s/g, '') > b.userName.replace(/\s/g, '')) return 1
-                if (a.userName.replace(/\s/g, '') < b.userName.replace(/\s/g, '')) return -1
-                return 0
-            })
-            this.reLoad(this.jobTitle)
-=======
     // lastSet () {
     //     // return this.activeSet
     // },
@@ -277,31 +232,12 @@ export default {
           this.activeSet = res.data;
           this.reLoad(0);
           console.log(this.activeSet);
->>>>>>> 98ab13a199bd5a0fd892bfcf048ffa66041bd684
         })
         .catch(err => {
           console.log(err);
         });
     },
     log() {
-<<<<<<< HEAD
-    }
-  },
-  beforeMount () {
-    this.activeSetName = this.sets[0].setName
-    services.getSetStudents(this.sets[0].setName)
-    .then(res => {
-        this.activeSet = res.data
-        this.activeSet['students']
-        .sort(function(a,b) {
-            // .replace(/\s/g, '') => NEEDED BECAUSE SOME OF THE NAMES HAD SPACES IN THEM AND THAT WAS MESSING WITH THE SORTING
-            if (a.userName.replace(/\s/g, '') > b.userName.replace(/\s/g, '')) return 1
-            if (a.userName.replace(/\s/g, '') < b.userName.replace(/\s/g, '')) return -1
-            return 0
-        })
-        this.reLoad(0)
-    })
-=======
       console.log(this.activeSet);
     }
   },
@@ -312,7 +248,6 @@ export default {
       this.reLoad(1);
       // console.log(this.activeSet)
     });
->>>>>>> 98ab13a199bd5a0fd892bfcf048ffa66041bd684
   }
 };
 </script>

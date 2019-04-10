@@ -66,39 +66,20 @@
 import { mapGetters } from "vuex";
 import services from "../../services";
 export default {
-    data () {
-        return {
-            projects: [],
-            email: ''
-        }
-    },
-    computed: {
-        ...mapGetters({
-            sets: 'getSets',
-            students: 'getStudents',
-            skills: 'getSkills'
-        }),
-        activeUser () {
-            return this.students.find(user => user._id === this.$route.params.userId)
-        }
-    },
-    mounted () {
-        this.email = `mailto:hire@stutern.com?subject=Request to Hire`
-        // &cc=${this.activeUser.userEmail}
-        services.getUserProjects(this.$route.params.userId)
-        .then(res => {
-            this.projects = res.data.userProjects
-        })
-        .catch(err => {
-            console.log(err)
-        })
-    },
-    methods: {
-        hireMe () {
-            window.open(
-                this.activeUser.userCV, '_blank'
-            )
-        }
+  data() {
+    return {
+      projects: [],
+      email: ""
+    };
+  },
+  computed: {
+    ...mapGetters({
+      sets: "getSets",
+      students: "getStudents",
+      skills: "getSkills"
+    }),
+    activeUser() {
+      return this.students.find(user => user._id === this.$route.params.userId);
     }
   },
   mounted() {
