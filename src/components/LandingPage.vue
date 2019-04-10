@@ -86,17 +86,6 @@
               </p>
           </b-col>
         </b-row>
-        <!-- <b-row class="main-sect-wrap">
-            <b-col sm="6" class="main-sect main-sect-top" v-for="(point, i) in sellingPoints" :key="i">
-                <img :src="point.better_featured_image.source_url" alt="">
-                <p class="mid-sect-heading">
-                  {{point.title.rendered}}
-                </p>
-                <p class="text">
-                    {{point.pointText}}
-                </p>
-            </b-col>
-        </b-row> -->
         
         <b-row class="main-sect-wrap">
             <b-col sm="6" class="main-sect main-sect-top">
