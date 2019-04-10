@@ -10,8 +10,6 @@
                   that connects the most ambitious university graduates with 
                   long-term employment
                 </p>
-                
-                <!-- <a href="#explore"> -->
                     <button class="apply-btn" @click="apply()" data-aos="slide-up" data-aos-duration="1000">
                       Apply
                     </button>
