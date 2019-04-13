@@ -91,17 +91,6 @@
               </p>
           </b-col>
         </b-row>
-        <!-- <b-row class="main-sect-wrap">
-            <b-col sm="6" class="main-sect main-sect-top" v-for="(point, i) in sellingPoints" :key="i">
-                <img :src="point.better_featured_image.source_url" alt="">
-                <p class="mid-sect-heading">
-                  {{point.title.rendered}}
-                </p>
-                <p class="text">
-                    {{point.pointText}}
-                </p>
-            </b-col>
-        </b-row> -->
         
         <b-row class="main-sect-wrap">
             <b-col sm="6" class="main-sect main-sect-top">
@@ -149,7 +138,6 @@
         </b-row>
 
         <b-row class="change">
-          <div class="overlay"></div>
           <div class="change-content">
             <p class="change-heading">
               Want to change your life today?
@@ -205,6 +193,7 @@
               </b-col>          
             </b-row>
           </div>
+          <div class="overlay"></div>
         </b-row>
         <b-row class="success-stories">
           <p class="success-heading">
@@ -567,13 +556,18 @@ export default {
       .overlay {
         background: rgba(0, 35, 32, 0.96);
         width: 100%;
-        height: 1100px
+        position: relative;
+        top: -1100px;
+        height: 1100px;
+        z-index: 12;
       }
       .change-content {
         width: 100%;
-        margin-top: -1050px;
-        padding: 30px 500px;
+        padding: 30px 30%;
         text-align: center;
+        top: -1000px;
+        height: 1100px;
+        z-index: 120;
         .change-heading {
           font-family: 'Playfair Display', serif;
           font-style: normal;
@@ -582,6 +576,8 @@ export default {
           font-size: 24px;
           margin: 0 auto 15px auto;
           text-align: center;
+          position: relative;
+          z-index: 100000;
         }
         // ul {
           // list-style-type: circle;
@@ -711,7 +707,7 @@ export default {
           transition: linear all 0.3s
         }
         img {
-            width: 110%;
+            height: 110%;
             position: relative;
             top: -610px;
             z-index: 3;
