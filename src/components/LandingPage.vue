@@ -695,7 +695,7 @@ export default {
           transition: linear all 0.3s
         }
         img {
-            width: 110%;
+            height: 106%;
             position: relative;
             top: -610px;
             z-index: 3;
