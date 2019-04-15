@@ -32,16 +32,16 @@
                             Hire me
                         </button>
                     </a>               
-                    <!-- <button class="apply-btn-two" @click="hireMe()">
-                        View CV
-                    </button> -->
+                    <button class="apply-btn-two" @click="hireMe()">
+                        View portfolio
+                    </button>
                 </b-row>
             </b-col>
             <b-col sm="6" class="img-grid-wrap">
                 <img :src="activeUser.userPhoto" class="animated 	slideInRight" alt="">
             </b-col>
         </b-row>
-        <b-row class="sect-two">
+        <!-- <b-row class="sect-two">
             <p class="sect-two-heading">
                 What I have worked on
             </p>
@@ -59,7 +59,7 @@
             <b-col class="card-container" v-if="projects.length === 0" sm="12" xs="12" style="text-align: center">
                 This user has no projects on display
             </b-col>
-        </b-row>
+        </b-row> -->
     </div>
 </template>
 <script>
