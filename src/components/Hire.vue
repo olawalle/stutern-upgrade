@@ -576,9 +576,11 @@ export default {
             }
         }
     }
+  }
     .apply-btn {
         // padding: 0 10px !important;
-        width: 46%;
+        width: 46% !important;
+        height: 50px !important;
         margin: 0 !important;
         font-size: 15px ;
         padding: 0 !important;
@@ -586,7 +588,8 @@ export default {
     }
     .apply-btn-two {
         // padding: 0 10px !important;
-        width: 46%;
+        width: 46% !important;
+        height: 50px !important;
         margin: 0 !important;
         float: right;
         font-size: 15px;
@@ -594,6 +597,5 @@ export default {
         padding: 0 !important;
         text-align: center
     }
-  }
 }
 </style>
