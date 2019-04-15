@@ -58,7 +58,7 @@
                 <img src="../assets/paystack.svg" alt="">
             </b-col>
             <b-col class="img">
-                <img src="../assets/signalaliance.svg" alt="">
+                <img src="../assets/terragon.svg" alt="">
             </b-col>
             <b-col class="img">
                 <img src="../assets/seamfix.svg" alt="">
