@@ -556,7 +556,7 @@ export default {
       .change-content {
         width: 100%;
         margin-top: -990px;
-        padding: 30px 500px;
+        padding: 30px 28%;
         text-align: center;
         .change-heading {
           font-family: 'Playfair Display', serif;
