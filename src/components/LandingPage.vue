@@ -338,9 +338,11 @@
             <p class="in-touch-sub-text">
               Looking to join our team or have further questions? 
             </p>
-            <button class="apply-btn-two">
-              Get in touch
-            </button>
+            <a href="mailto:accelerator@stutern.com">
+              <button class="apply-btn-two">
+                Get in touch
+              </button>
+            </a>
           </div>
         </b-row>
     </div>

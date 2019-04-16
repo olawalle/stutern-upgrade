@@ -57,7 +57,7 @@
             <!-- <b-row class="sects"> -->
                 <b-col class="impact-section" sm="4">
                     <p class="colored">
-                        14
+                        {{beneficiariesCount}}
                     </p>
                     <p class="coloreds-title">
                         number of beneficiaries
@@ -231,7 +231,8 @@ export default {
                 {name: 'Visioner Profile', active: false, id: 'profile'},
                 {name: 'Apply', active: false, id: 'Apply'},
                 {name: 'Beneficiaries', active: false, id: 'beneficiaries'}
-            ]
+            ],
+            beneficiariesCount: 0
         }
     },
     computed: {
@@ -261,6 +262,7 @@ export default {
             agg[curr.userSet] = agg[curr.userSet] ? agg[curr.userSet].concat(curr) : [curr];
             return agg
         }, {})
+        this.beneficiariesCount = filteredStudents.length
     }
 }
 </script>
