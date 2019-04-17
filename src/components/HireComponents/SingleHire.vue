@@ -27,11 +27,14 @@
                     </span>
                 </span>
                 <b-row class="top-btns">
-                    <a :href='email'>
+                    <a :href='email' v-if="activeUser.availability">
                         <button class="apply-btn">
                             Hire me
                         </button>
-                    </a>               
+                    </a>      
+                    <button v-else disabled class="apply-btn not-allowed" title="Candidate unavailable">
+                      Hire me
+                    </button>         
                     <button class="apply-btn-two" @click="hireMe()">
                         View portfolio
                     </button>
@@ -108,7 +111,7 @@ export default {
   .top-sect {
     padding: 150px 120px !important;
     background-color: rgba(247, 255, 254, 0.25);
-    height: 600px;
+    min-height: 600px;
     .top-sect-texts {
       padding-right: 120px !important;
       padding-left: 0 !important;
@@ -221,6 +224,9 @@ export default {
         border-radius: 4px;
         color: #fff;
         margin-top: 28px;
+      }
+      .not-allowed {
+        cursor: not-allowed !important;
       }
     }
     .img-grid-wrap {
