@@ -275,18 +275,6 @@ export default {
                     font-style: italic;
                 }
             }
-            .apply-btn-two {
-                height: 45px;
-                line-height: 45px;
-                border: 0;
-                padding: 0 34px;
-                background: #FFFFFF;
-                box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
-                border-radius: 4px;
-                color: #00D7C4;
-                margin-top: 8px;
-                margin-left: 40px;
-            }
         }
         .img-grid-wrap {
             padding: 0 !important;
@@ -404,12 +392,12 @@ export default {
                     height: 100%;
                     overflow: hidden;
                     img {
-                        width: 110%;
+                        width: 130%;
                         margin-top: -10px;
                     }
                 }
                 .user-text {
-                    padding-top: 7px !important;
+                    padding-top: 35px !important;
                     .username {
                         padding: 0 !important;
                         span {
@@ -447,7 +435,7 @@ export default {
                         color: #67747C;
                         display: -webkit-box;
                         -webkit-box-orient: vertical;
-                        -webkit-line-clamp: 3;  /* Number of lines displayed before it truncate */
+                        -webkit-line-clamp: 2;  /* Number of lines displayed before it truncate */
                         overflow: hidden;
                         text-overflow: ellipsis;
                     }
@@ -483,6 +471,18 @@ export default {
         color: #fff;
         margin-top: 8px;
     }
+    .apply-btn-two {
+        height: 45px;
+        line-height: 45px;
+        border: 0;
+        padding: 0 34px;
+        background: #FFFFFF;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
+        border-radius: 4px;
+        color: #00D7C4;
+        margin-top: 8px;
+        margin-left: 40px;
+    }
     button:hover {
         transform: translateY(-3px) !important;
         transition: all 0.6s;
@@ -509,7 +509,7 @@ export default {
         }
     }
     .tutors {
-      padding: 0px 20px !important;
+      padding: 0px 12px !important;
       margin: 0 !important;
       
       .img {
@@ -540,7 +540,7 @@ export default {
           padding: 0 !important;
           height: auto;
           .user-card {
-              height: 500px !important;
+              min-height: 400px !important;
                 .user-img {
                     width: auto;
                     height: 210px;
@@ -551,8 +551,7 @@ export default {
                     }
                 }
                 .user-text {
-                    margin-top: -12px;
-                    padding: 15px !important;
+                    padding: 0 25px !important;
                     .text-skill {
                         margin-top: 10px;
                     }
@@ -565,37 +564,20 @@ export default {
                         }
                     }
                     .user-desc {
-                        margin-bottom: 15px;
-                        display: -webkit-box;
-                        -webkit-box-orient: vertical;
-                        -webkit-line-clamp: 5;  /* Number of lines displayed before it truncate */
-                        overflow: hidden;
-                        text-overflow: ellipsis;
+                        margin-bottom: 15px
                     }
                 }
             }
         }
     }
-  }
     .apply-btn {
-        // padding: 0 10px !important;
-        width: 46% !important;
-        height: 50px !important;
-        margin: 0 !important;
-        font-size: 15px ;
-        padding: 0 !important;
-        text-align: center
+        width: 44% !important;
+        padding: 0 10px
     }
     .apply-btn-two {
-        // padding: 0 10px !important;
-        width: 46% !important;
-        height: 50px !important;
-        margin: 0 !important;
-        float: right;
-        font-size: 15px;
-        white-space: nowrap;
-        padding: 0 !important;
-        text-align: center
+        width: 44% !important;
+        padding: 0 10px
     }
+  }
 }
 </style>
