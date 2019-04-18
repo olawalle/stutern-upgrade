@@ -122,7 +122,7 @@
             </b-col>
             
             <b-col sm="12" md="7" class="user-cards" v-if="lastSet.students && lastSet.students.length > 0">
-                <b-row class="user-card" @click="toSingle(user)" v-for="(user, i) in lastSet.students" :key="'student'+i">
+                <b-row class="user-card" v-for="(user, i) in lastSet.students" :key="'student'+i">
                     <b-col sm="4" class="user-img">
                         <img :src="user.userPhoto" alt="">
                     </b-col>
@@ -130,8 +130,11 @@
                         <b-col sm="12" class="username">
                             <span>{{user.userName}}</span>
                             
-                            <button class="apply-btn">
+                            <button class="apply-btn" v-if="user.availability" @click="toSingle(user)">
                                 Hire me
+                            </button>
+                            <button class="disabled-btn" disabled v-else>
+                                Hired
                             </button>
                         </b-col>
                         <p class="user-job">
@@ -482,6 +485,18 @@ export default {
         color: #00D7C4;
         margin-top: 8px;
         margin-left: 40px;
+    }
+    .disabled-btn {
+        height: 45px;
+        line-height: 45px;
+        border: 0;
+        padding: 0 34px;
+        // background: linear-gradient(180deg, #00D7C4 0%, #01E3C2 100%);
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
+        border-radius: 4px;
+        color: #fff;
+        margin-top: 8px;
+        cursor: not-allowed !important;
     }
     button:hover {
         transform: translateY(-3px) !important;
