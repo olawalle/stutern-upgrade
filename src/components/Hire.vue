@@ -494,7 +494,7 @@ export default {
         // background: linear-gradient(180deg, #00D7C4 0%, #01E3C2 100%);
         box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
         border-radius: 4px;
-        color: #fff;
+        color: rgb(74, 74, 74);
         margin-top: 8px;
         cursor: not-allowed !important;
     }
