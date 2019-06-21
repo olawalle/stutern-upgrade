@@ -10,11 +10,21 @@
                   that connects the most ambitious university graduates with 
                   long-term employment
                 </p>
-                    <button class="apply-btn" @click="apply()" data-aos="slide-up" data-aos-duration="1000">
+                
+                <!-- <a href="#explore"> -->
+                    <button class="apply-btn" v-scroll-to="{
+                                el: '#apply',
+                                duration: 2000,
+                                offset: -60,
+                                easing: 'linear'
+                            }" data-aos="slide-up" data-aos-duration="1000">
                       Apply
                     </button>
             </b-col>
             <b-col sm="6" class="left-img">
+              <!-- <iframe src="https://www.youtube.com/watch?v=Ww1x0QCeGV8&t=6s" frameborder="0"></iframe> -->
+              <!-- <img src="../assets/banner4.png" alt=""> -->
+              <!-- <iframe src="https://www.youtube.com/watch?v=Ww1x0QCeGV8" frameborder="0"></iframe> -->
               <iframe width="921" height="518" src="https://www.youtube-nocookie.com/embed/Ww1x0QCeGV8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <!-- <b-row class="left-grid-wrap">
                     <b-col sm="6" class="left-grid">
@@ -133,7 +143,6 @@
         </b-row>
 
         <b-row class="change">
-          <div class="overlay"></div>
           <div class="change-content">
             <p class="change-heading">
               Want to change your life today?
@@ -189,6 +198,7 @@
               </b-col>          
             </b-row>
           </div>
+          <div class="overlay"></div>
         </b-row>
         <b-row class="success-stories">
           <p class="success-heading">
@@ -213,7 +223,7 @@
             <b-col sm="3" class="user">
               <div class="user-details">
                 <p class="name">
-                  Chininso Raymond 
+                  Chinonso Raymond 
                 </p>
                 <p class="job-title">
                   UI/UX Designer, Paystack
@@ -294,31 +304,38 @@
             </button>
           </b-col>
         </b-row>
-        <b-row class="accelerate">
+        <b-row class="accelerate" id="apply">
           <p class="accelerate-header">
             Graduate Accelerator Tracks
           </p>
           <p class="accelerate-header-text">
             Our programs are designed to help you elevate your earning potential 
             and launch your career. You will only pay a <b>one time enrollment fee of 
-            N50,000</b> to confirm your admission. Upon graduation, you will pay <b>15%
+            N73,500</b> to confirm your admission. Upon graduation, you will pay <b>15%
             of your annual salary for the first two years</b>
           </p>
             <b-row class="cards">
-                <b-col class="card-container" sm="6" xs="12" v-for="(track, i) in tracks" :key="i">
+                <b-col class="card-container" sm="4" xs="12" v-for="(track, i) in tracks" :key="i">
                     <div class="card">    
                       <div class="card-img-wrap">
                         <img class="card-img" :src="track.banner" alt="">
                       </div>
-                      <p class="card-text-heading">
+                      <p class="card-text-heading" :title="track.trackName">
                         {{track.trackName}}
                       </p>
                       <p class="card-text-content">
                         {{track.trackDesc}}
                       </p>
-                      <h3 class="more" @click="toTrack(track.trackUrl)">
-                          Apply now <img src="../assets/right-arrow.png" alt="">
-                      </h3>
+                      <span v-if="!track.trackName.includes('Starts Soon)')">
+                        <h3 class="more" @click="toTrack(track.trackUrl)">
+                            Apply now <img src="../assets/right-arrow.png" alt="">
+                        </h3>
+                      </span>
+                      <span v-else>
+                        <h3 class="more disabled_more">
+                            Apply now <img src="../assets/right-arrow.png" alt="">
+                        </h3>
+                      </span>
                     </div>
                 </b-col>
             </b-row>
@@ -333,9 +350,11 @@
             <p class="in-touch-sub-text">
               Looking to join our team or have further questions? 
             </p>
-            <button class="apply-btn-two">
-              Get in touch
-            </button>
+            <a href="mailto:accelerator@stutern.com">
+              <button class="apply-btn-two">
+                Get in touch
+              </button>
+            </a>
           </div>
         </b-row>
     </div>
@@ -541,7 +560,7 @@ export default {
       color: #67747C;
     }
     .change {
-      max-height: 1000px;
+      height: 1100px;
       // padding: 30px 300px !important;
       padding: 0 !important;
       color: #fff;
@@ -551,13 +570,18 @@ export default {
       .overlay {
         background: rgba(0, 35, 32, 0.96);
         width: 100%;
-        height: 1000px
+        position: relative;
+        top: -1100px;
+        height: 1100px;
+        z-index: 12;
       }
       .change-content {
         width: 100%;
-        margin-top: -990px;
-        padding: 30px 500px;
+        padding: 30px 30%;
         text-align: center;
+        top: -1000px;
+        height: 1100px;
+        z-index: 120;
         .change-heading {
           font-family: 'Playfair Display', serif;
           font-style: normal;
@@ -566,6 +590,8 @@ export default {
           font-size: 24px;
           margin: 0 auto 15px auto;
           text-align: center;
+          position: relative;
+          z-index: 100000;
         }
         // ul {
           // list-style-type: circle;
@@ -695,7 +721,7 @@ export default {
           transition: linear all 0.3s
         }
         img {
-            width: 110%;
+            height: 110%;
             position: relative;
             top: -610px;
             z-index: 3;
@@ -803,7 +829,7 @@ export default {
     }
   }
   .accelerate {
-    padding: 100px 200px !important;
+    padding: 100px 102px !important;
     text-align: center !important;
     background-repeat: no-repeat;
     background-position: left; 
@@ -822,19 +848,20 @@ export default {
         font-weight: normal;
         line-height: 28px;
         font-size: 16px;
-        margin: 10px auto;
-        padding: 0 280px;
+        margin: 10px 25%;
+        width: 50%;
+        // padding: 0 400px;
         color: #67747C;
     }
     .cards {
-        padding: 40px 50px 0 50px;
+        padding: 40px 20px 0 20px;
         text-align: left;
         .pattern {
             position: relative;
             z-index: 1;
         }
         .card-container {
-            padding: 0 20px;
+            padding: 10px;
             margin: 0 0 40px 0;
             p {
                 margin: 12px 20px
@@ -843,13 +870,13 @@ export default {
                 background: #FFFFFF;
                 box-shadow: 0px 2.5px 5px rgba(0, 0, 0, 0.05);  
                 padding: 0 !important;      
-                min-height: 500px;
+                min-height: 450px;
                 border: 0 !important;
                 border-radius: 0 !important;
                 overflow: hidden;
                 .card-img-wrap {
-                  width: 100%;
-                  height: 290px;
+                  width: 120%;
+                  height: 200px;
                   overflow: hidden;
                   .card-img {
                       // height: 290px;
@@ -865,6 +892,11 @@ export default {
                     font-weight: bold;
                     line-height: normal;
                     font-size: 20px;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 1;  /* Number of lines displayed before it truncate */
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                     font-family: 'Playfair Display', serif;
                     color: #222829;
                 }
@@ -881,11 +913,11 @@ export default {
                     font-weight: normal;
                     line-height: 24px;
                     font-size: 16px;
-                        display: -webkit-box;
-                        -webkit-box-orient: vertical;
-                        -webkit-line-clamp: 3;  /* Number of lines displayed before it truncate */
-                        overflow: hidden;
-                        text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 4;  /* Number of lines displayed before it truncate */
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                     color: #67747C;
                 }
                 .more {
@@ -901,6 +933,10 @@ export default {
                         height: auto;
                         margin-left: 12px
                     }
+                }
+                .disabled_more {
+                  opacity: 0.3;
+                  cursor: not-allowed !important
                 }
             }
         }
