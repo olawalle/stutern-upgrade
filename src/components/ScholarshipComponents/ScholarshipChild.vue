@@ -20,12 +20,12 @@
                         class="inner-link" 
                         @click="makeActive(i)" 
                         :class="link.active ? 'active' : ''"
-                         v-scroll-to="{
-                                    el: '#'+link.id,
-                                    duration: 1000,
-                                    offset: -60,
-                                    easing: 'linear'
-                                }"
+                        v-scroll-to="{
+                                el: '#'+link.id,
+                                duration: 1000,
+                                offset: -60,
+                                easing: 'linear'
+                            }"
                     >{{link.name}}</button>
             </div>
         </b-row>

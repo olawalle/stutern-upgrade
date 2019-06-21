@@ -29,21 +29,25 @@
                     </div> -->
                 </b-col>
                 <b-col sm="10" class="content-holder" :ref="'set'+i">
-                    <div class="card-wrap">
-                        <div class="card-inner-wrapper" style="width: 100%; white-space: initial">
-                            <div class="card" v-for="(user, i) in set" :key="'user'+i" @click="toSingle(user)">
-                                <img :src="user.userPhoto" alt="">
-                                <div class="user-details">
-                                    <p class="name">
-                                    {{user.userName}} 
-                                    </p>
-                                    <p class="job-title">
-                                    {{user.jobTitle}}
-                                    </p>
+                    <b-row>
+                        <b-col sm="3" v-for="(user, i) in set" :key="'user'+i" @click="toSingle(user)">
+                            <div class="card-wrap">
+                                <div class="card-inner-wrapper" style="width: 100%; white-space: initial">
+                                    <div class="card" >
+                                        <img :src="user.userPhoto" alt="">
+                                        <div class="user-details">
+                                            <p class="name">
+                                            {{user.userName}} 
+                                            </p>
+                                            <p class="job-title">
+                                            {{user.jobTitle}}
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        </b-col>
+                    </b-row>
                 </b-col>
                 <b-col sm="1" class="side-btn">
                 </b-col>
@@ -71,10 +75,7 @@ export default {
             this.$router.push({name: 'ScholarshipChild', params: {scholarshipName: 'girlsInTech'}})
         },
         toLeft (i) {
-            console.log(i)
-            console.log(this.$refs)
             let cont = this.$refs[i][0]
-            console.log(cont.scrollLeft)
             cont.scrollLeft = cont.scrollWidth - cont.clientWidth
         },
         toRight (i) {
@@ -90,13 +91,10 @@ export default {
         },
     },
     mounted () {
-        console.log(this.students)
         this.reducedSets = this.students.reduce((agg, curr) => {  
           agg[curr.userSet] = agg[curr.userSet] ? agg[curr.userSet].concat(curr) : [curr];
           return agg
         }, {})
-
-
         for (let i = 0; i < this.sets.length; i++) {
             this.reducedSets[this.sets[i].setName]
             .sort(function(a,b) {
@@ -204,7 +202,6 @@ export default {
             width: 0px;  /* remove scrollbar space */
             background: transparent;  /* optional: just make scrollbar invisible */
         }
-
         .sets {
             .set {
                 font-family: 'Playfair Display', serif;
@@ -246,8 +243,7 @@ export default {
                 }
                 .card {
                     display: inline-block;
-                    max-width: 280px;
-                    min-width: 280px;
+                    width: 100%;
                     height: 300px;
                     border: 0 !important;
                     border-radius: 4px !important;
@@ -262,7 +258,7 @@ export default {
                             margin: 0 0 0 0px;
                             padding-left: 20px;
                             height: 100%;
-                            padding-top: 240px;
+                            padding-top: 230px;
                             background: linear-gradient(1.25deg, rgba(0, 0, 0, 0.9) 0%, rgba(54, 54, 54, 0) 45.54%);
                             color: #fff;
                         .name {
@@ -283,7 +279,7 @@ export default {
                     
                     .user-details:hover {
                     // margin: -100px 0 0 0;
-                        padding-top: 230px;
+                        padding-top: 220px;
                         transition: linear all 0.4s
                     }
                     img {
