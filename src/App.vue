@@ -103,7 +103,6 @@ export default {
     services.getScholarships();
     services.getSkills();
     services.getJobTitles();
-    console.log(this.$refs.routerView)
   }
 };
 </script>
