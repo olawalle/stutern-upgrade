@@ -26,7 +26,7 @@
     </b-navbar>
 
 
-    <router-view/>
+    <router-view ref="routerView"/>
 
     <b-row class="footer">
       <b-col col-6 class="left-text">
@@ -83,10 +83,18 @@ export default {
       this.$router.push({ name: this.topLinks[i].name });
     },
     apply() {
-      window.open(
-        "https://stuternhq.vervoe.net/job-page/frontend-development-or-ui-ux-design-application/1548928271",
-        "_blank"
-      );
+      if (this.routeName === "LandingPage") {
+        this.$refs.routerView.apply()
+      } else {
+        this.$router.push('/')
+        setTimeout(() => {
+          this.$refs.routerView.apply()          
+        }, 100);
+      }
+      // window.open(
+      //   "https://stuternhq.vervoe.net/job-page/frontend-development-or-ui-ux-design-application/1548928271",
+      //   "_blank"
+      // );
     }
   },
   mounted() {
@@ -95,6 +103,7 @@ export default {
     services.getScholarships();
     services.getSkills();
     services.getJobTitles();
+    console.log(this.$refs.routerView)
   }
 };
 </script>

@@ -12,7 +12,7 @@
                 </p>
                 
                 <!-- <a href="#explore"> -->
-                    <button class="apply-btn" v-scroll-to="{
+                    <button id="apply-btn" class="apply-btn" v-scroll-to="{
                                 el: '#apply',
                                 duration: 2000,
                                 offset: -60,
@@ -98,7 +98,7 @@
         </b-row>
         
         <b-row class="main-sect-wrap">
-            <b-col sm="6" class="main-sect main-sect-top">
+            <b-col sm="6" class="main-sect main-sect-top main-sect-left">
                 <img src="../assets/skill.svg" alt="">
                 <p class="mid-sect-heading">
                   Learn valuable skills for today’s world﻿
@@ -120,7 +120,7 @@
                     of your income according to an income sharing agreement.
                 </p>
             </b-col>
-            <b-col sm="6" class="main-sect">
+            <b-col sm="6" class="main-sect main-sect-left">
                 <img src="../assets/monitor.svg" alt="">
                 <p class="mid-sect-heading">
                   Join in from anywhere
@@ -191,8 +191,13 @@
                 </p>
               </b-col>
 
-              <b-col sm="12" style="text-align: center">
-                <button class="apply-btn-two">
+              <b-col sm="12" style="text-align: center">                
+                <button class="apply-btn-two" v-scroll-to="{
+                            el: '#apply',
+                            duration: 1000,
+                            offset: -60,
+                            easing: 'linear'
+                        }" data-aos="slide-up" data-aos-duration="1000">
                   Apply
                 </button>
               </b-col>          
@@ -298,8 +303,13 @@
             </p>
             <p class="title">
               UI/UX Designer, PocketMoni
-            </p>
-            <button class="apply-btn" @click="apply()">
+            </p>                           
+            <button class="apply-btn" v-scroll-to="{
+                        el: '#apply',
+                        duration: 1000,
+                        offset: -60,
+                        easing: 'linear'
+                    }" data-aos="slide-up" data-aos-duration="1000">
               Apply
             </button>
           </b-col>
@@ -418,7 +428,7 @@ export default {
         
     },
     apply() {
-      window.open('https://stuternhq.vervoe.com/job-opportunity/frontend-development-or-ui-ux-design-application', '_blank')
+      document.getElementById('apply-btn').click()
     },
     
     toTrack (url) {
@@ -507,7 +517,6 @@ export default {
     .main-sect-wrap {
       padding: 30px 120px !important; 
       .main-sect {
-        padding: 30px 200px 50px 0px !important;
         .mid-sect-heading {
           font-family: 'Playfair Display', serif;
           font-style: normal;
@@ -518,9 +527,15 @@ export default {
           margin: 12px 0;
         } 
       }
-      .main-sect-right {
+      .main-sect-right {   
+        padding: 30px 0px 50px 0px !important;
         border-left: 1px solid rgba(103, 116, 124, 0.05); 
         padding-left: 70px !important
+      }
+      .main-sect-left {
+        padding: 30px 70px 50px 0px !important;
+        // border-left: 1px solid rgba(103, 116, 124, 0.05); 
+        // padding-left: 70px !important
       }
       .main-sect-top {
         border-bottom: 1px solid rgba(103, 116, 124, 0.05);
@@ -707,8 +722,14 @@ export default {
         height: 300px;
         overflow: hidden;
         color: #FFFFFF;
+        width: 100%;
+        overflow: hidden;
+        img {
+          width: 110%;
+          height: auto
+        }
         .overlay {
-              width: 150%;
+            width: 150%;
             height: 300px;
             opacity: 0.5;
             position: relative;
