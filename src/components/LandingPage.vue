@@ -14,7 +14,7 @@
                 <!-- <a href="#explore"> -->
                     <button id="apply-btn" class="apply-btn" v-scroll-to="{
                                 el: '#apply',
-                                duration: 2000,
+                                duration: 2,
                                 offset: -60,
                                 easing: 'linear'
                             }" data-aos="slide-up" data-aos-duration="1000">
