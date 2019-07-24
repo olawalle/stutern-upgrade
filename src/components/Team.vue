@@ -366,13 +366,13 @@ export default {
                     margin: 10px 20px
                 }
                 .content-holder {
-                    padding: 0 !important;
+                    padding: 20px !important;
                     .card-wrap {
                         .card-inner-wrapper {
                             padding: 10px 20px !important;
                             .card {
                                 display: inline-block;
-                                height: 300px;
+                                height: 250px;
                                 border: 0 !important;
                                 border-radius: 4px !important;
                                 overflow: hidden;
@@ -381,7 +381,7 @@ export default {
                                 min-width: 100% !important;
                                 scroll-behavior: smooth;
                                 img {
-                                    width: 130% !important;
+                                    width: 100% !important;
                                     max-width: 200% !important;
                                     -webkit-filter: grayscale(0.99);
                                     filter: grayscale(0.99);
@@ -390,11 +390,11 @@ export default {
                                 }
                                 .user-details {
                                     position: relative;
-                                    top: -325px;
+                                    top: -275px;
                                     margin: 0 0 0 0px;
                                     padding-left: 20px;
                                     height: 100%;
-                                    padding-top: 170px;
+                                    padding-top: 189px;
                                     background: linear-gradient(1.25deg, rgba(0, 0, 0, 0.9) 0%, rgba(54, 54, 54, 0) 45.54%);
                                     color: #fff;
                                 }

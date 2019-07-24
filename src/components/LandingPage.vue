@@ -1065,32 +1065,34 @@ export default {
         }
       .change-content {
         padding: 0 10px;
-        margin-top: -1098px;
+        margin-top: -0;
         .change-heading {
           font-size: 18px;
           margin: 12px 0 20px 0;
         }
         .single-change {
           margin-top: 20px;
-          padding-left: 58px !important;
+          padding-left: 35px !important;
             // border-left: 1px solid #fff;
             // padding: 0 30px;
             // content: "•"; /* Insert content that looks like bullets */
               padding-left: 88px;
               padding-bottom: 12px;
               ::before {
-              background: #e5e5e5;
-              // border-right: 1px solid #fff;
-              box-sizing: border-box;
-              content: '.';
-              height: 120%;
-              left: 7.7%;
-              position: absolute;
-              top: 0;
-              width: 1px;
-              z-index: 10000;
-            }
+                display: none;
+                background: #e5e5e5;
+                // border-right: 1px solid #fff;
+                box-sizing: border-box;
+                content: '.';
+                height: 120%;
+                left: 7.7%;
+                position: absolute;
+                top: 0;
+                width: 1px;
+                z-index: 10000;
+              }
             ::after {
+                display: none;
               // background: linear-gradient(#63b5fd, #0e4396);
               // content: "•"; /* Insert content that looks like bullets */
               content: url('../assets/ring.png');
@@ -1106,10 +1108,11 @@ export default {
         }
         .single-change-last {
           margin-top: 20px;
-          padding-left: 58px !important;
+          padding-left: 35px !important;
               padding-left: 88px;
               padding-bottom: 12px;
             ::after {
+              display: none;
               content: url('../assets/ring.png');
               height: 100%;
               left: 5.3%;

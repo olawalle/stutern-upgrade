@@ -20,10 +20,6 @@ export default {
             return this.tracks.find(track => track._id === this.$route.query.to).trackUrl
         }
     },
-    mounted() {
-        console.log(this.$route)
-        console.log(this.tracks.find(track => track._id === this.$route.query.to))
-    }
 }
 </script>
 <style lang="scss" scoped>
@@ -49,7 +45,7 @@ export default {
         @media (max-width: 767px) {
             padding: 20px;
             .top-text-heading {
-                font-size: 16px;
+                font-size: 14px;
                 margin-top: 60px;
             }
             .frame {
