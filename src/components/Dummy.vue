@@ -46,5 +46,17 @@ export default {
             min-height: 200vh;
             height: auto
         }
+        @media (max-width: 767px) {
+            padding: 20px;
+            .top-text-heading {
+                font-size: 16px;
+                margin-top: 60px;
+            }
+            .frame {
+                width: 100%;
+                min-height: 700vh;
+                height: auto
+            }
+        }
     }
 </style>
