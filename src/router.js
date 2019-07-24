@@ -47,6 +47,16 @@ export default new Router({
       path: "/alumni",
       name: "Alumni",
       component: () => import("./components/Alumni.vue")
+    },
+    {
+      path: "/team",
+      name: "Team",
+      component: () => import("./components/Team.vue")
+    },
+    {
+      path: "/form",
+      name: "Dummy",
+      component: () => import("./components/Dummy.vue")
     }
   ]
 });

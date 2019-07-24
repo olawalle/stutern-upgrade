@@ -51,6 +51,7 @@ export default {
       topLinks: [
         { name: "Hire", active: false },
         { name: "Scholarships", active: false },
+        { name: "Team", active: false },
         { name: "Alumni", active: false }
       ]
     };

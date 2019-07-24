@@ -1,0 +1,50 @@
+<template>
+    <div class="page-wrap">
+        <h3 class="top-text-heading">
+            {{title}}
+        </h3>
+        <iframe class="frame" :src="src" frameborder="0"></iframe>
+    </div>
+</template>
+<script>
+import {mapGetters} from 'vuex'
+export default {
+    computed: {
+        ...mapGetters({
+            tracks: 'getJobTitles'
+        }),
+        title() {
+            return this.tracks.find(track => track._id === this.$route.query.to).trackName
+        },
+        src() {
+            return this.tracks.find(track => track._id === this.$route.query.to).trackUrl
+        }
+    },
+    mounted() {
+        console.log(this.$route)
+        console.log(this.tracks.find(track => track._id === this.$route.query.to))
+    }
+}
+</script>
+<style lang="scss" scoped>
+    .page-wrap {
+        min-height: 95vh;
+        width: 100%;
+        padding: 120px 300px;
+        .top-text-heading {
+            font-family: 'Playfair Display', serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 32px;
+            text-align: center;
+            margin: 10px auto;
+            color: #222829;
+            margin: 0px 0 30px 0;
+        }
+        .frame {
+            width: 100%;
+            min-height: 200vh;
+            height: auto
+        }
+    }
+</style>

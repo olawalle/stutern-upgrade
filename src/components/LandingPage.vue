@@ -321,7 +321,7 @@
                         {{track.trackDesc}}
                       </p>
                       <span v-if="!track.trackName.includes('Starts Soon)')">
-                        <h3 class="more" @click="toTrack(track.trackUrl)">
+                        <h3 class="more" @click="toTrack(track._id)">
                             Apply now <img src="../assets/right-arrow.png" alt="">
                         </h3>
                       </span>
@@ -425,8 +425,9 @@ export default {
       document.getElementById('apply-btn').click()
     },
     
-    toTrack (url) {
-      window.open(url, '_blank')
+    toTrack (id) {
+      this.$router.push(`/form?to=${id}`)
+      // window.open(url, '_blank')
     }
   }
 }
