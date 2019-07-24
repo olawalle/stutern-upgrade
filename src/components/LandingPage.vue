@@ -22,23 +22,7 @@
                     </button>
             </b-col>
             <b-col sm="6" class="left-img">
-              <!-- <iframe src="https://www.youtube.com/watch?v=Ww1x0QCeGV8&t=6s" frameborder="0"></iframe> -->
-              <!-- <img src="../assets/banner4.png" alt=""> -->
-              <!-- <iframe src="https://www.youtube.com/watch?v=Ww1x0QCeGV8" frameborder="0"></iframe> -->
               <iframe width="921" height="518" src="https://www.youtube-nocookie.com/embed/Ww1x0QCeGV8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <!-- <b-row class="left-grid-wrap">
-                    <b-col sm="6" class="left-grid">
-                        <b-col sm="12" class="left-grid-top">
-                            <img src="../assets/grid1.png" class="animated slideInDown" alt="">
-                        </b-col>
-                        <b-col sm="12" class="left-grid-btm">
-                            <img src="../assets/grid2.png" class="animated slideInUp" alt="">
-                        </b-col>
-                    </b-col>
-                    <b-col sm="6"  class="right-grid">
-                        <img src="../assets/grid3.png" class="animated 	slideInRight" alt="">
-                    </b-col>
-                </b-row> -->
             </b-col>
         </b-row>
         <b-row class="tutors">
@@ -400,17 +384,27 @@ export default {
       jobTitles: 'getJobTitles'
     })
   },
-  mounted () {
+  beforeMount () {
     services.getUsers()
     services.getSets()
     services.getScholarships()
     services.getSkills()
-    let test = []
-    this.jobTitles.forEach((track, i) => {
-      if (i !== 0) {
-        this.tracks.push(track)
-      }
+    
+    services.getJobTitles()
+    .then(res => {
+      let titles = [{ text: "All", value: 0 }];
+      let test = []
+
+      res.data.forEach((job, i) => {
+        titles.push({
+          ...job,
+          text: job.trackName,
+          value: i + 1
+        });
+        this.tracks.push(job)
+      });
     })
+    .catch(err => console.log(err));
   },
   methods: {
     test(refName) {

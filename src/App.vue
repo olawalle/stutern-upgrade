@@ -44,6 +44,7 @@
 <script>
 import axios from "axios";
 import services from "./services";
+import * as mutationTypes from './mutationTypes'
 export default {
   data() {
     return {
@@ -102,7 +103,19 @@ export default {
     services.getSets();
     services.getScholarships();
     services.getSkills();
-    services.getJobTitles();
+    services.getJobTitles()
+    .then(res => {
+      let titles = [{ text: "All", value: 0 }];
+      res.data.forEach((job, i) => {
+        titles.push({
+          ...job,
+          text: job.trackName,
+          value: i + 1
+        });
+      });
+      this.$store.commit(mutationTypes.JOB_TITLES, titles);
+    })
+    .catch(err => console.log(err));
   }
 };
 </script>

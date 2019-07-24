@@ -100,18 +100,6 @@ let getJobTitles = () => {
     method: "get",
     url: urls.tracks
   })
-    .then(res => {
-      let titles = [{ text: "All", value: 0 }];
-      res.data.forEach((job, i) => {
-        titles.push({
-          ...job,
-          text: job.trackName,
-          value: i + 1
-        });
-      });
-      store.commit(mutationTypes.JOB_TITLES, titles);
-    })
-    .catch(err => console.log(err));
 };
 
 export default {
