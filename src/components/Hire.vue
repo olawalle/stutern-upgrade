@@ -463,28 +463,30 @@ export default {
             }
         }
     }
-    .apply-btn {
+    .top-sect-texts .apply-btn {
         height: 45px;
         line-height: 45px;
         border: 0;
-        padding: 0 34px;
+        padding: 0 24px;
         background: linear-gradient(180deg, #00D7C4 0%, #01E3C2 100%);
         box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
         border-radius: 4px;
         color: #fff;
+        width: 49%;
         margin-top: 8px;
     }
-    .apply-btn-two {
+    .top-sect-texts .apply-btn-two {
         height: 45px;
         line-height: 45px;
         border: 0;
-        padding: 0 34px;
+        // padding: 0 24px;
+        width: 49%;
         background: #FFFFFF;
         box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
         border-radius: 4px;
         color: #00D7C4;
         margin-top: 8px;
-        margin-left: 40px;
+        margin-left: 2%;
     }
     .disabled-btn {
         height: 45px;
@@ -586,12 +588,14 @@ export default {
         }
     }
     .apply-btn {
-        width: 44% !important;
-        padding: 0 10px
+        width: 100% !important;
+        padding: 0 10px;
+        margin: 5px 0
     }
     .apply-btn-two {
-        width: 44% !important;
-        padding: 0 10px
+        width: 100% !important;
+        padding: 0 10px;
+        margin: 5px 0
     }
   }
 }
