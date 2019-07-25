@@ -9,17 +9,22 @@
 <script>
 import {mapGetters} from 'vuex'
 export default {
+    data() {
+        return {
+            src: '',
+            title: ''
+        }
+    },
     computed: {
         ...mapGetters({
             tracks: 'getJobTitles'
-        }),
-        title() {
-            return this.tracks.find(track => track._id === this.$route.query.to).trackName
-        },
-        src() {
-            return this.tracks.find(track => track._id === this.$route.query.to).trackUrl
-        }
+        })
     },
+    beforeMount() {
+        this.title = this.tracks.find(track => track._id === this.$route.query.to).trackName
+        let src = this.tracks.find(track => track._id === this.$route.query.to).trackUrl
+        this.src = 'https:'+src.split(':')[1]
+    }
 }
 </script>
 <style lang="scss" scoped>
