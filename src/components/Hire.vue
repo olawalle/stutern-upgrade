@@ -187,7 +187,10 @@ export default {
     }),
     allSets () {
         return this.sets
-    }
+    },
+    // jobTitles() {
+    //     return this.titles.unshift({ text: "All", value: 0 })
+    // }
   },
   methods: {
     reLoad (e) {
@@ -230,6 +233,9 @@ export default {
     },
     log() {
     }
+  },
+  mounted() {
+      console.log(this.jobTitles)
   },
   beforeMount () {
     this.activeSetName = this.sets[0].setName

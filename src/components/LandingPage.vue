@@ -376,35 +376,37 @@ export default {
       tutors: [],
       sellingPoints: [],
       changes: [],
-      tracks: []
+      // tracks: []
     }
   },
   computed: {
     ...mapGetters({
-      jobTitles: 'getJobTitles'
+      tracks: 'getJobTitles'
     })
   },
+  mounted() {
+  },
   beforeMount () {
-    services.getUsers()
-    services.getSets()
-    services.getScholarships()
-    services.getSkills()
+    // services.getUsers()
+    // services.getSets()
+    // services.getScholarships()
+    // services.getSkills()
     
-    services.getJobTitles()
-    .then(res => {
-      let titles = [{ text: "All", value: 0 }];
-      let test = []
+    // services.getJobTitles()
+    // .then(res => {
+    //   let titles = [{ text: "All", value: 0 }];
+    //   let test = []
 
-      res.data.forEach((job, i) => {
-        titles.push({
-          ...job,
-          text: job.trackName,
-          value: i + 1
-        });
-        this.tracks.push(job)
-      });
-    })
-    .catch(err => console.log(err));
+    //   res.data.forEach((job, i) => {
+    //     titles.push({
+    //       ...job,
+    //       text: job.trackName,
+    //       value: i + 1
+    //     });
+    //     this.tracks.push(job)
+    //   });
+    // })
+    // .catch(err => console.log(err));
   },
   methods: {
     test(refName) {
@@ -1058,9 +1060,10 @@ export default {
     }
     .change {
       padding: 0 12px !important;
-      max-height: 1200px;
+      min-height: 1200px;
+      overflow: hidden;
         .overlay {
-          height: 1100px;
+          height: 1300px;
           margin: 0px 0 0 0;
         }
       .change-content {
@@ -1173,11 +1176,15 @@ export default {
     .accelerate {
       padding: 20px 12px !important;
       .accelerate-header {
-        margin-left: 25px;
+        font-size: 20px;
       }
       .accelerate-header-text {
-        padding: 0 30px !important;
-        text-align: left
+        padding: 0 !important;
+        line-height: 24px;
+        text-align: left;
+        margin: 10px 20px;
+        font-size: 14px;
+        width: 100%;
       }
       .cards {
         padding: 10px !important;
@@ -1189,7 +1196,41 @@ export default {
         }
         .card {
           height: auto !important;
+          min-height: 400px !important;
           width: 100%;
+                .card-text-heading {
+                    font-style: normal;
+                    font-weight: bold;
+                    line-height: normal;
+                    font-size: 16px !important;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 1;  /* Number of lines displayed before it truncate */
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-family: 'Playfair Display', serif;
+                    color: #222829;
+                }
+                .card-text-subheading {
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                    font-size: 14px;
+                    margin-top: 0 !important;
+                    color: #67747C;
+                }
+                .card-text-content {
+                    font-style: normal;
+                    font-weight: normal;
+                    line-height: 20px !important;
+                    font-size: 12px !important;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 4;  /* Number of lines displayed before it truncate */
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    color: #67747C;
+                }
           .card-img-wrap {
             width: 100%;
             height: 290px;

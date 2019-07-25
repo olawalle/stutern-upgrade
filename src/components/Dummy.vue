@@ -48,7 +48,7 @@ export default {
             height: auto
         }
         @media (max-width: 767px) {
-            padding: 20px;
+            padding: 20px 0;
             .top-text-heading {
                 font-size: 14px;
                 margin-top: 60px;

@@ -104,15 +104,23 @@ export default {
     services.getSets();
     services.getScholarships();
     services.getSkills();
+
     services.getJobTitles()
     .then(res => {
-      let titles = [{ text: "All", value: 0 }];
+      let titles = [];
       res.data.forEach((job, i) => {
-        titles.push({
+        // titles.push({
+        //   ...job,
+        //   text: job.trackName.split('.')[1],
+        //   value: i + 1
+        // });
+
+        titles[job.trackName.split('.')[0].substring(1, job.trackName.split('.')[0].length) - 1] = {
           ...job,
-          text: job.trackName,
+          trackName: job.trackName.split('.')[1],
+          text: job.trackName.split('.')[1],
           value: i + 1
-        });
+        }
       });
       this.$store.commit(mutationTypes.JOB_TITLES, titles);
     })
