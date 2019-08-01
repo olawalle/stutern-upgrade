@@ -22,7 +22,8 @@
                     </button>
             </b-col>
             <b-col sm="6" class="left-img">
-              <iframe width="921" height="518" src="https://www.youtube-nocookie.com/embed/Ww1x0QCeGV8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <!-- <iframe width="806" height="453" src="https://www.youtube.com/embed/A3uTh7PyFag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+              <iframe width="921" height="518" src="https://www.youtube.com/embed/A3uTh7PyFag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </b-col>
         </b-row>
         <b-row class="tutors">
