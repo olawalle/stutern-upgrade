@@ -305,9 +305,10 @@
           </p>
           <p class="accelerate-header-text">
             Our programs are designed to help you elevate your earning potential 
-            and launch your career. You will only pay a <b>one time enrollment fee of 
+            and launch your career. 
+            <!-- You will only pay a <b>one time enrollment fee of 
             N73,500</b> to confirm your admission. Upon graduation, you will pay <b>15%
-            of your annual salary for the first two years</b>
+            of your annual salary for the first two years</b> -->
           </p>
             <b-row class="cards">
                 <b-col class="card-container" sm="4" xs="12" v-for="(track, i) in tracks" :key="i">
