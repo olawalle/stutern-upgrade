@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "72f1defc87edbe5ba6d0b9c308666f56",
-    "url": "img/suregifts.72f1defc.svg"
+    "revision": "22e821e18de0540235698c3cdd3add5b",
+    "url": "img/monitor.22e821e1.svg"
   },
   {
     "revision": "661e27048720bf9eb5a447d994528208",
@@ -24,8 +24,8 @@ self.__precacheManifest = [
     "url": "robots.txt"
   },
   {
-    "revision": "871320af27ea40247930",
-    "url": "js/chunk-319a2efa.5254ccab.js"
+    "revision": "7c0445d61e5230af2571",
+    "url": "js/chunk-50a94f0d.d4ea860d.js"
   },
   {
     "revision": "b9aa277fcfc34c31db6c7a7ea3469b8c",
@@ -44,24 +44,24 @@ self.__precacheManifest = [
     "url": "js/chunk-55e7550f.e0adece4.js"
   },
   {
-    "revision": "0384cec0320289df2c57ca00e1900d1c",
-    "url": "favicon/safari-pinned-tab.svg"
+    "revision": "c8e8ad9ac58acf253d57abbfb0b1d2c6",
+    "url": "favicon/mstile-150x150.png"
   },
   {
     "revision": "975b1e5a8338ca406e11",
     "url": "js/chunk-b48df398.713e2473.js"
   },
   {
-    "revision": "c8e8ad9ac58acf253d57abbfb0b1d2c6",
-    "url": "favicon/mstile-150x150.png"
+    "revision": "0384cec0320289df2c57ca00e1900d1c",
+    "url": "favicon/safari-pinned-tab.svg"
   },
   {
     "revision": "8d2af0cbaf1655b13149",
     "url": "js/chunk-e971083c.fc68d705.js"
   },
   {
-    "revision": "8175f46d5f5da6dbcad1180a3cd77b42",
-    "url": "favicon/favicon-32x32.png"
+    "revision": "7f2b2f8a4c6863cc7be0a1e4b7963bd9",
+    "url": "favicon/browserconfig.txt"
   },
   {
     "revision": "6865503b0b4f251ccac2",
@@ -116,10 +116,6 @@ self.__precacheManifest = [
     "url": "img/banner4.a93e46d9.png"
   },
   {
-    "revision": "fadd124631aac718567b60981dd14a82",
-    "url": "img/pattern1.fadd1246.png"
-  },
-  {
     "revision": "c859a5457e7aa0d31ec9372b223424c8",
     "url": "img/Kayode.c859a545.png"
   },
@@ -168,12 +164,12 @@ self.__precacheManifest = [
     "url": "img/notes.a978235d.svg"
   },
   {
-    "revision": "98d9de3bde21ef09632d",
-    "url": "js/app.a225d094.js"
+    "revision": "72f1defc87edbe5ba6d0b9c308666f56",
+    "url": "img/suregifts.72f1defc.svg"
   },
   {
-    "revision": "22e821e18de0540235698c3cdd3add5b",
-    "url": "img/monitor.22e821e1.svg"
+    "revision": "c0670189f0d697a3e856",
+    "url": "js/app.ff0d1f1c.js"
   },
   {
     "revision": "1236719d76c297f59e09f72acd8be58d",
@@ -244,6 +240,10 @@ self.__precacheManifest = [
     "url": "img/andela.8052d6ac.svg"
   },
   {
+    "revision": "fadd124631aac718567b60981dd14a82",
+    "url": "img/pattern1.fadd1246.png"
+  },
+  {
     "revision": "4e8ceca3733e7c500f6b1774773a9955",
     "url": "img/skill.4e8ceca3.svg"
   },
@@ -254,6 +254,14 @@ self.__precacheManifest = [
   {
     "revision": "b0192478e4cd8bb281b0a6e10c74bfc3",
     "url": "img/silas.b0192478.jpg"
+  },
+  {
+    "revision": "541c88b3c6232ff2f5f53914f4f2779d",
+    "url": "img/banner1.541c88b3.png"
+  },
+  {
+    "revision": "e07531680e389c69228b6aa4a5a26afc",
+    "url": "img/banner11.e0753168.png"
   },
   {
     "revision": "9d9897deccfc449e027e05f4a9478e87",
@@ -276,20 +284,12 @@ self.__precacheManifest = [
     "url": "img/orezi.459b2f51.png"
   },
   {
-    "revision": "541c88b3c6232ff2f5f53914f4f2779d",
-    "url": "img/banner1.541c88b3.png"
-  },
-  {
-    "revision": "e07531680e389c69228b6aa4a5a26afc",
-    "url": "img/banner11.e0753168.png"
-  },
-  {
-    "revision": "8d602c021d277d899cdc07ccf6eee4a7",
+    "revision": "5fbf334b948ec09e9410aed0f3ee7281",
     "url": "index.html"
   },
   {
-    "revision": "49f235b3b36d997652e77f05425f6c93",
-    "url": "favicon/favicon-16x16.png"
+    "revision": "8175f46d5f5da6dbcad1180a3cd77b42",
+    "url": "favicon/favicon-32x32.png"
   },
   {
     "revision": "b6f037012bdf509917f162507c3f4d93",
@@ -297,11 +297,11 @@ self.__precacheManifest = [
   },
   {
     "revision": "7f2b2f8a4c6863cc7be0a1e4b7963bd9",
-    "url": "favicon/browserconfig.txt"
+    "url": "favicon/browserconfig.xml"
   },
   {
-    "revision": "7f2b2f8a4c6863cc7be0a1e4b7963bd9",
-    "url": "favicon/browserconfig.xml"
+    "revision": "49f235b3b36d997652e77f05425f6c93",
+    "url": "favicon/favicon-16x16.png"
   },
   {
     "revision": "e66ebb2b065e2f2e1421cbb1d5c1d79f",
@@ -328,15 +328,15 @@ self.__precacheManifest = [
     "url": "css/chunk-50ccf53e.7a357d4b.css"
   },
   {
-    "revision": "871320af27ea40247930",
-    "url": "css/chunk-319a2efa.9ddc5c5f.css"
+    "revision": "7c0445d61e5230af2571",
+    "url": "css/chunk-50a94f0d.9d5c4fe6.css"
   },
   {
     "revision": "421fe1092d38d19ebec8",
     "url": "css/chunk-2a4e6314.1856fbaf.css"
   },
   {
-    "revision": "98d9de3bde21ef09632d",
-    "url": "css/app.ab3d7e3e.css"
+    "revision": "c0670189f0d697a3e856",
+    "url": "css/app.ab1b9c7e.css"
   }
 ];

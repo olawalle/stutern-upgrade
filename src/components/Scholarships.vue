@@ -1,73 +1,81 @@
 <template>
-    <div class="scholarships-wrap">
-        <b-row class="top-text">
-            <h3 class="top-text-heading">
-                Scholarships
-            </h3>
-            <p class="sub-text">
-                As we further our mission of closing the gap between youth 
-                unemployment and entry-level jobs in the technology industry, our partners 
-                are supporting us on this mission by sponsoring scholarships
-            </p>
-        </b-row>
-        <b-row class="banner">
-            <img src="../assets/banner1.png" alt="">
-        </b-row>
-        <b-row class="cards-wrap">
-            <b-row class="cards-header">
-                <p class="top-text-heading">
-                    Begin your journey today!
-                </p>
-                <p class="sub-text">
-                    Launch your new career with the Graduate Accelerator 
-                    through these scholarships provided by our generous sponsors
-                </p>
-            </b-row>
-            <b-row class="cards">
-                <b-col class="card-container" sm="6" xs="12" v-for="(scholarship, i) in scholarships" :key="i">
-                    <div class="mycard">    
-                        <div class="card-img-wrap">
-                            <img class="card-img" :src="scholarship.banner" alt="">
-                        </div>
-                        <p class="card-text-heading">
-                            {{scholarship.scholarshipName}}
-                        </p>
-                        <!-- <p class="card-text-subheading">
+  <div class="scholarships-wrap">
+    <b-row class="top-text">
+      <h3 class="top-text-heading">Scholarships</h3>
+      <p class="sub-text">
+        As we further our mission of closing the gap between youth
+        unemployment and entry-level jobs in the technology industry, our partners
+        are supporting us on this mission by sponsoring scholarships
+      </p>
+    </b-row>
+    <b-row class="banner">
+      <img src="../assets/banner1.png" alt>
+    </b-row>
+    <b-row class="cards-wrap">
+      <b-row class="cards-header">
+        <p class="top-text-heading">Begin your journey today!</p>
+        <p class="sub-text">
+          Launch your new career with the Graduate Accelerator
+          through these scholarships provided by our generous sponsors
+        </p>
+      </b-row>
+      <b-row class="cards">
+        <b-col
+          class="card-container"
+          sm="6"
+          xs="12"
+          v-for="(scholarship, i) in scholarships"
+          :key="i"
+        >
+          <div class="mycard">
+            <div class="card-img-wrap" :style="{'background-image': 'url('+scholarship.banner+')'}">
+              <!-- <img class="card-img" :src="" alt=""> -->
+            </div>
+            <p class="card-text-heading">{{scholarship.scholarshipName}}</p>
+            <!-- <p class="card-text-subheading">
                             {{scholarship.scholarshipFacilitator}}
-                        </p> -->
-                        <p class="card-text-content">
-                            {{scholarship.scholarshipDesc}}
-                        </p>
-                        <h3 class="more" @click="toScholarship(scholarship._id)">
-                            Learn more and apply <img src="../assets/arrow-right.svg" alt="">
-                        </h3>
-                    </div>
-                </b-col>
-            </b-row>
-        </b-row>
-        <b-row class="sponsor-sect">
-            <b-col sm="6" class="sponsor-sect-left">
-                <p class="sponsor-text-heading">
-                    Become a sponsor
-                </p>
-                <p class="sponsor-text-content">
-                    Your sponsorship enables recent graduates to join the Stutern Graduate Accelerator, 
-                    a skills development and job placement training that connects the most ambitious
-                    university graduates with long-term employment..
-                </p>
-                <form action="mailto:accelerator@stutern.com" method="post" enctype="text/plain">
-                    <input type="text" class="myinput" name="full name" placeholder="Full name*">
-                    <input type="text" class="myinput" name="email address" placeholder="Email address*">
-                    <input type="text" class="myinput" name="no of students to sponsor" placeholder="How many students will you love to sponsor?*">
-                    <textarea id="" cols="30" name="additional info" rows="4" placeholder="Anything else you will like us to know?"></textarea>
-                    <input type="submit" value="Send" class="apply-btn">
-                </form>
-            </b-col>
-            <b-col sm="6" class="sponsor-sect-right">
-                <img src="../assets/banner4.png" alt="">
-            </b-col>
-        </b-row>
-    </div>
+            </p>-->
+            <p class="card-text-content">{{scholarship.scholarshipDesc}}</p>
+            <h3 class="more" @click="toScholarship(scholarship._id)">
+              Learn more and apply
+              <img src="../assets/arrow-right.svg" alt>
+            </h3>
+          </div>
+        </b-col>
+      </b-row>
+    </b-row>
+    <b-row class="sponsor-sect">
+      <b-col sm="6" class="sponsor-sect-left">
+        <p class="sponsor-text-heading">Become a sponsor</p>
+        <p class="sponsor-text-content">
+          Your sponsorship enables recent graduates to join the Stutern Graduate Accelerator,
+          a skills development and job placement training that connects the most ambitious
+          university graduates with long-term employment..
+        </p>
+        <form action="mailto:accelerator@stutern.com" method="post" enctype="text/plain">
+          <input type="text" class="myinput" name="full name" placeholder="Full name*">
+          <input type="text" class="myinput" name="email address" placeholder="Email address*">
+          <input
+            type="text"
+            class="myinput"
+            name="no of students to sponsor"
+            placeholder="How many students will you love to sponsor?*"
+          >
+          <textarea
+            id
+            cols="30"
+            name="additional info"
+            rows="4"
+            placeholder="Anything else you will like us to know?"
+          ></textarea>
+          <input type="submit" value="Send" class="apply-btn">
+        </form>
+      </b-col>
+      <b-col sm="6" class="sponsor-sect-right">
+        <img src="../assets/banner4.png" alt>
+      </b-col>
+    </b-row>
+  </div>
 </template>
 <script>
 import { mapGetters } from "vuex";
@@ -177,18 +185,21 @@ export default {
           background: #ffffff;
           box-shadow: 0px 2.5px 5px rgba(0, 0, 0, 0.05);
           padding: 0 !important;
-          height: 500px;
+          height: 400px;
           border: 0 !important;
           border-radius: 0 !important;
           margin-bottom: 10px;
           overflow: hidden;
           .card-img-wrap {
             width: 100%;
-            height: 290px;
+            height: 210px;
             overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
             .card-img {
               // height: 310px;
               // margin-left: -20px;

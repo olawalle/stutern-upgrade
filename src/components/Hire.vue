@@ -186,9 +186,6 @@ export default {
             students: this.activeSet.students.filter(s => s.jobTitle === this.jobTitles.find(j => j.value === this.jobTitle).trackTitle)
         } : {}
     }
-    // jobTitles() {
-    //     return this.titles.unshift({ text: "All", value: 0 })
-    // }
   },
   methods: {
     toSingle (user) {

@@ -722,7 +722,7 @@ export default {
             rgba(0, 0, 0, 0) 23.54%
           );
           z-index: 5;
-          padding: 12px;
+          padding: 15px;
           padding-top: 230px;
           cursor: pointer;
           .name {
