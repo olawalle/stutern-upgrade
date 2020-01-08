@@ -12,8 +12,8 @@ self.__precacheManifest = [
     "url": "favicon/favicon.png"
   },
   {
-    "revision": "421fe1092d38d19ebec8",
-    "url": "js/chunk-2a4e6314.b27fb883.js"
+    "revision": "5ef17a0c0328626e2a34",
+    "url": "js/chunk-0b9683be.ece2a8ff.js"
   },
   {
     "revision": "07c0a3689bd7998edab4",
@@ -24,20 +24,28 @@ self.__precacheManifest = [
     "url": "robots.txt"
   },
   {
-    "revision": "7c0445d61e5230af2571",
-    "url": "js/chunk-50a94f0d.d4ea860d.js"
+    "revision": "d4b7ccdacb510f62e63d",
+    "url": "js/chunk-32cd5094.69a4e556.js"
   },
   {
     "revision": "b9aa277fcfc34c31db6c7a7ea3469b8c",
     "url": "favicon/site.webmanifest"
   },
   {
-    "revision": "a05ab6312949e652cd31",
-    "url": "js/chunk-50ccf53e.8b1df745.js"
+    "revision": "7c0445d61e5230af2571",
+    "url": "js/chunk-50a94f0d.d4ea860d.js"
   },
   {
     "revision": "b9aa277fcfc34c31db6c7a7ea3469b8c",
     "url": "favicon/site.txt"
+  },
+  {
+    "revision": "a05ab6312949e652cd31",
+    "url": "js/chunk-50ccf53e.8b1df745.js"
+  },
+  {
+    "revision": "0384cec0320289df2c57ca00e1900d1c",
+    "url": "favicon/safari-pinned-tab.svg"
   },
   {
     "revision": "00d9080eef66782679cf",
@@ -48,24 +56,16 @@ self.__precacheManifest = [
     "url": "favicon/mstile-150x150.png"
   },
   {
-    "revision": "975b1e5a8338ca406e11",
-    "url": "js/chunk-b48df398.713e2473.js"
+    "revision": "b7a1b468766b35280fe5",
+    "url": "js/chunk-7cba6f8a.67635137.js"
   },
   {
-    "revision": "0384cec0320289df2c57ca00e1900d1c",
-    "url": "favicon/safari-pinned-tab.svg"
+    "revision": "8175f46d5f5da6dbcad1180a3cd77b42",
+    "url": "favicon/favicon-32x32.png"
   },
   {
-    "revision": "8d2af0cbaf1655b13149",
-    "url": "js/chunk-e971083c.fc68d705.js"
-  },
-  {
-    "revision": "7f2b2f8a4c6863cc7be0a1e4b7963bd9",
-    "url": "favicon/browserconfig.txt"
-  },
-  {
-    "revision": "6865503b0b4f251ccac2",
-    "url": "js/chunk-vendors.afad16ec.js"
+    "revision": "d20b46f56babfb445f41",
+    "url": "js/chunk-vendors.de142737.js"
   },
   {
     "revision": "49ac984af3a53f6fb71eeabf7f3c84ee",
@@ -168,8 +168,8 @@ self.__precacheManifest = [
     "url": "img/suregifts.72f1defc.svg"
   },
   {
-    "revision": "c0670189f0d697a3e856",
-    "url": "js/app.ff0d1f1c.js"
+    "revision": "9a9dd42c5603d6da34ec",
+    "url": "js/app.009b9c7b.js"
   },
   {
     "revision": "1236719d76c297f59e09f72acd8be58d",
@@ -284,12 +284,12 @@ self.__precacheManifest = [
     "url": "img/orezi.459b2f51.png"
   },
   {
-    "revision": "5fbf334b948ec09e9410aed0f3ee7281",
+    "revision": "05aec634a062105fd8c21071fb114a52",
     "url": "index.html"
   },
   {
-    "revision": "8175f46d5f5da6dbcad1180a3cd77b42",
-    "url": "favicon/favicon-32x32.png"
+    "revision": "49f235b3b36d997652e77f05425f6c93",
+    "url": "favicon/favicon-16x16.png"
   },
   {
     "revision": "b6f037012bdf509917f162507c3f4d93",
@@ -297,27 +297,23 @@ self.__precacheManifest = [
   },
   {
     "revision": "7f2b2f8a4c6863cc7be0a1e4b7963bd9",
-    "url": "favicon/browserconfig.xml"
+    "url": "favicon/browserconfig.txt"
   },
   {
-    "revision": "49f235b3b36d997652e77f05425f6c93",
-    "url": "favicon/favicon-16x16.png"
+    "revision": "7f2b2f8a4c6863cc7be0a1e4b7963bd9",
+    "url": "favicon/browserconfig.xml"
   },
   {
     "revision": "e66ebb2b065e2f2e1421cbb1d5c1d79f",
     "url": "favicon/android-chrome-192x192.png"
   },
   {
-    "revision": "6865503b0b4f251ccac2",
-    "url": "css/chunk-vendors.3131815e.css"
+    "revision": "d20b46f56babfb445f41",
+    "url": "css/chunk-vendors.18cdff1e.css"
   },
   {
-    "revision": "8d2af0cbaf1655b13149",
-    "url": "css/chunk-e971083c.e8bd5ad9.css"
-  },
-  {
-    "revision": "975b1e5a8338ca406e11",
-    "url": "css/chunk-b48df398.655a2a60.css"
+    "revision": "b7a1b468766b35280fe5",
+    "url": "css/chunk-7cba6f8a.1856fbaf.css"
   },
   {
     "revision": "00d9080eef66782679cf",
@@ -332,11 +328,15 @@ self.__precacheManifest = [
     "url": "css/chunk-50a94f0d.9d5c4fe6.css"
   },
   {
-    "revision": "421fe1092d38d19ebec8",
-    "url": "css/chunk-2a4e6314.1856fbaf.css"
+    "revision": "d4b7ccdacb510f62e63d",
+    "url": "css/chunk-32cd5094.e8bd5ad9.css"
   },
   {
-    "revision": "c0670189f0d697a3e856",
-    "url": "css/app.ab1b9c7e.css"
+    "revision": "5ef17a0c0328626e2a34",
+    "url": "css/chunk-0b9683be.655a2a60.css"
+  },
+  {
+    "revision": "9a9dd42c5603d6da34ec",
+    "url": "css/app.751aba58.css"
   }
 ];

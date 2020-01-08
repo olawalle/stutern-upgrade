@@ -1,41 +1,44 @@
 <template>
   <div id="app">
     <b-navbar toggleable="md" id="nav">
-
       <b-navbar-toggle target="nav_collapse" class="coll-btn"></b-navbar-toggle>
 
       <b-navbar-brand>
-          <router-link to="/">
-            <img src="./assets/logo (1).png" alt="" class="logo">
-          </router-link>
-        </b-navbar-brand>
+        <router-link to="/">
+          <img src="./assets/logo (1).png" alt class="logo">
+        </router-link>
+      </b-navbar-brand>
 
       <b-collapse is-nav id="nav_collapse">
-
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
+          <button
+            v-for="(link, i) in topLinks"
+            :key="i"
+            class="top-link"
+            @click="makeActive(i)"
+            :class="link.active ? 'active' : ''"
+          >{{link.name}}</button>
 
-          <button v-for="(link, i) in topLinks" :key="i" class="top-link" @click="makeActive(i)" :class="link.active ? 'active' : ''">{{link.name}}</button>
-          
-          <button class="apply-btn" @click="apply()">
-            Apply
-          </button>
+          <button class="apply-btn" @click="apply()">Apply</button>
         </b-navbar-nav>
-
       </b-collapse>
     </b-navbar>
-
 
     <router-view ref="routerView"/>
 
     <b-row class="footer">
-      <b-col col-6 class="left-text">
-        Stutern Inc. © {{year}}
-      </b-col>
+      <b-col col-6 class="left-text">Stutern Inc. © {{year}}</b-col>
       <b-col col-6 class="right-text">
-        <a href="https://web.facebook.com/stutern" target="_blank"><img src="./assets/facebook.svg" class="socials" alt=""></a>
-        <a href="https://www.instagram.com/stuternhq/" target="_blank"><img src="./assets/instagram.svg" class="socials" alt=""></a>
-        <a href="https://twitter.com/stutern" target="_blank"><img src="./assets/twitter.svg" class="socials" alt=""></a>
+        <a href="https://web.facebook.com/stutern" target="_blank">
+          <img src="./assets/facebook.svg" class="socials" alt>
+        </a>
+        <a href="https://www.instagram.com/stuternhq/" target="_blank">
+          <img src="./assets/instagram.svg" class="socials" alt>
+        </a>
+        <a href="https://twitter.com/stutern" target="_blank">
+          <img src="./assets/twitter.svg" class="socials" alt>
+        </a>
       </b-col>
     </b-row>
   </div>
@@ -44,7 +47,7 @@
 <script>
 import axios from "axios";
 import services from "./services";
-import * as mutationTypes from './mutationTypes'
+import * as mutationTypes from "./mutationTypes";
 export default {
   data() {
     return {
@@ -86,11 +89,11 @@ export default {
     },
     apply() {
       if (this.routeName === "LandingPage") {
-        this.$refs.routerView.apply()
+        this.$refs.routerView.apply();
       } else {
-        this.$router.push('/')
+        this.$router.push("/");
         setTimeout(() => {
-          this.$refs.routerView.apply()          
+          this.$refs.routerView.apply();
         }, 100);
       }
       // window.open(
@@ -105,26 +108,28 @@ export default {
     services.getScholarships();
     services.getSkills();
 
-    services.getJobTitles()
-    .then(res => {
-      let titles = [];
-      res.data.forEach((job, i) => {
-        // titles.push({
-        //   ...job,
-        //   text: job.trackName.split('.')[1],
-        //   value: i + 1
-        // });
+    services
+      .getJobTitles()
+      .then(res => {
+        let titles = [];
+        res.data.forEach((job, i) => {
+          // titles[job.trackName.split('.')[0].substring(1, job.trackName.split('.')[0].length) - 1] = {
+          //   ...job,
+          //   trackName: job.trackName.split('.')[1],
+          //   text: job.trackName.split('.')[1],
+          //   value: i + 1
+          // }
 
-        titles[job.trackName.split('.')[0].substring(1, job.trackName.split('.')[0].length) - 1] = {
-          ...job,
-          trackName: job.trackName.split('.')[1],
-          text: job.trackName.split('.')[1],
-          value: i + 1
-        }
-      });
-      this.$store.commit(mutationTypes.JOB_TITLES, titles);
-    })
-    .catch(err => console.log(err));
+          titles.push({
+            ...job,
+            trackName: job.trackName,
+            text: job.trackName,
+            value: i + 1
+          });
+        });
+        this.$store.commit(mutationTypes.JOB_TITLES, titles);
+      })
+      .catch(err => console.log(err));
   }
 };
 </script>

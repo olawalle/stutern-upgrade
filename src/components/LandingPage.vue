@@ -295,7 +295,7 @@
             </div>
             <p class="card-text-heading" :title="track.trackName">{{track.trackName}}</p>
             <p class="card-text-content">{{track.trackDesc}}</p>
-            <span v-if="!track.trackName.includes('Starts Soon)')">
+            <span v-if="!track.trackName.includes('Starts soon')">
               <h3 class="more" @click="toTrack(track._id)">
                 Apply now
                 <img src="../assets/right-arrow.png" alt>
