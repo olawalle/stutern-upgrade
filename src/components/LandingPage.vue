@@ -10,7 +10,7 @@
         <p class="text" data-aos="slide-up" data-aos-duration="800">
           Stutern is a skills development and job placement platform
           that connects the most ambitious university graduates with
-          long-term employment
+          long-term employment.
         </p>
 
         <!-- <a href="#explore"> -->

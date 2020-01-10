@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "22e821e18de0540235698c3cdd3add5b",
-    "url": "img/monitor.22e821e1.svg"
+    "revision": "a978235dbd4ac5d0f11c5bd59f0f4ac5",
+    "url": "img/notes.a978235d.svg"
   },
   {
     "revision": "661e27048720bf9eb5a447d994528208",
@@ -36,24 +36,24 @@ self.__precacheManifest = [
     "url": "js/chunk-50a94f0d.d4ea860d.js"
   },
   {
-    "revision": "b9aa277fcfc34c31db6c7a7ea3469b8c",
-    "url": "favicon/site.txt"
+    "revision": "c8e8ad9ac58acf253d57abbfb0b1d2c6",
+    "url": "favicon/mstile-150x150.png"
   },
   {
     "revision": "a05ab6312949e652cd31",
     "url": "js/chunk-50ccf53e.8b1df745.js"
   },
   {
-    "revision": "0384cec0320289df2c57ca00e1900d1c",
-    "url": "favicon/safari-pinned-tab.svg"
+    "revision": "b9aa277fcfc34c31db6c7a7ea3469b8c",
+    "url": "favicon/site.txt"
   },
   {
     "revision": "00d9080eef66782679cf",
     "url": "js/chunk-55e7550f.e0adece4.js"
   },
   {
-    "revision": "c8e8ad9ac58acf253d57abbfb0b1d2c6",
-    "url": "favicon/mstile-150x150.png"
+    "revision": "0384cec0320289df2c57ca00e1900d1c",
+    "url": "favicon/safari-pinned-tab.svg"
   },
   {
     "revision": "b7a1b468766b35280fe5",
@@ -112,6 +112,14 @@ self.__precacheManifest = [
     "url": "img/logo (1).b71c83e4.png"
   },
   {
+    "revision": "541c88b3c6232ff2f5f53914f4f2779d",
+    "url": "img/banner1.541c88b3.png"
+  },
+  {
+    "revision": "e07531680e389c69228b6aa4a5a26afc",
+    "url": "img/banner11.e0753168.png"
+  },
+  {
     "revision": "a93e46d9af08cba607023070c0fd3b59",
     "url": "img/banner4.a93e46d9.png"
   },
@@ -160,16 +168,16 @@ self.__precacheManifest = [
     "url": "img/Tosin.d80711e4.png"
   },
   {
-    "revision": "a978235dbd4ac5d0f11c5bd59f0f4ac5",
-    "url": "img/notes.a978235d.svg"
+    "revision": "9062d5a8a379afb14cc9",
+    "url": "js/app.15eecfe7.js"
   },
   {
     "revision": "72f1defc87edbe5ba6d0b9c308666f56",
     "url": "img/suregifts.72f1defc.svg"
   },
   {
-    "revision": "9a9dd42c5603d6da34ec",
-    "url": "js/app.009b9c7b.js"
+    "revision": "22e821e18de0540235698c3cdd3add5b",
+    "url": "img/monitor.22e821e1.svg"
   },
   {
     "revision": "1236719d76c297f59e09f72acd8be58d",
@@ -256,14 +264,6 @@ self.__precacheManifest = [
     "url": "img/silas.b0192478.jpg"
   },
   {
-    "revision": "541c88b3c6232ff2f5f53914f4f2779d",
-    "url": "img/banner1.541c88b3.png"
-  },
-  {
-    "revision": "e07531680e389c69228b6aa4a5a26afc",
-    "url": "img/banner11.e0753168.png"
-  },
-  {
     "revision": "9d9897deccfc449e027e05f4a9478e87",
     "url": "img/grid1.9d9897de.png"
   },
@@ -284,7 +284,7 @@ self.__precacheManifest = [
     "url": "img/orezi.459b2f51.png"
   },
   {
-    "revision": "05aec634a062105fd8c21071fb114a52",
+    "revision": "402802b208fbd33c4c29586f91a59f11",
     "url": "index.html"
   },
   {
@@ -297,11 +297,11 @@ self.__precacheManifest = [
   },
   {
     "revision": "7f2b2f8a4c6863cc7be0a1e4b7963bd9",
-    "url": "favicon/browserconfig.txt"
+    "url": "favicon/browserconfig.xml"
   },
   {
     "revision": "7f2b2f8a4c6863cc7be0a1e4b7963bd9",
-    "url": "favicon/browserconfig.xml"
+    "url": "favicon/browserconfig.txt"
   },
   {
     "revision": "e66ebb2b065e2f2e1421cbb1d5c1d79f",
@@ -336,7 +336,7 @@ self.__precacheManifest = [
     "url": "css/chunk-0b9683be.655a2a60.css"
   },
   {
-    "revision": "9a9dd42c5603d6da34ec",
-    "url": "css/app.751aba58.css"
+    "revision": "9062d5a8a379afb14cc9",
+    "url": "css/app.a6a444c9.css"
   }
 ];
