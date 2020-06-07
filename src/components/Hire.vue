@@ -126,8 +126,9 @@
             <b-col sm="12" class="username">
               <span>{{user.userName}}</span>
 
-              <button class="apply-btn" v-if="user.availability" @click="toSingle(user)">Hire me</button>
+              <button class="apply-btn" v-if="user.availability" @click="toSingle(user)">Request to hire</button>
               <button class="disabled-btn" disabled v-else>Hired</button>
+              
             </b-col>
             <p class="user-job">{{user.jobTitle}}</p>
             <p class="user-desc">{{user.userDesc}}</p>
@@ -159,77 +160,86 @@
   </div>
 </template>
 <script>
-import { mapGetters } from 'vuex'
-import * as mutationTypes from '../mutationTypes'
-import services from '../services'
+import { mapGetters } from "vuex";
+import * as mutationTypes from "../mutationTypes";
+import services from "../services";
 export default {
-  data () {
+  data() {
     return {
       lastSet: {},
       jobTitle: 0,
       activeSet: {},
       activeSetName: null
-    }
+    };
   },
   computed: {
     ...mapGetters({
-        sets: 'getSets',
-        skills: 'getSkills',
-        jobTitles: 'getJobTitles'
+      sets: "getSets",
+      skills: "getSkills",
+      jobTitles: "getJobTitles"
     }),
-    allSets () {
-        return this.sets
+    allSets() {
+      return this.sets;
     },
-    filteredStudents () {
-        return this.activeSet.students ? {
+    filteredStudents() {
+      return this.activeSet.students
+        ? {
             setName: this.activeSet.setName,
-            students: this.activeSet.students.filter(s => s.jobTitle === this.jobTitles.find(j => j.value === this.jobTitle).trackTitle)
-        } : {}
+            students: this.activeSet.students.filter(
+              s =>
+                s.jobTitle ===
+                this.jobTitles.find(j => j.value === this.jobTitle).trackTitle
+            )
+          }
+        : {};
     }
   },
   methods: {
-    toSingle (user) {
-        this.$router.push({name: 'SingleHire', params: {userId: user._id}})
+    toSingle(user) {
+      // this.$router.push({ name: "SingleHire", params: { userId: user._id } });
+      // the code below opens in a new tab
+      window.open("https://forms.gle/7UaKupXe2vDBUCVP6", "_blank");
     },
 
-    switchSet (e) {
-        services.getSetStudents(e)
+    switchSet(e) {
+      services
+        .getSetStudents(e)
         .then(res => {
-            console.log(res.data)
-            this.activeSet = res.data
-            this.activeSet['students']
-            .sort(function(a,b) {
-                // .replace(/\s/g, '') => NEEDED BECAUSE SOME OF THE NAMES HAD SPACES IN THEM AND THAT WAS MESSING WITH THE SORTING
-                if (a.userName.replace(/\s/g, '') > b.userName.replace(/\s/g, '')) return 1
-                if (a.userName.replace(/\s/g, '') < b.userName.replace(/\s/g, '')) return -1
-                return 0
-            })
+          console.log(res.data);
+          this.activeSet = res.data;
+          this.activeSet["students"].sort(function(a, b) {
+            // .replace(/\s/g, '') => NEEDED BECAUSE SOME OF THE NAMES HAD SPACES IN THEM AND THAT WAS MESSING WITH THE SORTING
+            if (a.userName.replace(/\s/g, "") > b.userName.replace(/\s/g, ""))
+              return 1;
+            if (a.userName.replace(/\s/g, "") < b.userName.replace(/\s/g, ""))
+              return -1;
+            return 0;
+          });
         })
         .catch(err => {
-            console.log(err)
-        })
+          console.log(err);
+        });
     },
-    log() {
-    }
+    log() {}
   },
   mounted() {
-    this.jobTitle = this.jobTitles[0].value
+    this.jobTitle = this.jobTitles[0].value;
   },
-  beforeMount () {
-    this.activeSetName = this.sets[0].setName
-    services.getSetStudents(this.sets[0].setName)
-    .then(res => {
-        this.activeSet = res.data
-        this.activeSet['students']
-        .sort(function(a,b) {
-            // .replace(/\s/g, '') => NEEDED BECAUSE SOME OF THE NAMES HAD SPACES IN THEM AND THAT WAS MESSING WITH THE SORTING
-            if (a.userName.replace(/\s/g, '') > b.userName.replace(/\s/g, '')) return 1
-            if (a.userName.replace(/\s/g, '') < b.userName.replace(/\s/g, '')) return -1
-            return 0
-        })
-    })
+  beforeMount() {
+    this.activeSetName = this.sets[0].setName;
+    services.getSetStudents(this.sets[0].setName).then(res => {
+      this.activeSet = res.data;
+      this.activeSet["students"].sort(function(a, b) {
+        // .replace(/\s/g, '') => NEEDED BECAUSE SOME OF THE NAMES HAD SPACES IN THEM AND THAT WAS MESSING WITH THE SORTING
+        if (a.userName.replace(/\s/g, "") > b.userName.replace(/\s/g, ""))
+          return 1;
+        if (a.userName.replace(/\s/g, "") < b.userName.replace(/\s/g, ""))
+          return -1;
+        return 0;
+      });
+    });
   }
-}
+};
 </script>
 <style lang="scss" scoped>
 .hire-wrap {
@@ -304,7 +314,7 @@ export default {
       color: #67747c;
     }
     .img {
-      padding: 20px 0 !important;
+      /* padding: 20px 0 !important; */
       // img:last-c
     }
   }
