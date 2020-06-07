@@ -126,7 +126,7 @@
             <b-col sm="12" class="username">
               <span>{{user.userName}}</span>
 
-              <button class="apply-btn" v-if="user.availability" @click="toSingle(user)">Hire me</button>
+              <button class="apply-btn" v-if="user.availability" @click="toSingle(user)">Request to hire</button>
               <button class="disabled-btn" disabled v-else>Hired</button>
               
             </b-col>
@@ -314,7 +314,7 @@ export default {
       color: #67747c;
     }
     .img {
-      padding: 20px 0 !important;
+      /* padding: 20px 0 !important; */
       // img:last-c
     }
   }

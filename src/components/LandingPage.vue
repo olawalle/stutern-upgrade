@@ -328,68 +328,64 @@
   </div>
 </template>
 <script>
-import services from '../services'
-import {mapGetters} from 'vuex'
+import services from "../services";
+import { mapGetters } from "vuex";
 export default {
-  data () {
+  data() {
     return {
       selected: [], // Must be an array reference!
       options: [
-        {text: 'UI/UX Designer', value: 'UI/UX Designer'},
-        {text: 'Front End Web Developer', value: 'Front End Web Developer'},
-        {text: 'Digital Marketer', value: 'Digital Marketer'}
+        { text: "UI/UX Designer", value: "UI/UX Designer" },
+        { text: "Front End Web Developer", value: "Front End Web Developer" },
+        { text: "Digital Marketer", value: "Digital Marketer" }
       ],
       selected2: null,
       options2: [
-        { value: null, text: 'Select cohort' },
-        { value: 'a', text: 'This is First option' },
-        { value: 'b', text: 'Default Selected Option' },
-        { value: 'c', text: 'This is another option' },
-        { value: 'd', text: 'This one is disabled', disabled: true }
+        { value: null, text: "Select cohort" },
+        { value: "a", text: "This is First option" },
+        { value: "b", text: "Default Selected Option" },
+        { value: "c", text: "This is another option" },
+        { value: "d", text: "This one is disabled", disabled: true }
       ],
       tutors: [],
       sellingPoints: [],
-      changes: [],
+      changes: []
       // tracks: []
-    }
+    };
   },
   computed: {
     ...mapGetters({
-      tracks: 'getJobTitles'
+      tracks: "getJobTitles"
     })
   },
-  mounted() {
-  },
-  beforeMount () {
-  },
+  mounted() {},
+  beforeMount() {},
   methods: {
     getImgUrl(pic) {
-      return require('../assets/people/'+pic)
+      return require("../assets/people/" + pic);
     },
     test(refName) {
-        var element = this.$refs[refName];
-        var to = element.offsetTop;
+      var element = this.$refs[refName];
+      var to = element.offsetTop;
 
-        let steps = to / 0.0000000000001
+      let steps = to / 0.0000000000001;
 
-        for (let index = 0; index < to; index += 1) {
-            window.scrollTo(0, index);
-            console.log(index)
-        }
+      for (let index = 0; index < to; index += 1) {
+        window.scrollTo(0, index);
+        console.log(index);
+      }
     },
-    int () {
-        
-    },
+    int() {},
     apply() {
-      document.getElementById('apply-btn').click()
+      document.getElementById("apply-btn").click();
     },
-    
-    toTrack (id) {
-      this.$router.push(`/form?to=${id}`)
+
+    toTrack(id) {
+      this.$router.push(`/form?to=${id}`);
       // window.open(url, '_blank')
     }
   }
-}
+};
 </script>
 <style lang="scss" scoped>
 .hire-wrap {
@@ -457,7 +453,7 @@ export default {
       color: #67747c;
     }
     .img {
-      padding: 20px 0 !important;
+      /* padding: 20px 0 !important; */
       height: 80px;
       img {
         height: 25px;
@@ -754,7 +750,7 @@ export default {
     }
   }
   .checkers {
-    padding: 20px 0 !important;
+    /* padding: 20px 0 !important; */
     .checkers-photo {
       overflow: hidden;
       height: 500px;
