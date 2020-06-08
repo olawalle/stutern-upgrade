@@ -126,7 +126,7 @@
             <b-col sm="12" class="username">
               <span>{{user.userName}}</span>
 
-              <button class="apply-btn" v-if="user.availability" @click="toSingle(user)">Request to hire</button>
+              <button class="apply-btn" v-if="user.availability" @click="toSingle(user)">View Profile</button>
               <button class="disabled-btn" disabled v-else>Hired</button>
               
             </b-col>
@@ -196,9 +196,9 @@ export default {
   },
   methods: {
     toSingle(user) {
-      // this.$router.push({ name: "SingleHire", params: { userId: user._id } });
+      this.$router.push({ name: "SingleHire", params: { userId: user._id } });
       // the code below opens in a new tab
-      window.open("https://forms.gle/7UaKupXe2vDBUCVP6", "_blank");
+      // window.open("https://forms.gle/7UaKupXe2vDBUCVP6", "_blank");
     },
 
     switchSet(e) {
