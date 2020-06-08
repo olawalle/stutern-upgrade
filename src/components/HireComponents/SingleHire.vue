@@ -36,7 +36,7 @@
                       Hire me
                     </button>         
                     <button class="apply-btn-two" @click="hireMe()">
-                        View portfolio
+                        View CV
                     </button>
                 </b-row>
             </b-col>
