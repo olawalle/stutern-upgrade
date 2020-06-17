@@ -388,7 +388,7 @@ export default {
           height: 100%;
           overflow: hidden;
           img {
-            width: 130%;
+            width: 100%;
             margin-top: -10px;
           }
         }

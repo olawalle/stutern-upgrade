@@ -27,14 +27,17 @@
                     </span>
                 </span>
                 <b-row class="top-btns">
-                    <a :href='email' v-if="activeUser.availability">
+                    <!-- <a :href='email' v-if="activeUser.availability">
                         <button class="apply-btn">
                             Hire me
                         </button>
                     </a>      
                     <button v-else disabled class="apply-btn not-allowed" title="Candidate unavailable">
                       Hire me
-                    </button>         
+                    </button>     -->
+                    <button class="apply-btn" @click="hireNow()">
+                        Hire me
+                    </button>     
                     <button class="apply-btn-two" @click="hireMe()">
                         View CV
                     </button>
@@ -86,9 +89,10 @@ export default {
     }
   },
   mounted() {
-    this.email = `mailto:accelerator@stutern.com?subject=Request to Hire&cc=${
-      this.activeUser.userEmail
-    }`;
+    // this goes to an email
+    // this.email = `mailto:accelerator@stutern.com?subject=Request to Hire&cc=${
+    //   this.activeUser.userEmail
+    // }`;
     services
       .getUserProjects(this.$route.params.userId)
       .then(res => {
@@ -99,6 +103,10 @@ export default {
       });
   },
   methods: {
+    // this goes to a google form "hire now"
+    hireNow() {
+      window.open("https://forms.gle/7UaKupXe2vDBUCVP6", "_blank");
+    },
     hireMe() {
       window.open(this.activeUser.userCV, "_blank");
     }
