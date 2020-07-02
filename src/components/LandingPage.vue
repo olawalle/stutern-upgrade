@@ -1208,7 +1208,7 @@ export default {
             overflow: hidden;
             .card-img {
               height: auto !important;
-              width: 10% !important;
+              width: 100% !important;
               margin: 0;
               border-radius: 0;
               margin-bottom: 0 !important;
