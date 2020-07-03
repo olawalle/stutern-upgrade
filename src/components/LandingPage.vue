@@ -9,8 +9,8 @@
         </p>
         <p class="text" data-aos="slide-up" data-aos-duration="800">
           Stutern is a skills development and job placement platform
-          that connects the most ambitious university graduates with
-          long-term employment.
+          that provides the most ambitious millennials with skills for
+          high paying careers.
         </p>
 
         <!-- <a href="#explore"> -->
@@ -95,7 +95,7 @@
         <img src="../assets/funds.svg" alt>
         <p class="mid-sect-heading">Can’t pay upfront? No worries</p>
         <p class="text">
-          The Stutern Graduate Accelerator enables you launch your
+          The Stutern Accelerator enables you launch your
           career without upfront tuition. You pay back a percentage
           of your income according to an income sharing agreement.
         </p>
@@ -127,7 +127,7 @@
             <p class="single-change-heading">Complete free application</p>
             <p class="single-change-store">
               We look forward to learning about you through your application. Join thousands of ambitious
-              university graduates by telling us about your interest, motivation and goals.
+              millennials by telling us about your interest, motivation and goals.
             </p>
           </b-col>
           <b-col sm="12" class="single-change">
@@ -178,7 +178,7 @@
       <p class="success-heading">Success stories</p>
       <p
         class="sucess-story-text"
-      >We have helped many recent graduates launch new and promising careers</p>
+      >We have helped many millennials launch new and promising careers</p>
 
       <b-col sm="12" style="padding: 0">
         <b-row class="users" style="margin: 0">
@@ -279,7 +279,7 @@
       </b-col>
     </b-row>
     <b-row class="accelerate" id="apply">
-      <p class="accelerate-header">Graduate Accelerator Tracks</p>
+      <p class="accelerate-header">Accelerator Tracks</p>
       <p class="accelerate-header-text">
         Our programs are designed to help you elevate your earning potential
         and launch your career.
